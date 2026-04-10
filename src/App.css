@@ -601,3 +601,80 @@
     z-index: 100;
   }
 }
+
+/* Smoke Transition Effect */
+.smoke-divider {
+  height: 150px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: -75px 0;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.smoke-cloud {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(255, 69, 0, 0.1), transparent 70%);
+  filter: blur(40px);
+  animation: floatSmoke 10s ease-in-out infinite;
+}
+
+@keyframes floatSmoke {
+  0%, 100% { transform: translateX(-10%) translateY(0); opacity: 0.3; }
+  50% { transform: translateX(10%) translateY(-20px); opacity: 0.6; }
+}
+
+/* Enhanced 3D Tilt Container */
+.tilt-container {
+  transform-style: preserve-3d;
+  perspective: 1200px;
+}
+
+.tilt-inner {
+  transition: transform 0.1s ease-out;
+}
+
+/* Parallax Background */
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  z-index: -1;
+  background-attachment: fixed;
+  opacity: 0.05;
+}
+
+/* Fix for skipping section */
+.hero-fullscreen {
+  min-height: 180vh; /* Reduced from 200vh to ensure tighter scroll */
+  position: relative;
+}
+
+.hero-visual-bg {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 5;
+}
+
+/* Page Transitions */
+.section-transition-up {
+  position: relative;
+}
+
+.section-transition-up::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(to bottom, transparent, #050505 50%, transparent);
+  z-index: 5;
+}
+

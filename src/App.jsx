@@ -5,7 +5,17 @@ import {
   ArrowRight, Download, Menu, X, 
   Flame, Settings, Zap, Award, Clock
 } from 'lucide-react';
+import Tilt from 'react-tilt';
 import './App.css';
+
+// Reusable transition component
+const SectionDivider = () => (
+  <div className="smoke-divider">
+    <div className="smoke-cloud"></div>
+    <div className="smoke-cloud" style={{ animationDelay: '2s', left: '20%' }}></div>
+    <div className="smoke-cloud" style={{ animationDelay: '5s', left: '-20%' }}></div>
+  </div>
+);
 
 // Components will be defined or imported here
 const Navbar = () => {
@@ -124,26 +134,33 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="section-padding">
+    <section id="services" className="section-padding section-transition-up">
       <div className="section-header">
-        <h2 className="section-title">Our <span className="accent-text">Services</span></h2>
+        <motion.h2 
+          className="section-title"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Our <span className="accent-text">Services</span>
+        </motion.h2>
         <div className="title-underline"></div>
       </div>
       <div className="services-grid">
         {services.map((s, i) => (
-          <motion.div 
-            key={i}
-            className="glass-card service-card"
-            whileHover={{ scale: 1.02 }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-          >
-            <div className="service-icon">{s.icon}</div>
-            <h3>{s.title}</h3>
-            <p>{s.desc}</p>
-          </motion.div>
+          <Tilt key={i} options={{ max: 15, scale: 1.05, speed: 400 }}>
+            <motion.div 
+              className="glass-card service-card"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+            >
+              <div className="service-icon">{s.icon}</div>
+              <h3>{s.title}</h3>
+              <p>{s.desc}</p>
+            </motion.div>
+          </Tilt>
         ))}
       </div>
     </section>
@@ -160,27 +177,30 @@ const Products = () => {
   ];
 
   return (
-    <section id="products" className="section-padding bg-surface">
+    <section id="products" className="section-padding bg-surface section-transition-up">
       <div className="section-header">
         <h2 className="section-title">Safety <span className="accent-text">Products</span></h2>
         <div className="title-underline"></div>
       </div>
       <div className="products-grid">
         {products.map((p, i) => (
-          <motion.div 
-            key={i}
-            className="glass-card product-card"
-            whileHover={{ y: -10, rotateX: 5, rotateY: 5 }}
-            style={{ transformStyle: 'preserve-3d' }}
-          >
-            <div className="product-visual">
-              <img src={p.img} alt={p.title} className="product-img-fit" />
-            </div>
-            <div className="product-info">
-              <h3>{p.title}</h3>
-              <p>{p.desc}</p>
-            </div>
-          </motion.div>
+          <Tilt key={i} options={{ max: 10, scale: 1.02, speed: 1000 }}>
+            <motion.div 
+              className="glass-card product-card"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+            >
+              <div className="product-visual">
+                <img src={p.img} alt={p.title} className="product-img-fit" />
+              </div>
+              <div className="product-info">
+                <h3>{p.title}</h3>
+                <p>{p.desc}</p>
+              </div>
+            </motion.div>
+          </Tilt>
         ))}
       </div>
     </section>
@@ -329,8 +349,11 @@ function App() {
       <div className="particle-background"></div>
       <Navbar />
       <Hero />
+      <SectionDivider />
       <Services />
+      <SectionDivider />
       <Products />
+      <SectionDivider />
       <About />
       <Contact />
       <Footer />
