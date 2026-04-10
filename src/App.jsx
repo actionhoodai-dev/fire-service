@@ -5,7 +5,7 @@ import {
   ArrowRight, Download, Menu, X, 
   Flame, Settings, Zap, Award, Clock
 } from 'lucide-react';
-import Tilt from 'react-tilt';
+import { Tilt } from 'react-tilt';
 import './App.css';
 
 // Reusable transition component
