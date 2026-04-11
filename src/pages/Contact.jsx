@@ -17,17 +17,15 @@ const Contact = () => {
               <Phone className="accent-text mb-10" />
               <h3>Phone Numbers</h3>
               <div className="phone-list mt-10">
-                <a href="tel:6379321829">63793 21829</a>
-                <a href="tel:7200999660">72009 99660</a>
-                <a href="tel:9944677149">99446 77149</a>
-                <a href="tel:7200763674">72007 63674</a>
+                <a href="tel:9944677149">+91 99446 77149</a>
+                <a href="tel:7200763674">+91 72007 63674</a>
               </div>
             </div>
 
             <div className="contact-box glass-card mb-20">
               <Mail className="accent-text mb-10" />
               <h3>Email</h3>
-              <a href="mailto:varathavinayagar@gmail.com" className="hover-text">varathavinayagar@gmail.com</a>
+              <a href="mailto:varathavinayagar1989@gmail.com" className="hover-text">varathavinayagar1989@gmail.com</a>
             </div>
 
             <div className="contact-box glass-card">
@@ -76,7 +74,7 @@ const Contact = () => {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.712202728212!2d78.15088527399394!3d8.813084792333468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b03efe149ba4967%3A0xbf24fd03611dea1!2sVARATHA%20VINAYAGAR%20SAFETY%20%26%20FIRE%20SALES%20AND%20SERVICES!5e0!3m2!1sen!2sin!4v1775810818175!5m2!1sen!2sin" 
               width="100%" 
               height="450" 
-              style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) contrast(90%)' }} 
+              style={{ border: 0 }} 
               allowFullScreen="" 
               loading="lazy"
             ></iframe>

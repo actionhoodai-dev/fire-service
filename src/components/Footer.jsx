@@ -14,7 +14,7 @@ const Footer = () => {
               <span className="brand-sub">SAFETY & FIRE</span>
             </div>
           </div>
-          <p className="mt-10">Premium Fire Safety Solutions across Tuticorin.</p>
+          <p className="mt-10">“Never Trust Fire! Trust Varatha Vinayagar Safety & Fire”</p>
           <div className="gst-badge">GSTIN: 33FOCPP2123C1ZJ</div>
         </div>
 
@@ -31,9 +31,9 @@ const Footer = () => {
         <div className="footer-contact">
           <h4>Contact Info</h4>
           <div className="footer-nav-list">
-            <p><Phone size={14} /> 63793 21829</p>
-            <p><Mail size={14} /> varathavinayagar@gmail.com</p>
-            <p><MapPin size={14} /> Muthukrishnapuram, Tuticorin</p>
+            <p><Phone size={14} /> +91 99446 77149 <br/><Phone size={14} style={{opacity: 0}} /> +91 72007 63674</p>
+            <p><Mail size={14} /> varathavinayagar1989@gmail.com</p>
+            <p><MapPin size={14} style={{flexShrink: 0}} /> 112Q/3, Muthukrishnapuram 2nd Street, Tuticorin</p>
           </div>
         </div>
 

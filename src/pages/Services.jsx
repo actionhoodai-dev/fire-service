@@ -1,93 +1,118 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Settings, Zap, Shield, Flame, Award, Drill } from 'lucide-react';
-import { Tilt } from 'react-tilt';
+import { Shield, Zap, Settings, Truck, Wrench, CheckCircle, Factory, ShieldAlert } from 'lucide-react';
 
 const Services = () => {
   const services = [
-    { 
-      icon: <Zap />, 
-      title: "Extinguisher Refilling", 
-      desc: "Fast and certified refilling of all types of fire extinguishers including ABC, CO2, and Water based." 
+    {
+      title: "Fire Extinguisher Supply",
+      desc: "Delivering world-class, certified fire extinguishers perfectly suited for industrial, commercial, and residential use.",
+      icon: <Truck size={32} />
     },
-    { 
-      icon: <Settings />, 
-      title: "Extinguisher Servicing", 
-      desc: "Regular maintenance and component replacement to ensure your equipment never fails when needed." 
+    {
+      title: "Fire Extinguisher Refilling",
+      desc: "High-quality refilling agents matching stringent industry standards for rapid fire suppression.",
+      icon: <Zap size={32} />
     },
-    { 
-      icon: <Shield />, 
-      title: "H.P. Testing", 
-      desc: "High-Pressure hydrostatic testing to verify the structural integrity of gas cylinders and vessels." 
+    {
+      title: "Fire Extinguisher Servicing",
+      desc: "Periodic servicing by qualified technicians to ensure your equipment is always ready.",
+      icon: <Wrench size={32} />
     },
-    { 
-      icon: <Flame />, 
-      title: "Equipment Supply", 
-      desc: "Wholesale and retail supply of fire safety hardware, alarms, and industrial protection gear." 
+    {
+      title: "High Pressure Testing",
+      desc: "Advanced hydrostatic testing ensuring container integrity under extreme conditions.",
+      icon: <Shield size={32} />
     },
-    { 
-      icon: <Award />, 
-      title: "Installation", 
-      desc: "Professional placement and mounting of extinguishers as per fire safety norms and regulations." 
+    {
+      title: "Fire Safety Equipment Installation",
+      desc: "Precision installation of fire safety pipelines, hydrants, and complete fire protection systems.",
+      icon: <Settings size={32} />
     },
-    { 
-      icon: <Drill />, 
-      title: "Annual Maintenance", 
-      desc: "Worry-free annual contracts (AMC) for commercial and industrial buildings in Tuticorin." 
+    {
+      title: "Annual Maintenance Contracts (AMC)",
+      desc: "End-to-end periodic maintenance checks for complete peace of mind.",
+      icon: <CheckCircle size={32} />
+    },
+    {
+      title: "Industrial Safety Solutions",
+      desc: "We specialize in heat protective garments, safety showers, and fall protection gear specifically for industries.",
+      icon: <ShieldAlert size={32} />
     }
+  ];
+
+  const industries = [
+    "Steel & Iron Industries",
+    "Thermal Power Plants",
+    "Construction & Infrastructure",
+    "Engineering Industries",
+    "Textile & Garment Industries",
+    "Chemical Industries",
+    "Government Sector",
+    "Educational Institutions"
   ];
 
   return (
     <div className="services-page pt-120">
       <section className="section-padding">
         <div className="section-header text-center">
-          <span className="badge">Professional Care</span>
-          <h1 className="section-title">Our <span className="accent-text">Service</span> Portfolio</h1>
-          <p className="max-w-600 mx-auto">Providing end-to-end fire safety solutions with certified professionals and state-of-the-art testing equipment.</p>
+          <span className="badge">Our Expertise</span>
+          <h1 className="section-title">Complete <span className="accent-text">Safety</span> Services</h1>
+          <p className="mt-20 text-muted mx-auto" style={{maxWidth: '600px'}}>
+            We provide a comprehensive range of professional fire safety services to keep your environments fully protected.
+          </p>
         </div>
-        
+
         <div className="services-grid container mt-60">
-          {services.map((s, i) => (
-            <Tilt key={i} options={{ max: 15, scale: 1.05 }}>
-              <motion.div 
-                className="glass-card service-card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <div className="service-icon">{s.icon}</div>
-                <h3>{s.title}</h3>
-                <p>{s.desc}</p>
-              </motion.div>
-            </Tilt>
+          {services.map((service, i) => (
+            <motion.div 
+              key={i}
+              className="service-card glass-card"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              whileHover={{ scale: 1.02 }}
+            >
+              <div className="service-icon-box">
+                {service.icon}
+              </div>
+              <h3 className="mt-20">{service.title}</h3>
+              <p className="mt-10 text-muted">{service.desc}</p>
+            </motion.div>
           ))}
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Industries Served */}
       <section className="section-padding bg-surface">
         <div className="container">
-          <h2 className="text-center mb-60">How We <span className="glow-text">Work</span></h2>
-          <div className="process-cards">
-             {['Inspection', 'Collection', 'Execution', 'Delivery'].map((step, i) => (
-               <motion.div 
-                 key={i} 
-                 className="glass-card process-card-new"
-                 initial={{ opacity: 0, y: 30 }}
-                 whileInView={{ opacity: 1, y: 0 }}
-                 transition={{ delay: i * 0.1 }}
-               >
-                  <div className="step-number-glow">0{i+1}</div>
-                  <h3>{step}</h3>
-                  <p className="text-muted mt-10">
-                     {i === 0 && "Thorough site assessment and hazard identification."}
-                     {i === 1 && "Safe transport of equipment to our certified facility."}
-                     {i === 2 && "Certified refill and high-pressure testing."}
-                     {i === 3 && "Final quality check and prompt delivery."}
-                  </p>
-               </motion.div>
-             ))}
+          <div className="section-header text-center">
+            <span className="badge">Where We Serve</span>
+            <h2 className="section-title">Industries <span className="accent-text">Served</span></h2>
           </div>
+          
+          <div className="process-cards mt-50">
+            {industries.map((ind, i) => (
+               <motion.div 
+                 key={i}
+                 className="glass-card process-card-new text-center p-20"
+                 initial={{ opacity: 0, scale: 0.9 }}
+                 whileInView={{ opacity: 1, scale: 1 }}
+                 transition={{ delay: i * 0.05 }}
+               >
+                 <Factory size={24} className="accent-text mb-10 mx-auto" />
+                 <h4 style={{fontSize: '1rem', fontWeight: 600}}>{ind}</h4>
+               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="cta-section section-padding text-center">
+        <div className="container">
+          <h2>Ready to secure your premises?</h2>
+          <p className="mb-30 mx-auto mt-10 text-muted" style={{maxWidth: '500px'}}>Contact us today for an expert consultation and a tailored safety solution for your industry.</p>
+          <a href="/contact" className="btn-primary">Book Consultation</a>
         </div>
       </section>
     </div>

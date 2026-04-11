@@ -63,9 +63,9 @@ const Navbar = () => {
           </div>
 
           <div className="nav-contact-header">
-             <a href="tel:6379321829" className="contact-pill">
+             <a href="tel:9944677149" className="contact-pill">
               <Phone size={16} />
-              <span>63793 21829</span>
+              <span>+91 99446 77149</span>
             </a>
           </div>
 
@@ -118,8 +118,8 @@ const Navbar = () => {
             <div className="mobile-menu-footer">
               <p className="mobile-menu-label">24/7 Emergency Support</p>
               <div className="mobile-phone-list">
-                <a href="tel:6379321829"><Phone size={16} /> 63793 21829</a>
-                <a href="tel:7200999660"><Phone size={16} /> 72009 99660</a>
+                <a href="tel:9944677149"><Phone size={16} /> +91 99446 77149</a>
+                <a href="tel:7200763674"><Phone size={16} /> +91 72007 63674</a>
               </div>
               <Link 
                 to="/contact" 

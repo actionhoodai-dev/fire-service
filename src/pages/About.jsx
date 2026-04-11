@@ -1,15 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Target, Users, Clock, Award, CheckCircle } from 'lucide-react';
+import { Shield, Target, Users, Settings, Award, CheckCircle, Eye, Rocket, ThumbsUp } from 'lucide-react';
 
 const About = () => {
-  const values = [
-    { icon: <Shield />, title: "Safety First", desc: "Our primary mission is protecting lives and property through uncompromising safety standards." },
-    { icon: <Target />, title: "Precision", desc: "Every refill and every test is executed with surgical precision and certified accuracy." },
-    { icon: <Users />, title: "Community", desc: "As a Tuticorin-based business, we take pride in safeguarding our local community and industries." },
-    { icon: <Clock />, title: "24/7 Support", desc: "Fire doesn't sleep, and neither do we. Our emergency response team is always ready." }
-  ];
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -35,11 +28,6 @@ const About = () => {
           >
             <div className="glass-card about-main-card overflow-hidden">
                <img src="/team.png" alt="Safety Team" />
-               <div className="card-overlay-abs">
-                  <div className="years-badge">
-                     <span>4+</span> Years of Excellence
-                  </div>
-               </div>
             </div>
           </motion.div>
 
@@ -49,71 +37,76 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
-            <span className="badge">Who We Are</span>
-            <h1 className="section-title">Trusted Partner in <span className="glow-text">Fire Safety</span></h1>
-            <p className="mt-20 text-muted">Varatha Vinayagar Safety & Fire was founded with a single mission: to bring world-class fire protection services to Tuticorin. We specialize in high-pressure testing, certified refilling, and comprehensive safety auditing.</p>
+            <span className="badge">Our Company Profile</span>
+            <h1 className="section-title">Varatha Vinayagar <span className="accent-text">Safety & Fire</span></h1>
+            <p className="mt-20">We supply fire extinguishers, hydrant accessories, personal protective equipment, and industrial safety products based in Tuticorin. We specialize in industrial heat protective garments, fall protection systems, and safety shower systems.</p>
+            <p className="mt-10">Our products follow high-quality standards, durability, and user-friendly design with a strong focus on customer satisfaction and fast service delivery.</p>
             
             <div className="about-check-list mt-30">
                <div className="check-item">
                   <CheckCircle size={18} className="accent-text" />
-                  <span>Licensed by Industrial Safety Standards</span>
+                  <span>Strict quality control from design to testing</span>
                </div>
                <div className="check-item">
                   <CheckCircle size={18} className="accent-text" />
-                  <span>Certified Equipment & Testing Gear</span>
+                  <span>Advanced technology integration</span>
                </div>
                <div className="check-item">
                   <CheckCircle size={18} className="accent-text" />
-                  <span>Expert Technicians with 10+ Years Experience</span>
+                  <span>Skilled professionals and experienced team</span>
+               </div>
+               <div className="check-item">
+                  <CheckCircle size={18} className="accent-text" />
+                  <span>Customer-centric service approach</span>
                </div>
             </div>
-
-            <button className="btn-primary mt-40">Download Company Profile</button>
           </motion.div>
         </div>
       </section>
 
-      {/* Core Values */}
+      {/* Vision, Mission, Quality */}
       <section className="section-padding bg-surface">
         <div className="container">
-          <h2 className="text-center mb-60">Our Core <span className="glow-text">Values</span></h2>
-          <motion.div 
-            className="values-grid"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-          >
-            {values.map((v, i) => (
-              <motion.div key={i} className="glass-card value-card" variants={itemVariants}>
-                <div className="value-icon">{v.icon}</div>
-                <h3>{v.title}</h3>
-                <p>{v.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+          <div className="values-grid">
+            <motion.div className="glass-card value-card" whileHover={{ y: -5 }}>
+              <div className="value-icon"><Eye size={30} /></div>
+              <h3>Our Vision</h3>
+              <p>To become a highly respected safety solutions provider delivering:</p>
+              <ul className="text-muted mt-10" style={{ listStylePosition: 'inside' }}>
+                <li>Complete safety systems and services</li>
+                <li>Advanced technology-based solutions</li>
+                <li>Continuous improvement and innovation</li>
+                <li>Strong customer-focused approach</li>
+              </ul>
+            </motion.div>
+
+            <motion.div className="glass-card value-card" whileHover={{ y: -5 }}>
+              <div className="value-icon"><Rocket size={30} /></div>
+              <h3>Our Mission</h3>
+              <p>Driving excellence via:</p>
+              <ul className="text-muted mt-10" style={{ listStylePosition: 'inside' }}>
+                <li>Achieve top position in India's safety industry</li>
+                <li>Focus on innovation, quality, and service excellence</li>
+                <li>Promote safety awareness and responsibility</li>
+                <li>Deliver high-value products and solutions</li>
+              </ul>
+            </motion.div>
+
+            <motion.div className="glass-card value-card" whileHover={{ y: -5 }}>
+              <div className="value-icon"><ThumbsUp size={30} /></div>
+              <h3>Quality Policy</h3>
+              <p>We ensure quality through:</p>
+              <ul className="text-muted mt-10" style={{ listStylePosition: 'inside' }}>
+                <li>Strict quality control from design to testing</li>
+                <li>Advanced technology integration</li>
+                <li>Skilled professionals and experienced team</li>
+                <li>Customer-centric service approach</li>
+              </ul>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Achievements */}
-      <section className="section-padding achievements-section">
-         <div className="container text-center">
-            <h2 className="mb-60">Certified for <span className="accent-text">Safety</span></h2>
-            <div className="certification-grid">
-               <div className="cert-card glass-card">
-                  <Award size={40} className="glow-text mb-10" />
-                  <p>ISO 9001:2015</p>
-               </div>
-               <div className="cert-card glass-card">
-                  <Shield size={40} className="glow-text mb-10" />
-                  <p>Fire Safety Board</p>
-               </div>
-               <div className="cert-card glass-card">
-                  <Users size={40} className="glow-text mb-10" />
-                  <p>500+ Clients</p>
-               </div>
-            </div>
-         </div>
-      </section>
     </div>
   );
 };
