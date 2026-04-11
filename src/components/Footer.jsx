@@ -1,95 +1,66 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Flame, Phone, Mail, MapPin, ChevronRight, ShieldCheck } from 'lucide-react';
-
-const FooterLink = ({ to, label }) => (
-  <Link to={to} className="footer-nav-item">
-    <ChevronRight size={14} className="nav-arrow" />
-    <span>{label}</span>
-  </Link>
-);
-
-const GSTBadge = ({ number }) => (
-  <div className="gst-component mt-20">
-    <div className="gst-label">Registered Business</div>
-    <div className="gst-value">
-      <ShieldCheck size={16} className="text-secondary" />
-      <span>{number}</span>
-    </div>
-  </div>
-);
+import { Flame, Phone, Mail, MapPin, ShieldCheck } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="footer-root">
-      {/* Top CTA Bar */}
-      <div className="footer-cta-bar glass-card container">
-        <div className="cta-content">
-          <h3>Need an Emergency Safety Audit?</h3>
-          <p>Our experts are available 24/7 for Tuticorin industries.</p>
-        </div>
-        <Link to="/contact" className="btn-primary">Request Audit Now</Link>
-      </div>
-
-      <div className="footer-main section-padding">
-        <div className="container footer-grid">
-          {/* Brand & GST Section */}
-          <div className="footer-column brand-col">
-            <div className="logo mb-20">
-              <Flame className="logo-icon" />
-              <div className="logo-text">
-                <span className="brand-name">VARATHA VINAYAGAR</span>
-                <span className="brand-sub">SAFETY & FIRE</span>
-              </div>
+    <footer className="footer">
+      <div className="footer-content">
+        <div className="footer-brand">
+          <div className="logo footer-logo-padded">
+            <Flame className="logo-icon" />
+            <div className="logo-text">
+              <span className="brand-name">VARATHA VINAYAGAR</span>
+              <span className="brand-sub">SAFETY & FIRE</span>
             </div>
-            <p className="footer-slogan">“Never Trust Fire! Trust Varatha Vinayagar Safety & Fire”</p>
-            <GSTBadge number="33FOCPP2123C1ZJ" />
           </div>
-
-          {/* Quick Links Section */}
-          <div className="footer-column">
-            <h4 className="footer-header">Quick Navigation</h4>
-            <nav className="footer-nav">
-              <FooterLink to="/" label="Home" />
-              <FooterLink to="/about" label="About Us" />
-              <FooterLink to="/services" label="Services" />
-              <FooterLink to="/products" label="Products" />
-              <FooterLink to="/contact" label="Contact" />
-            </nav>
-          </div>
-
-          {/* Contact Section */}
-          <div className="footer-column">
-            <h4 className="footer-header">Connect With Us</h4>
-            <div className="footer-contact-list">
-              <div className="contact-item">
-                <Phone size={18} className="accent-text" />
-                <div className="contact-details">
-                   <a href="tel:9944677149">+91 99446 77149</a>
-                   <a href="tel:7200763674">+91 72007 63674</a>
-                </div>
-              </div>
-              <div className="contact-item">
-                <Mail size={18} className="accent-text" />
-                <a href="mailto:varathavinayagar1989@gmail.com">varathavinayagar1989@gmail.com</a>
-              </div>
-              <div className="contact-item">
-                <MapPin size={18} className="accent-text" style={{flexShrink: 0}} />
-                <address>112Q/3, Muthukrishnapuram 2nd Street, Tuticorin</address>
-              </div>
+          <p className="footer-tagline">“Never Trust Fire! Trust Varatha Vinayagar Safety & Fire”</p>
+          
+          <div className="gst-container-premium">
+            <ShieldCheck size={16} className="accent-text" />
+            <div className="gst-content">
+              <span className="gst-label">GSTIN REGISTERED</span>
+              <span className="gst-number">33FOCPP2123C1ZJ</span>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="footer-bottom">
-        <div className="container flex-between">
+        <div className="footer-links">
+          <h4>Navigation</h4>
+          <div className="footer-nav-list">
+            <Link to="/">Home</Link>
+            <Link to="/about">About Us</Link>
+            <Link to="/services">Services</Link>
+            <Link to="/products">Products</Link>
+            <Link to="/contact">Contact</Link>
+          </div>
+        </div>
+
+        <div className="footer-contact">
+          <h4>Contact Info</h4>
+          <div className="footer-nav-list">
+            <a href="tel:+919944677149" className="footer-contact-link">
+              <Phone size={14} /> +91 99446 77149
+            </a>
+            <a href="tel:+917200763674" className="footer-contact-link">
+              <Phone size={14} /> +91 72007 63674
+            </a>
+            <a href="mailto:varathavinayagar1989@gmail.com" className="footer-contact-link">
+              <Mail size={14} /> varathavinayagar1989@gmail.com
+            </a>
+            <a 
+              href="https://www.google.com/maps/search/?api=1&query=112Q%2F3%2C+Muthukrishnapuram+2nd+Street%2C+Tuticorin" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="footer-contact-link address-link"
+            >
+              <MapPin size={14} style={{flexShrink: 0}} /> 112Q/3, Muthukrishnapuram 2nd Street, Tuticorin
+            </a>
+          </div>
+        </div>
+
+        <div className="footer-copy">
           <p>&copy; {new Date().getFullYear()} Varatha Vinayagar Safety & Fire. All rights reserved.</p>
-          <div className="footer-legal">
-            <Link to="/contact">Safety Policy</Link>
-            <Link to="/contact">Terms</Link>
-          </div>
         </div>
       </div>
     </footer>
