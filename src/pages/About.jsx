@@ -4,27 +4,29 @@ import { Shield, Target, Users, Settings, Award, CheckCircle, Eye, Rocket, Thumb
 
 const PartnerCarousel = () => {
   return (
-    <div className="partner-carousel-wrapper">
-      <div className="section-header text-center mb-40">
+    <div className="partner-section">
+      <div className="section-header text-center mb-40" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
          <span className="badge">Authorized Partners</span>
-         <h2 className="section-title" style={{fontSize: '2rem'}}>Trusted Brands & <span className="accent-text">Certifications</span></h2>
+         <h2 className="section-title" style={{fontSize: '2rem', textAlign: 'center'}}>Trusted Brands & <span className="accent-text">Certifications</span></h2>
       </div>
-      <motion.div 
-        className="partner-carousel-track"
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{ 
-          duration: 25, 
-          ease: "linear", 
-          repeat: Infinity 
-        }}
-      >
-        <div className="partner-strip">
-          <img src="/partners_strip.png" alt="Trusted Brands and Partners" />
-        </div>
-        <div className="partner-strip">
-          <img src="/partners_strip.png" alt="Trusted Brands and Partners" />
-        </div>
-      </motion.div>
+      <div className="partner-carousel-wrapper">
+        <motion.div 
+          className="partner-carousel-track"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ 
+            duration: 25, 
+            ease: "linear", 
+            repeat: Infinity 
+          }}
+        >
+          <div className="partner-strip">
+            <img src="/partners_strip.png" alt="Trusted Brands and Partners" />
+          </div>
+          <div className="partner-strip">
+            <img src="/partners_strip.png" alt="Trusted Brands and Partners" />
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 };
