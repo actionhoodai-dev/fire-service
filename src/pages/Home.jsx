@@ -136,8 +136,8 @@ const Home = () => {
               transition={{ duration: 1 }}
               viewport={{ once: true }}
             >
-              <div className="glass-card about-main-card overflow-hidden">
-                 <img src="/indian_team.png" alt="Indian Safety Engineers Team" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div className="glass-card about-main-card overflow-hidden" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px' }}>
+                 <img src="/logo.png" alt="Varatha Vinayagar Business Logo" style={{ width: '100%', height: '100%', objectFit: 'contain', filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.5))' }} />
               </div>
             </motion.div>
 
