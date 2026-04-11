@@ -14,7 +14,7 @@ const PartnerCarousel = () => {
           className="partner-carousel-track"
           animate={{ x: ["0%", "-50%"] }}
           transition={{ 
-            duration: 25, 
+            duration: 45, 
             ease: "linear", 
             repeat: Infinity 
           }}

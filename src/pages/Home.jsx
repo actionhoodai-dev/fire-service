@@ -69,7 +69,7 @@ const ProductCarousel = () => {
         className="product-carousel-track"
         animate={{ x: ["0%", "-50%"] }}
         transition={{ 
-          duration: 35, 
+          duration: 90, 
           ease: "linear", 
           repeat: Infinity 
         }}
