@@ -33,6 +33,36 @@ const Counter = ({ end, suffix }) => {
   return <span ref={ref}>{count}{suffix}</span>;
 };
 
+const ProductCarousel = () => {
+  const images = [
+    "/extinguisher.png", "/co2.png", "/foam.png", "/detector.png", 
+    "/hydrant.png", "/helmet.png", "/apparatus.png", "/gloves.png", "/shoes.png"
+  ];
+  
+  // Duplicate images for infinite loop
+  const duplicatedImages = [...images, ...images];
+
+  return (
+    <div className="product-carousel-wrapper">
+      <motion.div 
+        className="product-carousel-track"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{ 
+          duration: 30, 
+          ease: "linear", 
+          repeat: Infinity 
+        }}
+      >
+        {duplicatedImages.map((src, i) => (
+          <div key={i} className="carousel-item glass-card">
+            <img src={src} alt="Product" />
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
+
 const Home = () => {
   const stats = [
     { label: 'Safety Compliance', end: 100, suffix: '%' },
@@ -70,6 +100,7 @@ const Home = () => {
 
       {/* Everything below has a solid dark background */}
       <div className="post-hero-content">
+        <ProductCarousel />
 
         {/* About Overview Content */}
         <section className="section-padding">
