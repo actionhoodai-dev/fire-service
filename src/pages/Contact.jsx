@@ -16,16 +16,22 @@ const Contact = () => {
             <div className="contact-box glass-card mb-20">
               <Phone className="accent-text mb-10" />
               <h3>Phone Numbers</h3>
-              <div className="phone-list mt-10">
-                <a href="tel:9944677149">+91 99446 77149</a>
-                <a href="tel:7200763674">+91 72007 63674</a>
+              <div className="phone-list mt-10" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <a href="tel:9944677149" className="btn-primary" style={{ justifyContent: 'center' }}>
+                  <Phone size={16} /> +91 99446 77149
+                </a>
+                <a href="tel:7200763674" className="btn-outline" style={{ justifyContent: 'center' }}>
+                  <Phone size={16} /> +91 72007 63674
+                </a>
               </div>
             </div>
 
             <div className="contact-box glass-card mb-20">
               <Mail className="accent-text mb-10" />
               <h3>Email</h3>
-              <a href="mailto:varathavinayagar1989@gmail.com" className="hover-text">varathavinayagar1989@gmail.com</a>
+              <a href="mailto:varathavinayagar1989@gmail.com" className="btn-outline mt-10" style={{ justifyContent: 'center', width: '100%' }}>
+                <Mail size={16} /> Email Us
+              </a>
             </div>
 
             <div className="contact-box glass-card">
