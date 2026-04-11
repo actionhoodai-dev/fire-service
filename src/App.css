@@ -54,36 +54,51 @@ body {
   overflow: hidden;
 }
 
-.particle-background::before, .particle-background::after {
+.particle-background::before, .particle-background::after, .particle-background .cluster-1, .particle-background .cluster-2 {
   content: '';
   position: absolute;
-  width: 50vw;
-  height: 50vw;
+  width: 60vw;
+  height: 60vw;
   border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.6;
-  animation: bgClustering 20s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+  filter: blur(120px);
+  opacity: 0.5;
+  animation: solarRoll 30s infinite linear;
   pointer-events: none;
 }
 
 .particle-background::before {
-  background: rgba(204, 0, 0, 0.06);
-  top: -10%;
-  left: -10%;
+  background: rgba(229, 9, 20, 0.12); /* Vibrant Fire Red */
+  top: -20%;
+  left: -20%;
 }
 
 .particle-background::after {
-  background: rgba(255, 215, 0, 0.04); /* Light gold cluster */
-  bottom: -10%;
-  right: -10%;
-  animation-delay: -10s;
-  animation-direction: alternate-reverse;
+  background: rgba(255, 69, 0, 0.08); /* Orange Red */
+  bottom: -20%;
+  right: -20%;
+  animation-duration: 45s;
+  animation-direction: reverse;
 }
 
-@keyframes bgClustering {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(10vw, 5vw) scale(1.1); }
-  100% { transform: translate(-5vw, 15vw) scale(0.95); }
+.particle-background .cluster-1 {
+  background: rgba(180, 0, 0, 0.1);
+  top: 20%;
+  right: -10%;
+  animation-duration: 35s;
+}
+
+.particle-background .cluster-2 {
+  background: rgba(255, 120, 0, 0.05);
+  bottom: 20%;
+  left: -10%;
+  animation-duration: 55s;
+  animation-direction: reverse;
+}
+
+@keyframes solarRoll {
+  0% { transform: rotate(0deg) translate(5vw, 5vw) scale(1); }
+  50% { transform: rotate(180deg) translate(-5vw, 10vw) scale(1.1); }
+  100% { transform: rotate(360deg) translate(5vw, 5vw) scale(1); }
 }
 
 /* Navbar */
@@ -619,9 +634,27 @@ input:focus, select:focus, textarea:focus {
 
 /* Footer */
 .footer {
+  background-color: #2a2a2a;
+  background-image: 
+    linear-gradient(30deg, #333333 12%, transparent 12.5%, transparent 87%, #333333 87.5%, #333333),
+    linear-gradient(150deg, #333333 12%, transparent 12.5%, transparent 87%, #333333 87.5%, #333333),
+    linear-gradient(30deg, #333333 12%, transparent 12.5%, transparent 87%, #333333 87.5%, #333333),
+    linear-gradient(150deg, #333333 12%, transparent 12.5%, transparent 87%, #333333 87.5%, #333333),
+    linear-gradient(60deg, #383838 25%, transparent 25.5%, transparent 75%, #383838 75%, #383838),
+    linear-gradient(60deg, #383838 25%, transparent 25.5%, transparent 75%, #383838 75%, #383838);
+  background-size: 80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+  color: white;
   padding: 100px 5% 40px;
   border-top: 1px solid var(--glass-border);
-  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.03));
+}
+
+.footer .brand-name, .footer .brand-sub, .footer h4, .footer p, .footer .footer-copy, .footer-nav-list a {
+  color: #eeeeee !important;
+}
+
+.footer-nav-list a:hover {
+  color: var(--primary) !important;
 }
 
 .footer-content {

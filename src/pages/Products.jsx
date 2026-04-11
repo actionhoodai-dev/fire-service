@@ -18,20 +18,20 @@ const Products = () => {
   const productsData = [
     // Fire Extinguishers
     { name: "Powder Type (ABC)", category: "Fire Extinguishers", img: "/extinguisher.png", desc: "Multi-purpose dry chemical.", icon: <Droplet size={80} /> },
-    { name: "CO₂ Type", category: "Fire Extinguishers", img: null, desc: "Safe for electrical fires.", icon: <Droplet size={80} /> },
-    { name: "Foam & Water Type", category: "Fire Extinguishers", img: null, desc: "For solid and liquid fires.", icon: <Droplet size={80} /> },
+    { name: "CO₂ Type", category: "Fire Extinguishers", img: "/co2.png", desc: "Safe for electrical fires.", icon: <Droplet size={80} /> },
+    { name: "Foam & Water Type", category: "Fire Extinguishers", img: "/foam.png", desc: "For solid and liquid fires.", icon: <Droplet size={80} /> },
     { name: "Clean Agent (FE-36)", category: "Fire Extinguishers", img: null, desc: "Leaves no residue.", icon: <Droplet size={80} /> },
     { name: "Kitchen Fire Extinguishers", category: "Fire Extinguishers", img: null, desc: "Specialized for oils/fats.", icon: <Droplet size={80} /> },
     { name: "D-Class Metal Fire Extinguishers", category: "Fire Extinguishers", img: null, desc: "For combustible metals.", icon: <Droplet size={80} /> },
     // Fire Alarm Systems
     { name: "Digital Addressable Fire Alarm Panels", category: "Fire Alarm Systems", img: null, desc: "Precision fire locating panels.", icon: <Activity size={80} /> },
-    { name: "Smoke Detectors", category: "Fire Alarm Systems", img: null, desc: "Early warning smoke sensing.", icon: <BellRing size={80} /> },
-    { name: "Heat Detectors", category: "Fire Alarm Systems", img: null, desc: "Triggered by temperature spikes.", icon: <BellRing size={80} /> },
+    { name: "Smoke Detectors", category: "Fire Alarm Systems", img: "/detector.png", desc: "Early warning smoke sensing.", icon: <BellRing size={80} /> },
+    { name: "Heat Detectors", category: "Fire Alarm Systems", img: "/detector.png", desc: "Triggered by temperature spikes.", icon: <BellRing size={80} /> },
     { name: "Manual Call Points", category: "Fire Alarm Systems", img: null, desc: "Manual emergency triggers.", icon: <BellRing size={80} /> },
     { name: "Gas Release Systems", category: "Fire Alarm Systems", img: null, desc: "Automated suppression release.", icon: <Settings size={80} /> },
     // Hydrant & Fire Fighting
-    { name: "Landing Valves", category: "Hydrant & Fire Fighting", img: null, desc: "High pressure control valves.", icon: <Settings size={80} /> },
-    { name: "Fire Hydrants (2-way / 4-way)", category: "Hydrant & Fire Fighting", img: null, desc: "High capacity water delivery.", icon: <Settings size={80} /> },
+    { name: "Landing Valves", category: "Hydrant & Fire Fighting", img: "/hydrant.png", desc: "High pressure control valves.", icon: <Settings size={80} /> },
+    { name: "Fire Hydrants (2-way / 4-way)", category: "Hydrant & Fire Fighting", img: "/hydrant.png", desc: "High capacity water delivery.", icon: <Settings size={80} /> },
     { name: "Hose Reel Systems", category: "Hydrant & Fire Fighting", img: null, desc: "Rapid deployment water hoses.", icon: <Settings size={80} /> },
     { name: "Foam Monitor Systems", category: "Hydrant & Fire Fighting", img: null, desc: "Heavy-duty foam deployment.", icon: <Settings size={80} /> },
     { name: "Water Monitors", category: "Hydrant & Fire Fighting", img: null, desc: "High trajectory water streams.", icon: <Settings size={80} /> },

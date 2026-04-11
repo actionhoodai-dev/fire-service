@@ -59,7 +59,10 @@ function App() {
       <div className="app">
         <ScrollToTop />
         <Preloader />
-        <div className="particle-background"></div>
+        <div className="particle-background">
+          <div className="cluster-1"></div>
+          <div className="cluster-2"></div>
+        </div>
         <Navbar />
         <main className="main-content">
           <WrappedRoutes />
