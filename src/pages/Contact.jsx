@@ -40,8 +40,11 @@ const Contact = () => {
               <p>112Q/3, Muthukrishnapuram 2nd Street, Tuticorin, Tamil Nadu</p>
             </div>
             
-            <div className="availability-tag glass-card mt-20">
-              <Clock size={16} /> 24/7 Emergency Service Available
+            <div className="contact-box glass-card mt-20">
+              <Clock className="accent-text mb-10" />
+              <h3>Emergency Service</h3>
+              <p className="text-muted mt-5">24/7 Availability</p>
+              <p className="mt-10" style={{ fontSize: '0.9rem' }}>Our team is fully equipped and on standby around the clock for rapid emergency response.</p>
             </div>
           </div>
 
