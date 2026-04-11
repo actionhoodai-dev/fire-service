@@ -35,12 +35,19 @@ const Counter = ({ end, suffix }) => {
 
 const ProductCarousel = () => {
   const images = [
-    "/extinguisher.png", "/co2.png", "/foam.png", "/detector.png", 
-    "/hydrant.png", "/helmet.png", "/apparatus.png", "/gloves.png", "/shoes.png"
+    { src: "/extinguisher.png", name: "ABC Powder" }, 
+    { src: "/co2.png", name: "CO₂ Type" }, 
+    { src: "/foam.png", name: "Foam Type" }, 
+    { src: "/detector.png", name: "Smoke Detector" }, 
+    { src: "/hydrant.png", name: "Fire Hydrant" }, 
+    { src: "/helmet.png", name: "Safety Helmet" }, 
+    { src: "/apparatus.png", name: "Breathing App" }, 
+    { src: "/gloves.png", name: "Safety Gloves" }, 
+    { src: "/shoes.png", name: "Safety Shoes" }
   ];
   
-  // Duplicate images for infinite loop
-  const duplicatedImages = [...images, ...images];
+  // Duplicate for infinite loop
+  const duplicatedItems = [...images, ...images];
 
   return (
     <div className="product-carousel-wrapper">
@@ -48,15 +55,18 @@ const ProductCarousel = () => {
         className="product-carousel-track"
         animate={{ x: ["0%", "-50%"] }}
         transition={{ 
-          duration: 30, 
+          duration: 35, 
           ease: "linear", 
           repeat: Infinity 
         }}
       >
-        {duplicatedImages.map((src, i) => (
-          <div key={i} className="carousel-item glass-card">
-            <img src={src} alt="Product" />
-          </div>
+        {duplicatedItems.map((item, i) => (
+          <Link key={i} to="/products" className="carousel-item glass-card no-underline">
+            <div className="carousel-img-box">
+              <img src={item.src} alt={item.name} />
+            </div>
+            <span className="carousel-name mt-10">{item.name}</span>
+          </Link>
         ))}
       </motion.div>
     </div>
