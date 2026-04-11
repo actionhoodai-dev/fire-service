@@ -69,13 +69,13 @@ const Products = () => {
         </div>
 
         <div className="container mt-40">
-          <div className="filter-scroll-wrapper mb-50" style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', justifyContent: 'center' }}>
+          <div className="filter-scroll-wrapper mb-50">
             {categories.map((cat) => (
               <button 
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`btn-outline ${activeCategory === cat ? 'bg-primary border-primary text-white' : ''}`}
-                style={activeCategory === cat ? { background: 'var(--primary)', color: 'white' } : {}}
+                className={`btn-outline ${activeCategory === cat ? 'active-filter' : ''}`}
+                style={activeCategory === cat ? { background: '#cc0000', color: 'white', borderColor: '#cc0000' } : {}}
               >
                 {cat}
               </button>

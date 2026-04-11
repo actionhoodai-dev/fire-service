@@ -146,6 +146,10 @@ h1, h2, h3, .heading {
   padding: 100px 5%;
 }
 
+.text-center {
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .section-padding {
     padding: 60px 20px;

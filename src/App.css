@@ -690,7 +690,25 @@ body {
   text-align: center;
 }
 
-/* Products */
+/* Products & Filters */
+.filter-scroll-wrapper {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+.filter-scroll-wrapper::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+.filter-scroll-wrapper button {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -992,7 +1010,7 @@ input:focus, select:focus, textarea:focus {
     text-align: center;
   }
   
-  .footer-logo-padded, .gst-container-premium {
+  .footer-logo-padded, .gst-container-premium, .footer-tagline {
     justify-content: center;
     margin: 0 auto 20px auto;
   }
