@@ -4,7 +4,34 @@ import { Shield, Zap, Award } from 'lucide-react';
 import Hero3D from '../components/Hero3D';
 import { Link } from 'react-router-dom';
 
-import CountUp from 'react-countup';
+import { useInView } from 'framer-motion';
+
+const Counter = ({ end, suffix }) => {
+  const [count, setCount] = React.useState(0);
+  const ref = React.useRef(null);
+  const inView = useInView(ref, { once: true });
+
+  React.useEffect(() => {
+    if (inView) {
+      let start = 0;
+      const duration = 2000;
+      const increment = end / (duration / 16);
+      
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= end) {
+          setCount(end);
+          clearInterval(timer);
+        } else {
+          setCount(Math.ceil(start));
+        }
+      }, 16);
+      return () => clearInterval(timer);
+    }
+  }, [inView, end]);
+
+  return <span ref={ref}>{count}{suffix}</span>;
+};
 
 const Home = () => {
   const stats = [
@@ -89,13 +116,7 @@ const Home = () => {
                 viewport={{ once: true }}
               >
                 <h3 className="stat-num" style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--primary)' }}>
-                  <CountUp 
-                    end={stat.end} 
-                    suffix={stat.suffix} 
-                    duration={3} 
-                    enableScrollSpy={true}
-                    scrollSpyOnce={true}
-                  />
+                  <Counter end={stat.end} suffix={stat.suffix} />
                 </h3>
                 <p className="stat-label">{stat.label}</p>
               </motion.div>
