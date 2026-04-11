@@ -226,21 +226,37 @@ body {
   width: max-content;
 }
 
-.partner-strip {
-  flex-shrink: 0;
+.partner-logo-item {
+  width: 140px;
+  height: 80px;
   display: flex;
-  padding: 0 20px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 40px; /* <--- Significant spacing between logos */
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  transition: all 0.3s ease;
+  overflow: hidden;
 }
 
-.partner-strip img {
-  height: 60px;
-  object-fit: contain;
-  opacity: 0.85;
-  filter: grayscale(10%);
+.partner-logo-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.partner-sprite {
+  width: 110px;
+  height: 50px;
+  background-image: url('/partners_strip.png');
+  background-size: 700% 100%; /* Slices the strip into 7 exactly */
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+  opacity: 0.6;
   transition: all 0.3s ease;
 }
 
-.partner-strip img:hover {
+.partner-logo-item:hover .partner-sprite {
   filter: grayscale(0%);
   opacity: 1;
 }
