@@ -2,6 +2,33 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Target, Users, Settings, Award, CheckCircle, Eye, Rocket, ThumbsUp } from 'lucide-react';
 
+const PartnerCarousel = () => {
+  return (
+    <div className="partner-carousel-wrapper">
+      <div className="section-header text-center mb-40">
+         <span className="badge">Authorized Partners</span>
+         <h2 className="section-title" style={{fontSize: '2rem'}}>Trusted Brands & <span className="accent-text">Certifications</span></h2>
+      </div>
+      <motion.div 
+        className="partner-carousel-track"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{ 
+          duration: 25, 
+          ease: "linear", 
+          repeat: Infinity 
+        }}
+      >
+        <div className="partner-strip">
+          <img src="/partners_strip.png" alt="Trusted Brands and Partners" />
+        </div>
+        <div className="partner-strip">
+          <img src="/partners_strip.png" alt="Trusted Brands and Partners" />
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
 const About = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -64,8 +91,13 @@ const About = () => {
         </div>
       </section>
 
+      {/* Partners Marquee Carousel */}
+      <section className="section-padding bg-surface" style={{ padding: '60px 0' }}>
+         <PartnerCarousel />
+      </section>
+
       {/* Vision, Mission, Quality */}
-      <section className="section-padding bg-surface">
+      <section className="section-padding">
         <div className="container">
           <div className="values-grid">
             <motion.div className="glass-card value-card" whileHover={{ y: -5 }}>

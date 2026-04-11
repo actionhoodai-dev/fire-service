@@ -192,6 +192,60 @@ body {
   opacity: 1;
 }
 
+/* Partner Carousel */
+.partner-carousel-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.partner-carousel-wrapper::before,
+.partner-carousel-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 15%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.partner-carousel-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-surface), transparent);
+}
+
+.partner-carousel-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-surface), transparent);
+}
+
+.partner-carousel-track {
+  display: flex;
+  width: max-content;
+}
+
+.partner-strip {
+  flex-shrink: 0;
+  display: flex;
+  padding: 0 20px;
+}
+
+.partner-strip img {
+  height: 60px;
+  object-fit: contain;
+  opacity: 0.85;
+  filter: grayscale(10%);
+  transition: all 0.3s ease;
+}
+
+.partner-strip img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+
 /* Navbar */
 .navbar {
   position: fixed;
