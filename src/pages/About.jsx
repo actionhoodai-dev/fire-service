@@ -3,19 +3,6 @@ import { motion } from 'framer-motion';
 import { Shield, Target, Users, Settings, Award, CheckCircle, Eye, Rocket, ThumbsUp } from 'lucide-react';
 
 const PartnerCarousel = () => {
-  const logos = [
-    { name: "Minimax", position: "0%" },
-    { name: "Ceasefire", position: "16.66%" },
-    { name: "Kanex", position: "33.33%" },
-    { name: "Newex", position: "50%" },
-    { name: "NewAge", position: "66.66%" },
-    { name: "ASES", position: "83.33%" },
-    { name: "Honeywell", position: "100%" },
-  ];
-
-  // Tripled for smooth infinite loop without gaps
-  const duplicatedLogos = [...logos, ...logos, ...logos];
-
   return (
     <div className="partner-carousel-wrapper">
       <div className="section-header text-center mb-40">
@@ -24,18 +11,19 @@ const PartnerCarousel = () => {
       </div>
       <motion.div 
         className="partner-carousel-track"
-        animate={{ x: ["0%", "-33.33%"] }}
+        animate={{ x: ["0%", "-50%"] }}
         transition={{ 
-          duration: 35, 
+          duration: 25, 
           ease: "linear", 
           repeat: Infinity 
         }}
       >
-        {duplicatedLogos.map((logo, i) => (
-          <div key={i} className="partner-logo-item" title={logo.name}>
-             <div className="partner-sprite" style={{ backgroundPosition: logo.position }}></div>
-          </div>
-        ))}
+        <div className="partner-strip">
+          <img src="/partners_strip.png" alt="Trusted Brands and Partners" />
+        </div>
+        <div className="partner-strip">
+          <img src="/partners_strip.png" alt="Trusted Brands and Partners" />
+        </div>
       </motion.div>
     </div>
   );
