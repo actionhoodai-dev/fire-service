@@ -349,41 +349,53 @@ body {
 }
 
 .btn-primary {
-  background: var(--primary);
-  color: white;
+  background: #ffcc00; /* Solid Yellow */
+  color: #000000; /* Black text */
   padding: 14px 34px;
   border-radius: 50px;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 800;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
-  box-shadow: 0 0 25px var(--primary-glow);
-  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+  transition: all 0.3s ease;
   border: none;
   cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 0 35px var(--primary-glow);
+  transform: translateY(-3px) scale(1.02);
+  background: #f2c200; /* Slightly darker yellow */
+  box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
 }
 
 .btn-outline {
-  border: 1px solid var(--glass-border);
-  color: var(--text-main);
+  background: #ffcc00; /* Solid Yellow */
+  color: #000000; /* Black text */
   padding: 14px 34px;
   border-radius: 50px;
   text-decoration: none;
-  font-weight: 700;
-  background: var(--glass);
-  transition: var(--transition);
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 4px 15px rgba(255, 204, 0, 0.2);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .btn-outline:hover {
-  border-color: var(--primary);
-  color: var(--primary);
-  background: rgba(204, 0, 0, 0.08);
+  transform: translateY(-3px) scale(1.02);
+  background: #f2c200;
+  box-shadow: 0 6px 20px rgba(255, 204, 0, 0.3);
 }
 
 /* Hero Section - clean single viewport, no sticky bleed */
@@ -1039,30 +1051,30 @@ input:focus, select:focus, textarea:focus {
 
 /* Enquire Now Button Animation */
 .btn-outline-sm {
-  background: transparent;
-  border: 1px solid var(--glass-border);
+  background: #ffcc00;
+  color: #000000;
   padding: 10px 22px;
   border-radius: 50px;
-  color: white;
   cursor: pointer;
-  font-weight: 600;
-  transition: var(--transition);
-  animation: buttonPulse 3s infinite;
+  font-weight: 800;
+  transition: all 0.3s ease;
+  animation: buttonPulseYellow 3s infinite;
   display: inline-block;
   text-decoration: none;
   font-size: 0.85rem;
+  border: none;
+  text-transform: uppercase;
 }
 
-@keyframes buttonPulse {
-  0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1); }
-  50% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+@keyframes buttonPulseYellow {
+  0% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.4); }
+  50% { box-shadow: 0 0 0 10px rgba(255, 204, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0); }
 }
 
 .btn-outline-sm:hover {
-  background: var(--primary);
-  border-color: var(--primary);
-  box-shadow: 0 0 20px var(--primary-glow);
+  background: #f2c200;
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.4);
   transform: translateY(-2px);
   animation: none;
 }
