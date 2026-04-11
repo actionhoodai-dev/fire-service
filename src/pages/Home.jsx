@@ -38,12 +38,26 @@ const ProductCarousel = () => {
     { src: "/extinguisher.png", name: "ABC Powder" }, 
     { src: "/co2.png", name: "CO₂ Type" }, 
     { src: "/foam.png", name: "Foam Type" }, 
-    { src: "/detector.png", name: "Smoke Detector" }, 
-    { src: "/hydrant.png", name: "Fire Hydrant" }, 
-    { src: "/helmet.png", name: "Safety Helmet" }, 
-    { src: "/apparatus.png", name: "Breathing App" }, 
-    { src: "/gloves.png", name: "Safety Gloves" }, 
-    { src: "/shoes.png", name: "Safety Shoes" }
+    { src: "/clean_agent.png", name: "Clean Agent" },
+    { src: "/kitchen.png", name: "Kitchen Safe" },
+    { src: "/d_class.jpg", name: "Metal Fire" },
+    { src: "/panel.jpg", name: "Alarm Panel" },
+    { src: "/detector.png", name: "Smoke Sensor" }, 
+    { src: "/call_point.jpg", name: "Manual Trigger" },
+    { src: "/gas_release.jpg", name: "Gas Systems" },
+    { src: "/hydrant.png", name: "Landing Valve" }, 
+    { src: "/hose_reel.jpg", name: "Hose Reel" },
+    { src: "/foam_monitor.jpg", name: "Foam Monitor" },
+    { src: "/water_monitor.jpg", name: "Water Monitor" },
+    { src: "/helmet.png", name: "Head Protec" }, 
+    { src: "/suit.png", name: "Body Armor" },
+    { src: "/apparatus.png", name: "Respiratory" }, 
+    { src: "/gloves.png", name: "Hand Safety" }, 
+    { src: "/shoes.png", name: "Safety Shoes" },
+    { src: "/cone.jpg", name: "Traffic Cone" },
+    { src: "/sign.jpg", name: "Safety Sign" },
+    { src: "/barricade.jpg", name: "Barricade" },
+    { src: "/tape.jpg", name: "Floor Mark" }
   ];
   
   // Duplicate for infinite loop

@@ -845,17 +845,17 @@ input:focus, select:focus, textarea:focus {
 }
 
 .badge {
-  background: rgba(255, 0, 0, 0.1);
-  padding: 8px 18px;
-  border-radius: 50px;
-  border: 1px solid var(--primary);
-  color: var(--primary);
-  font-size: 0.8rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 25px;
   display: inline-block;
+  padding: 6px 14px;
+  background: #ffcc00; /* Solid Yellow */
+  color: #000000; /* Black text */
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
 }
 
 /* Mobile */
