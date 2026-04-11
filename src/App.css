@@ -753,8 +753,10 @@ input:focus, select:focus, textarea:focus {
 }
 
 .footer-logo-padded {
-  padding: 10px 0;
-  margin-bottom: 15px;
+  padding: 0;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .footer-tagline {
@@ -823,11 +825,12 @@ input:focus, select:focus, textarea:focus {
 }
 
 .footer-content {
-  max-width: 1400px;
+  max-width: 1200px; /* Reduced width */
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: 1.5fr 1fr 1.2fr;
+  gap: 60px;
+  padding: 0 5%;
 }
 
 .footer-nav-list {
