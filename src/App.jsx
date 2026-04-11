@@ -1,14 +1,34 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import Preloader from './components/Preloader';
+import PageTransition from './components/PageTransition';
+
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Products from './pages/Products';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import './App.css';
+
+const WrappedRoutes = () => {
+  const location = useLocation();
+  
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+        <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
+        <Route path="/products" element={<PageTransition><Products /></PageTransition>} />
+        <Route path="/about" element={<PageTransition><About /></PageTransition>} />
+        <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+      </Routes>
+    </AnimatePresence>
+  );
+};
 
 const WhatsAppButton = () => (
   <a 
@@ -25,20 +45,24 @@ const WhatsAppButton = () => (
 );
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2800);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <Router>
       <div className="app">
         <ScrollToTop />
+        <Preloader />
         <div className="particle-background"></div>
         <Navbar />
         <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
+          <WrappedRoutes />
         </main>
         <WhatsAppButton />
         <Footer />
