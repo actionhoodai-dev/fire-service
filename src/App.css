@@ -225,9 +225,13 @@ body {
   color: var(--text-main);
 }
 
-.logo-icon {
-  color: var(--primary);
-  filter: drop-shadow(0 0 8px var(--primary-glow));
+.logo-img-circular {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .logo-text {

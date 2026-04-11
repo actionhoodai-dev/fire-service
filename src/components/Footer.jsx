@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-brand">
           <div className="logo footer-logo-padded">
-            <Flame className="logo-icon" />
+            <img src="/logo.png" alt="Varatha Vinayagar Logo" className="logo-img-circular" />
             <div className="logo-text">
               <span className="brand-name">VARATHA VINAYAGAR</span>
               <span className="brand-sub">SAFETY & FIRE</span>

@@ -42,7 +42,7 @@ const Navbar = () => {
       <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
         <div className="nav-container">
           <Link to="/" className="logo">
-            <Flame className="logo-icon" />
+            <img src="/logo.png" alt="Varatha Vinayagar Logo" className="logo-img-circular" />
             <div className="logo-text">
               <span className="brand-name">VARATHA VINAYAGAR</span>
               <span className="brand-sub">SAFETY & FIRE</span>
