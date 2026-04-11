@@ -22,19 +22,19 @@ const Products = () => {
     { name: "Foam & Water Type", category: "Fire Extinguishers", img: "/foam.png", desc: "For solid and liquid fires.", icon: <Droplet size={80} /> },
     { name: "Clean Agent (FE-36)", category: "Fire Extinguishers", img: "/clean_agent.png", desc: "Leaves no residue.", icon: <Droplet size={80} /> },
     { name: "Kitchen Fire Extinguishers", category: "Fire Extinguishers", img: "/kitchen.png", desc: "Specialized for oils/fats.", icon: <Droplet size={80} /> },
-    { name: "D-Class Metal Fire Extinguishers", category: "Fire Extinguishers", img: null, desc: "For combustible metals.", icon: <Droplet size={80} /> },
+    { name: "D-Class Metal Fire Extinguishers", category: "Fire Extinguishers", img: "/d_class.jpg", desc: "For combustible metals.", icon: <Droplet size={80} /> },
     // Fire Alarm Systems
-    { name: "Digital Addressable Fire Alarm Panels", category: "Fire Alarm Systems", img: null, desc: "Precision fire locating panels.", icon: <Activity size={80} /> },
+    { name: "Digital Addressable Fire Alarm Panels", category: "Fire Alarm Systems", img: "/panel.jpg", desc: "Precision fire locating panels.", icon: <Activity size={80} /> },
     { name: "Smoke Detectors", category: "Fire Alarm Systems", img: "/detector.png", desc: "Early warning smoke sensing.", icon: <BellRing size={80} /> },
     { name: "Heat Detectors", category: "Fire Alarm Systems", img: "/detector.png", desc: "Triggered by temperature spikes.", icon: <BellRing size={80} /> },
-    { name: "Manual Call Points", category: "Fire Alarm Systems", img: null, desc: "Manual emergency triggers.", icon: <BellRing size={80} /> },
-    { name: "Gas Release Systems", category: "Fire Alarm Systems", img: null, desc: "Automated suppression release.", icon: <Settings size={80} /> },
+    { name: "Manual Call Points", category: "Fire Alarm Systems", img: "/call_point.jpg", desc: "Manual emergency triggers.", icon: <BellRing size={80} /> },
+    { name: "Gas Release Systems", category: "Fire Alarm Systems", img: "/gas_release.jpg", desc: "Automated suppression release.", icon: <Settings size={80} /> },
     // Hydrant & Fire Fighting
     { name: "Landing Valves", category: "Hydrant & Fire Fighting", img: "/hydrant.png", desc: "High pressure control valves.", icon: <Settings size={80} /> },
     { name: "Fire Hydrants (2-way / 4-way)", category: "Hydrant & Fire Fighting", img: "/hydrant.png", desc: "High capacity water delivery.", icon: <Settings size={80} /> },
-    { name: "Hose Reel Systems", category: "Hydrant & Fire Fighting", img: null, desc: "Rapid deployment water hoses.", icon: <Settings size={80} /> },
-    { name: "Foam Monitor Systems", category: "Hydrant & Fire Fighting", img: null, desc: "Heavy-duty foam deployment.", icon: <Settings size={80} /> },
-    { name: "Water Monitors", category: "Hydrant & Fire Fighting", img: null, desc: "High trajectory water streams.", icon: <Settings size={80} /> },
+    { name: "Hose Reel Systems", category: "Hydrant & Fire Fighting", img: "/hose_reel.jpg", desc: "Rapid deployment water hoses.", icon: <Settings size={80} /> },
+    { name: "Foam Monitor Systems", category: "Hydrant & Fire Fighting", img: "/foam_monitor.jpg", desc: "Heavy-duty foam deployment.", icon: <Settings size={80} /> },
+    { name: "Water Monitors", category: "Hydrant & Fire Fighting", img: "/water_monitor.jpg", desc: "High trajectory water streams.", icon: <Settings size={80} /> },
     // Safety Products (PPE)
     { name: "Head Protection", category: "Safety Products (PPE)", img: "/helmet.png", desc: "Industrial safety helmets.", icon: <ShieldAlert size={80} /> },
     { name: "Eye & Face Protection", category: "Safety Products (PPE)", img: "/suit.png", desc: "Goggles and face shields.", icon: <ShieldAlert size={80} /> },
@@ -44,10 +44,10 @@ const Products = () => {
     { name: "Fall Protection Equipment", category: "Safety Products (PPE)", img: "/suit.png", desc: "Harnesses and safety lines.", icon: <ShieldAlert size={80} /> },
     { name: "Heat Protective Garments", category: "Safety Products (PPE)", img: "/suit.png", desc: "Industrial heat resistant suits.", icon: <ShieldAlert size={80} /> },
     // Road Safety Products
-    { name: "Traffic Cones", category: "Road Safety Products", img: null, desc: "High-visibility markers.", icon: <TriangleAlert size={80} /> },
-    { name: "Reflective Signs", category: "Road Safety Products", img: null, desc: "Glow-in-dark safety signage.", icon: <TriangleAlert size={80} /> },
-    { name: "Barricades", category: "Road Safety Products", img: null, desc: "Crowd and hazard control.", icon: <TriangleAlert size={80} /> },
-    { name: "Safety Markings", category: "Road Safety Products", img: null, desc: "Road and floor safety tapes.", icon: <TriangleAlert size={80} /> }
+    { name: "Traffic Cones", category: "Road Safety Products", img: "/cone.jpg", desc: "High-visibility markers.", icon: <TriangleAlert size={80} /> },
+    { name: "Reflective Signs", category: "Road Safety Products", img: "/sign.jpg", desc: "Glow-in-dark safety signage.", icon: <TriangleAlert size={80} /> },
+    { name: "Barricades", category: "Road Safety Products", img: "/barricade.jpg", desc: "Crowd and hazard control.", icon: <TriangleAlert size={80} /> },
+    { name: "Safety Markings", category: "Road Safety Products", img: "/tape.jpg", desc: "Road and floor safety tapes.", icon: <TriangleAlert size={80} /> }
   ];
 
   const filteredProducts = activeCategory === 'All' 
