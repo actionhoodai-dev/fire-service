@@ -20,8 +20,8 @@ const Products = () => {
     { name: "Powder Type (ABC)", category: "Fire Extinguishers", img: "/extinguisher.png", desc: "Multi-purpose dry chemical.", icon: <Droplet size={80} /> },
     { name: "CO₂ Type", category: "Fire Extinguishers", img: "/co2.png", desc: "Safe for electrical fires.", icon: <Droplet size={80} /> },
     { name: "Foam & Water Type", category: "Fire Extinguishers", img: "/foam.png", desc: "For solid and liquid fires.", icon: <Droplet size={80} /> },
-    { name: "Clean Agent (FE-36)", category: "Fire Extinguishers", img: null, desc: "Leaves no residue.", icon: <Droplet size={80} /> },
-    { name: "Kitchen Fire Extinguishers", category: "Fire Extinguishers", img: null, desc: "Specialized for oils/fats.", icon: <Droplet size={80} /> },
+    { name: "Clean Agent (FE-36)", category: "Fire Extinguishers", img: "/clean_agent.png", desc: "Leaves no residue.", icon: <Droplet size={80} /> },
+    { name: "Kitchen Fire Extinguishers", category: "Fire Extinguishers", img: "/kitchen.png", desc: "Specialized for oils/fats.", icon: <Droplet size={80} /> },
     { name: "D-Class Metal Fire Extinguishers", category: "Fire Extinguishers", img: null, desc: "For combustible metals.", icon: <Droplet size={80} /> },
     // Fire Alarm Systems
     { name: "Digital Addressable Fire Alarm Panels", category: "Fire Alarm Systems", img: null, desc: "Precision fire locating panels.", icon: <Activity size={80} /> },
@@ -37,11 +37,12 @@ const Products = () => {
     { name: "Water Monitors", category: "Hydrant & Fire Fighting", img: null, desc: "High trajectory water streams.", icon: <Settings size={80} /> },
     // Safety Products (PPE)
     { name: "Head Protection", category: "Safety Products (PPE)", img: "/helmet.png", desc: "Industrial safety helmets.", icon: <ShieldAlert size={80} /> },
-    { name: "Eye & Face Protection", category: "Safety Products (PPE)", img: null, desc: "Goggles and face shields.", icon: <ShieldAlert size={80} /> },
+    { name: "Eye & Face Protection", category: "Safety Products (PPE)", img: "/suit.png", desc: "Goggles and face shields.", icon: <ShieldAlert size={80} /> },
     { name: "Respiratory Protection", category: "Safety Products (PPE)", img: "/apparatus.png", desc: "Masks and breathing apparatus.", icon: <ShieldAlert size={80} /> },
     { name: "Hand Gloves", category: "Safety Products (PPE)", img: "/gloves.png", desc: "Heat and chemical resistant.", icon: <ShieldAlert size={80} /> },
     { name: "Safety Shoes", category: "Safety Products (PPE)", img: "/shoes.png", desc: "Reinforced industrial footwear.", icon: <ShieldAlert size={80} /> },
-    { name: "Fall Protection Equipment", category: "Safety Products (PPE)", img: null, desc: "Harnesses and safety lines.", icon: <ShieldAlert size={80} /> },
+    { name: "Fall Protection Equipment", category: "Safety Products (PPE)", img: "/suit.png", desc: "Harnesses and safety lines.", icon: <ShieldAlert size={80} /> },
+    { name: "Heat Protective Garments", category: "Safety Products (PPE)", img: "/suit.png", desc: "Industrial heat resistant suits.", icon: <ShieldAlert size={80} /> },
     // Road Safety Products
     { name: "Traffic Cones", category: "Road Safety Products", img: null, desc: "High-visibility markers.", icon: <TriangleAlert size={80} /> },
     { name: "Reflective Signs", category: "Road Safety Products", img: null, desc: "Glow-in-dark safety signage.", icon: <TriangleAlert size={80} /> },
