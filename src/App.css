@@ -962,7 +962,7 @@ input:focus, select:focus, textarea:focus {
   .mobile-menu-btn { display: block; }
   .nav-links, .nav-contact-header { display: none; }
   
-  .grid-2, .footer-content, .contact-grid, .form-grid, .services-grid, .why-us-grid-horizontal { 
+  .grid-2, .footer-content, .contact-grid, .form-grid, .services-grid, .why-us-grid-horizontal, .products-grid { 
     grid-template-columns: 1fr !important; 
   }
   
