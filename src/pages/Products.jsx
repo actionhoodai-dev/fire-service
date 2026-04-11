@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingBag, ChevronRight, Filter } from 'lucide-react';
+import { ShoppingBag, ChevronRight, Filter, ShieldAlert, Droplet, BellRing, Settings, TriangleAlert, Activity } from 'lucide-react';
 import { Tilt } from 'react-tilt';
 
 const Products = () => {
@@ -17,36 +17,36 @@ const Products = () => {
 
   const productsData = [
     // Fire Extinguishers
-    { name: "Powder Type (ABC)", category: "Fire Extinguishers", img: "/apparatus.png", desc: "Multi-purpose dry chemical." },
-    { name: "CO₂ Type", category: "Fire Extinguishers", img: "/apparatus.png", desc: "Safe for electrical fires." },
-    { name: "Foam & Water Type", category: "Fire Extinguishers", img: null, desc: "For solid and liquid fires." },
-    { name: "Clean Agent (FE-36)", category: "Fire Extinguishers", img: null, desc: "Leaves no residue." },
-    { name: "Kitchen Fire Extinguishers", category: "Fire Extinguishers", img: null, desc: "Specialized for oils/fats." },
-    { name: "D-Class Metal Fire Extinguishers", category: "Fire Extinguishers", img: null, desc: "For combustible metals." },
+    { name: "Powder Type (ABC)", category: "Fire Extinguishers", img: "/extinguisher.png", desc: "Multi-purpose dry chemical.", icon: <Droplet size={80} /> },
+    { name: "CO₂ Type", category: "Fire Extinguishers", img: null, desc: "Safe for electrical fires.", icon: <Droplet size={80} /> },
+    { name: "Foam & Water Type", category: "Fire Extinguishers", img: null, desc: "For solid and liquid fires.", icon: <Droplet size={80} /> },
+    { name: "Clean Agent (FE-36)", category: "Fire Extinguishers", img: null, desc: "Leaves no residue.", icon: <Droplet size={80} /> },
+    { name: "Kitchen Fire Extinguishers", category: "Fire Extinguishers", img: null, desc: "Specialized for oils/fats.", icon: <Droplet size={80} /> },
+    { name: "D-Class Metal Fire Extinguishers", category: "Fire Extinguishers", img: null, desc: "For combustible metals.", icon: <Droplet size={80} /> },
     // Fire Alarm Systems
-    { name: "Digital Addressable Fire Alarm Panels", category: "Fire Alarm Systems", img: null, desc: "Precision fire locating panels." },
-    { name: "Smoke Detectors", category: "Fire Alarm Systems", img: null, desc: "Early warning smoke sensing." },
-    { name: "Heat Detectors", category: "Fire Alarm Systems", img: null, desc: "Triggered by temperature spikes." },
-    { name: "Manual Call Points", category: "Fire Alarm Systems", img: null, desc: "Manual emergency triggers." },
-    { name: "Gas Release Systems", category: "Fire Alarm Systems", img: null, desc: "Automated suppression release." },
+    { name: "Digital Addressable Fire Alarm Panels", category: "Fire Alarm Systems", img: null, desc: "Precision fire locating panels.", icon: <Activity size={80} /> },
+    { name: "Smoke Detectors", category: "Fire Alarm Systems", img: null, desc: "Early warning smoke sensing.", icon: <BellRing size={80} /> },
+    { name: "Heat Detectors", category: "Fire Alarm Systems", img: null, desc: "Triggered by temperature spikes.", icon: <BellRing size={80} /> },
+    { name: "Manual Call Points", category: "Fire Alarm Systems", img: null, desc: "Manual emergency triggers.", icon: <BellRing size={80} /> },
+    { name: "Gas Release Systems", category: "Fire Alarm Systems", img: null, desc: "Automated suppression release.", icon: <Settings size={80} /> },
     // Hydrant & Fire Fighting
-    { name: "Landing Valves", category: "Hydrant & Fire Fighting", img: null, desc: "High pressure control valves." },
-    { name: "Fire Hydrants (2-way / 4-way)", category: "Hydrant & Fire Fighting", img: null, desc: "High capacity water delivery." },
-    { name: "Hose Reel Systems", category: "Hydrant & Fire Fighting", img: null, desc: "Rapid deployment water hoses." },
-    { name: "Foam Monitor Systems", category: "Hydrant & Fire Fighting", img: null, desc: "Heavy-duty foam deployment." },
-    { name: "Water Monitors", category: "Hydrant & Fire Fighting", img: null, desc: "High trajectory water streams." },
+    { name: "Landing Valves", category: "Hydrant & Fire Fighting", img: null, desc: "High pressure control valves.", icon: <Settings size={80} /> },
+    { name: "Fire Hydrants (2-way / 4-way)", category: "Hydrant & Fire Fighting", img: null, desc: "High capacity water delivery.", icon: <Settings size={80} /> },
+    { name: "Hose Reel Systems", category: "Hydrant & Fire Fighting", img: null, desc: "Rapid deployment water hoses.", icon: <Settings size={80} /> },
+    { name: "Foam Monitor Systems", category: "Hydrant & Fire Fighting", img: null, desc: "Heavy-duty foam deployment.", icon: <Settings size={80} /> },
+    { name: "Water Monitors", category: "Hydrant & Fire Fighting", img: null, desc: "High trajectory water streams.", icon: <Settings size={80} /> },
     // Safety Products (PPE)
-    { name: "Head Protection", category: "Safety Products (PPE)", img: null, desc: "Industrial safety helmets." },
-    { name: "Eye & Face Protection", category: "Safety Products (PPE)", img: null, desc: "Goggles and face shields." },
-    { name: "Respiratory Protection", category: "Safety Products (PPE)", img: null, desc: "Masks and breathing apparatus." },
-    { name: "Hand Gloves", category: "Safety Products (PPE)", img: "/gloves.png", desc: "Heat and chemical resistant." },
-    { name: "Safety Shoes", category: "Safety Products (PPE)", img: "/shoes.png", desc: "Reinforced industrial footwear." },
-    { name: "Fall Protection Equipment", category: "Safety Products (PPE)", img: null, desc: "Harnesses and safety lines." },
+    { name: "Head Protection", category: "Safety Products (PPE)", img: "/helmet.png", desc: "Industrial safety helmets.", icon: <ShieldAlert size={80} /> },
+    { name: "Eye & Face Protection", category: "Safety Products (PPE)", img: null, desc: "Goggles and face shields.", icon: <ShieldAlert size={80} /> },
+    { name: "Respiratory Protection", category: "Safety Products (PPE)", img: "/apparatus.png", desc: "Masks and breathing apparatus.", icon: <ShieldAlert size={80} /> },
+    { name: "Hand Gloves", category: "Safety Products (PPE)", img: "/gloves.png", desc: "Heat and chemical resistant.", icon: <ShieldAlert size={80} /> },
+    { name: "Safety Shoes", category: "Safety Products (PPE)", img: "/shoes.png", desc: "Reinforced industrial footwear.", icon: <ShieldAlert size={80} /> },
+    { name: "Fall Protection Equipment", category: "Safety Products (PPE)", img: null, desc: "Harnesses and safety lines.", icon: <ShieldAlert size={80} /> },
     // Road Safety Products
-    { name: "Traffic Cones", category: "Road Safety Products", img: null, desc: "High-visibility markers." },
-    { name: "Reflective Signs", category: "Road Safety Products", img: null, desc: "Glow-in-dark safety signage." },
-    { name: "Barricades", category: "Road Safety Products", img: null, desc: "Crowd and hazard control." },
-    { name: "Safety Markings", category: "Road Safety Products", img: null, desc: "Road and floor safety tapes." }
+    { name: "Traffic Cones", category: "Road Safety Products", img: null, desc: "High-visibility markers.", icon: <TriangleAlert size={80} /> },
+    { name: "Reflective Signs", category: "Road Safety Products", img: null, desc: "Glow-in-dark safety signage.", icon: <TriangleAlert size={80} /> },
+    { name: "Barricades", category: "Road Safety Products", img: null, desc: "Crowd and hazard control.", icon: <TriangleAlert size={80} /> },
+    { name: "Safety Markings", category: "Road Safety Products", img: null, desc: "Road and floor safety tapes.", icon: <TriangleAlert size={80} /> }
   ];
 
   const filteredProducts = activeCategory === 'All' 
@@ -98,8 +98,8 @@ const Products = () => {
                       {product.img ? (
                         <img src={product.img} alt={product.name} className="product-img-full" style={{ filter: 'drop-shadow(0 0 20px rgba(255, 0, 0, 0.3))' }} />
                       ) : (
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', width: '100%', opacity: 0.5 }}>
-                          <ShoppingBag size={80} style={{ color: 'var(--primary-glow)' }} />
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', width: '100%', opacity: 0.5, color: 'var(--primary)' }}>
+                          {product.icon}
                         </div>
                       )}
                     </div>

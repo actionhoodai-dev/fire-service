@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Zap, Settings, Truck, Wrench, CheckCircle, Factory, ShieldAlert } from 'lucide-react';
+import { Tilt } from 'react-tilt';
 
 const Services = () => {
   const services = [
@@ -67,17 +68,17 @@ const Services = () => {
           {services.map((service, i) => (
             <motion.div 
               key={i}
-              className="service-card glass-card"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              whileHover={{ scale: 1.02 }}
             >
-              <div className="service-icon-box">
-                {service.icon}
-              </div>
-              <h3 className="mt-20">{service.title}</h3>
-              <p className="mt-10 text-muted">{service.desc}</p>
+              <Tilt className="service-card glass-card" options={{ max: 15, scale: 1.05 }}>
+                <div className="service-icon-box">
+                  {service.icon}
+                </div>
+                <h3 className="mt-20">{service.title}</h3>
+                <p className="mt-10 text-muted">{service.desc}</p>
+              </Tilt>
             </motion.div>
           ))}
         </div>
@@ -95,13 +96,14 @@ const Services = () => {
             {industries.map((ind, i) => (
                <motion.div 
                  key={i}
-                 className="glass-card process-card-new text-center p-20"
                  initial={{ opacity: 0, scale: 0.9 }}
                  whileInView={{ opacity: 1, scale: 1 }}
                  transition={{ delay: i * 0.05 }}
                >
-                 <Factory size={24} className="accent-text mb-10 mx-auto" />
-                 <h4 style={{fontSize: '1rem', fontWeight: 600}}>{ind}</h4>
+                 <Tilt className="glass-card process-card-new text-center p-20" options={{ max: 15, scale: 1.05, style: { height: '100%' }}}>
+                   <Factory size={24} className="accent-text mb-10 mx-auto" />
+                   <h4 style={{fontSize: '1rem', fontWeight: 600}}>{ind}</h4>
+                 </Tilt>
                </motion.div>
             ))}
           </div>
