@@ -22,6 +22,7 @@ const Footer = () => {
           <h4>Navigation</h4>
           <div className="footer-nav-list">
             <Link to="/">Home</Link>
+            <Link to="/about">About Us</Link>
             <Link to="/services">Services</Link>
             <Link to="/products">Products</Link>
             <Link to="/contact">Contact</Link>

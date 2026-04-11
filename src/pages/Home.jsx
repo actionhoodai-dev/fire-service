@@ -4,12 +4,14 @@ import { Shield, Zap, Award } from 'lucide-react';
 import Hero3D from '../components/Hero3D';
 import { Link } from 'react-router-dom';
 
+import CountUp from 'react-countup';
+
 const Home = () => {
   const stats = [
-    { label: 'Safety Compliance', value: '100%' },
-    { label: 'Years Experience', value: '15+' },
-    { label: 'Certified Staff', value: '25+' },
-    { label: 'Active Sites', value: '500+' }
+    { label: 'Safety Compliance', end: 100, suffix: '%' },
+    { label: 'Years Experience', end: 12, suffix: '+' },
+    { label: 'Certified Staff', end: 25, suffix: '+' },
+    { label: 'Active Sites', end: 500, suffix: '+' }
   ];
 
   return (
@@ -42,6 +44,38 @@ const Home = () => {
       {/* Everything below has a solid dark background */}
       <div className="post-hero-content">
 
+        {/* About Overview Content */}
+        <section className="section-padding">
+          <div className="container grid-2">
+            <motion.div 
+              className="about-visual-box relative"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            >
+              <div className="glass-card about-main-card overflow-hidden">
+                 <img src="/team.png" alt="Safety Team" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+            </motion.div>
+
+            <motion.div 
+              className="about-content-side"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            >
+              <span className="badge">Welcome to Varatha Vinayagar</span>
+              <h1 className="section-title">Your Trusted Partner in <span className="accent-text">Safety</span></h1>
+              <p className="mt-20">We supply advanced fire extinguishers, hydrant accessories, personal protective equipment, and industrial safety products based in Tuticorin.</p>
+              <p className="mt-10">Our products strictly follow high-quality standards, guaranteeing durability, and user-friendly design with a strong focus on absolute customer satisfaction.</p>
+              
+              <Link to="/about" className="btn-primary mt-30">Learn More About Us</Link>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Quick Stats */}
         <section className="section-padding bg-surface">
           <div className="stats-grid container">
@@ -52,8 +86,17 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
               >
-                <h3 className="stat-num">{stat.value}</h3>
+                <h3 className="stat-num" style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--primary)' }}>
+                  <CountUp 
+                    end={stat.end} 
+                    suffix={stat.suffix} 
+                    duration={3} 
+                    enableScrollSpy={true}
+                    scrollSpyOnce={true}
+                  />
+                </h3>
                 <p className="stat-label">{stat.label}</p>
               </motion.div>
             ))}
