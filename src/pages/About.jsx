@@ -27,7 +27,7 @@ const About = () => {
             transition={{ duration: 1 }}
           >
             <div className="glass-card about-main-card overflow-hidden">
-               <img src="/team.png" alt="Safety Team" />
+               <img src="/indian_team.png" alt="Indian Safety Engineers Team" />
             </div>
           </motion.div>
 

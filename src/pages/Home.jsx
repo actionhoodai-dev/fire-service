@@ -82,7 +82,7 @@ const Home = () => {
               viewport={{ once: true }}
             >
               <div className="glass-card about-main-card overflow-hidden">
-                 <img src="/team.png" alt="Safety Team" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                 <img src="/indian_team.png" alt="Indian Safety Engineers Team" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
             </motion.div>
 
