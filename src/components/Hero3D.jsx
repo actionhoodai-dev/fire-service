@@ -77,7 +77,7 @@ const Hero3D = () => {
 
   return (
     <div className="hero-canvas-container">
-      <Canvas dpr={[1, 2]} shadows>
+      <Canvas dpr={[1, 2]} shadows={{ type: THREE.PCFShadowMap }}>
         <PerspectiveCamera makeDefault position={[0, 0.5, isMobile ? 12 : 8]} fov={35} />
         <OrbitControls 
           enableZoom={false} 
