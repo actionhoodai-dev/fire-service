@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Zap, Award } from 'lucide-react';
+import { Shield, Zap, Award, FileDown } from 'lucide-react';
 import Hero3D from '../components/Hero3D';
 import { Link } from 'react-router-dom';
 
@@ -117,7 +117,9 @@ const Home = () => {
           <p>Tuticorin's premium partner for Refilling, Servicing & H.P. Testing. We don't just sell equipment; we sell peace of mind.</p>
           <div className="hero-btns">
             <Link to="/contact" className="btn-primary">Get Consultation</Link>
-            <Link to="/services" className="btn-outline">Our Services</Link>
+            <a href="https://github.com/actionhoodai-dev/fire-service/releases/download/assets/VARATHAVINAYAGAR.FIRE.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <FileDown size={20} /> Download Brochure
+            </a>
           </div>
         </div>
       </section>

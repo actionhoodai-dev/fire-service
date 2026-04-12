@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, Menu, X, Flame } from 'lucide-react';
+import { Phone, Menu, X, Flame, FileDown } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -63,6 +63,9 @@ const Navbar = () => {
           </div>
 
           <div className="nav-contact-header">
+             <a href="https://github.com/actionhoodai-dev/fire-service/releases/download/assets/VARATHAVINAYAGAR.FIRE.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary-sm" style={{ marginRight: '15px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+               <FileDown size={16} /> Brochure
+             </a>
              <a href="tel:9944677149" className="contact-pill">
               <Phone size={16} />
               <span>+91 99446 77149</span>
@@ -121,13 +124,25 @@ const Navbar = () => {
                 <a href="tel:9944677149"><Phone size={16} /> +91 99446 77149</a>
                 <a href="tel:7200763674"><Phone size={16} /> +91 72007 63674</a>
               </div>
-              <Link 
-                to="/contact" 
-                className="btn-primary mobile-cta" 
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Get Quote
-              </Link>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '15px' }}>
+                <a 
+                  href="https://github.com/actionhoodai-dev/fire-service/releases/download/assets/VARATHAVINAYAGAR.FIRE.pdf" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary mobile-cta" 
+                  style={{ background: 'var(--primary)', color: 'white' }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <FileDown size={18} /> Download Brochure
+                </a>
+                <Link 
+                  to="/contact" 
+                  className="btn-outline mobile-cta" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Get Free Quote
+                </Link>
+              </div>
             </div>
           </motion.div>
         )}
