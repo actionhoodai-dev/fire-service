@@ -12,9 +12,9 @@ const Preloader = () => {
     <motion.div 
       className="preloader"
       initial={{ opacity: 1 }}
-      animate={{ opacity: 0 }}
-      transition={{ duration: 0.8, delay: 2 }}
-      onAnimationComplete={() => document.body.style.overflow = 'auto'}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       style={{
         position: 'fixed',
         top: 0,

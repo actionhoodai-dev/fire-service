@@ -56,9 +56,12 @@ function App() {
 
   return (
     <Router>
+      <AnimatePresence mode="wait">
+        {loading && <Preloader key="preloader" />}
+      </AnimatePresence>
+
       <div className="app">
         <ScrollToTop />
-        <Preloader />
         <div className="particle-background">
           <div className="cluster-1"></div>
           <div className="cluster-2"></div>
