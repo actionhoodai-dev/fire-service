@@ -63,7 +63,7 @@ const Navbar = () => {
           </div>
 
           <div className="nav-contact-header">
-             <a href="https://github.com/actionhoodai-dev/fire-service/releases/download/assets/VARATHAVINAYAGAR.FIRE.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary-sm" style={{ marginRight: '15px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+             <a href="https://github.com/actionhoodai-dev/fire-service/releases/download/assets/VARATHAVINAYAGAR.FIRE.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary-sm">
                <FileDown size={16} /> Brochure
              </a>
              <a href="tel:9944677149" className="contact-pill">
