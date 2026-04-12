@@ -93,12 +93,12 @@ const ChatAssistant = () => {
           width: '60px', 
           height: '60px', 
           borderRadius: '50%', 
-          background: 'var(--text-main)', 
+          background: 'var(--primary)', 
           color: 'white', 
           display: 'flex', 
           alignItems: 'center', 
           justifyContent: 'center',
-          boxShadow: '0 8px 16px rgba(0, 0, 0, 0.4)',
+          boxShadow: '0 8px 16px rgba(255, 0, 0, 0.4)',
           border: 'none',
           cursor: 'pointer'
         }}
