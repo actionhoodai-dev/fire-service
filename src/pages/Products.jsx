@@ -92,7 +92,11 @@ const Products = () => {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Tilt className="product-card-detailed glass-card" options={{ max: 5, scale: 1.01 }}>
+                  <Tilt 
+                    className={`product-card-detailed glass-card product-card-floating`} 
+                    options={{ max: 15, scale: 1.05, speed: 1000 }}
+                    style={{ animationDelay: `${i * 0.5}s` }}
+                  >
                     <div className="product-visual-large relative">
                       <span className="badge" style={{position: 'absolute', top: '20px', left: '20px', zIndex: 10}}>{product.category}</span>
                       {product.img ? (

@@ -1228,3 +1228,51 @@ input:focus, select:focus, textarea:focus {
   animation: none;
 }
 
+/* Floating Actions & Chat Box */
+.chat-box {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.floating-btn {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.floating-btn:hover {
+  transform: translateY(-5px) scale(1.1);
+}
+
+/* Floating Product Cards Effect */
+.product-card-floating {
+  animation: cardFloat 6s ease-in-out infinite;
+}
+
+@keyframes cardFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.product-card-detailed {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.product-card-detailed:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .floating-actions-container {
+    bottom: 20px !important;
+    right: 20px !important;
+  }
+  
+  .chat-box {
+    width: 280px !important;
+  }
+}
