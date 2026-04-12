@@ -7,6 +7,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Preloader from './components/Preloader';
 import PageTransition from './components/PageTransition';
 import FloatingActions from './components/FloatingActions';
+import ChatAssistant from './components/ChatAssistant';
 
 import Home from './pages/Home';
 import Services from './pages/Services';
@@ -59,6 +60,7 @@ function App() {
         <main className="main-content">
           <WrappedRoutes />
         </main>
+        <ChatAssistant />
         <FloatingActions />
         <Footer />
       </div>
