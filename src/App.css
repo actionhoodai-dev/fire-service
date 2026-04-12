@@ -399,7 +399,7 @@ body {
 
 .btn-primary-sm {
   background: var(--primary);
-  color: #000;
+  color: #fff;
   padding: 6px 14px;
   border-radius: 50px;
   font-size: 0.85rem;
