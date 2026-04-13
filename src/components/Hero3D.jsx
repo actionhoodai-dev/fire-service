@@ -5,29 +5,45 @@ import * as THREE from 'three';
 
 const ExtinguisherModel = () => {
   const bodyMaterial = useMemo(() => new THREE.MeshStandardMaterial({ 
-    color: '#ff0000', 
-    metalness: 1, 
-    roughness: 0.1, 
-    emissive: '#220000',
-    emissiveIntensity: 0.5 
+    color: '#cc0000', 
+    metalness: 0.8, 
+    roughness: 0.2, 
+    emissive: '#330000',
+    emissiveIntensity: 0.2 
   }), []);
   
   const metalMaterial = useMemo(() => new THREE.MeshStandardMaterial({ 
-    color: '#444', 
+    color: '#222', 
     metalness: 1, 
-    roughness: 0.05 
+    roughness: 0.1 
   }), []);
+
+  const hoseMaterial = useMemo(() => new THREE.MeshStandardMaterial({
+    color: '#111',
+    metalness: 0.1,
+    roughness: 0.8
+  }), []);
+
+  // Create Hose Path
+  const hosePath = useMemo(() => {
+    const points = [];
+    points.push(new THREE.Vector3(0.25, 1.6, 0)); // Start at valve
+    points.push(new THREE.Vector3(1.0, 1.4, 0.5)); // Bend out
+    points.push(new THREE.Vector3(1.2, 0, 0.8));   // Hang down
+    points.push(new THREE.Vector3(0.8, -0.6, 0.6)); // End near nozzle
+    return new THREE.CatmullRomCurve3(points);
+  }, []);
   
   return (
     <group>
-      {/* Main Body with higher reflectivity */}
-      <mesh position={[0, 0, 0]} material={bodyMaterial}>
+      {/* Main Body */}
+      <mesh position={[0, 0, 0]} material={bodyMaterial} castShadow>
         <cylinderGeometry args={[0.8, 0.8, 2.5, 64]} />
       </mesh>
-      <mesh position={[0, 1.25, 0]} material={bodyMaterial}>
+      <mesh position={[0, 1.25, 0]} material={bodyMaterial} castShadow>
         <sphereGeometry args={[0.8, 64, 64, 0, Math.PI * 2, 0, Math.PI / 2]} />
       </mesh>
-      <mesh position={[0, -1.25, 0]} material={bodyMaterial}>
+      <mesh position={[0, -1.25, 0]} material={bodyMaterial} castShadow>
         <sphereGeometry args={[0.8, 64, 64, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2]} />
       </mesh>
       
@@ -36,14 +52,25 @@ const ExtinguisherModel = () => {
         <cylinderGeometry args={[0.2, 0.25, 0.4, 32]} />
       </mesh>
 
+      {/* Handles */}
       <group position={[0, 1.8, 0]}>
         <mesh position={[0, 0.1, 0]} material={metalMaterial} rotation={[0.2, 0, 0]}>
-          <boxGeometry args={[0.3, 0.05, 1]} />
+          <boxGeometry args={[0.3, 0.05, 1.2]} />
         </mesh>
-        <mesh position={[0, 0.35, 0.2]} material={metalMaterial} rotation={[-0.4, 0, 0]}>
-          <boxGeometry args={[0.2, 0.05, 0.8]} />
+        <mesh position={[0, 0.4, 0.2]} material={metalMaterial} rotation={[-0.4, 0, 0]}>
+          <boxGeometry args={[0.2, 0.05, 0.9]} />
         </mesh>
       </group>
+
+      {/* Realistic Hose */}
+      <mesh material={hoseMaterial} castShadow>
+        <tubeGeometry args={[hosePath, 64, 0.08, 16, false]} />
+      </mesh>
+
+      {/* Nozzle at the end of the hose */}
+      <mesh position={[0.8, -0.85, 0.6]} rotation={[0.4, 0, -0.5]} material={metalMaterial} castShadow>
+        <cylinderGeometry args={[0.08, 0.15, 0.6, 32]} />
+      </mesh>
 
       {/* Pressure Gauge */}
       <group position={[0.4, 1.5, 0.6]} rotation={[0, 0.5, 0]}>
