@@ -36,12 +36,12 @@ const Counter = ({ end, suffix }) => {
 const CategoryCarousel = () => {
   const navigate = useNavigate();
   const categories = [
-    { id: 1, name: "Fire Extinguishers", img: "/extinguisher.png", count: "10+ Models" },
-    { id: 2, name: "Fire Alarm Systems", img: "/detector.png", count: "Smart Sensors" },
-    { id: 3, name: "Hydrant & Fire Fighting", img: "/hydrant.png", count: "Industrial" },
-    { id: 4, name: "Safety Products (PPE)", img: "/helmet.png", count: "Full Armor" },
-    { id: 5, name: "Road Safety Products", img: "/cone.jpg", count: "High Viz" },
-    { id: 6, name: "Fire Suppression", img: "/clean_agent.png", count: "Auto Release" }
+    { id: 1, name: "Fire Extinguishers", img: "/extinguisher.png" },
+    { id: 2, name: "Fire Alarm Systems", img: "/detector.png" },
+    { id: 3, name: "Hydrant & Fire Fighting", img: "/hydrant.png" },
+    { id: 4, name: "Safety Products (PPE)", img: "/helmet.png" },
+    { id: 5, name: "Road Safety Products", img: "/cone.jpg" },
+    { id: 6, name: "Fire Suppression", img: "/clean_agent.png" }
   ];
 
   const handleCategoryClick = (catName) => {
@@ -85,7 +85,6 @@ const CategoryCarousel = () => {
               </div>
               <div className="category-info text-center mt-15">
                 <span className="category-name-main">{item.name}</span>
-                <span className="category-count-sub text-muted">{item.count}</span>
               </div>
             </div>
           ))}
