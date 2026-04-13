@@ -1349,14 +1349,15 @@ input:focus, select:focus, textarea:focus {
   display: flex;
   align-items: center;
   justify-content: center;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.12));
 }
 
 .category-circle-border {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  padding: 2px;
-  background: linear-gradient(45deg, #ffcc00, #f2c200, #ffeb3b, #ffcc00);
+  padding: 2.5px;
+  background: linear-gradient(45deg, #d4af37, #f2c200, #ffcc00, #d4af37);
   background-size: 300% 300%;
   animation: borderAnim 4s linear infinite;
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
