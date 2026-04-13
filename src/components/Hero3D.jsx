@@ -40,6 +40,32 @@ const ExtinguisherModel = () => {
       <mesh position={[0, 0, 0]} material={bodyMaterial} castShadow>
         <cylinderGeometry args={[0.8, 0.8, 2.5, 64]} />
       </mesh>
+
+      {/* Industrial Safety Label/Sticker */}
+      <group position={[0, -0.1, 0.01]}>
+         {/* Label Base */}
+         <mesh position={[0, 0, 0.78]} rotation={[0, 0, 0]}>
+           <cylinderGeometry args={[0.025, 0.025, 1.2, 32, 1, false, -Math.PI/4, Math.PI/2]} />
+           {/* We simulate the label by using a very thin segment of a cylinder that sits just outside the body */}
+         </mesh>
+         
+         {/* Visual Sticker (White background) */}
+         <mesh position={[0, 0, 0.1]} rotation={[0, 0, 0]}>
+           <cylinderGeometry args={[0.81, 0.81, 1.4, 64, 1, false, -Math.PI/3.5, Math.PI/1.75]} />
+           <meshStandardMaterial color="#ffffff" roughness={0.3} metalness={0} />
+         </mesh>
+
+         {/* Technical Stripes on Label */}
+         <mesh position={[0, 0.4, 0.11]} rotation={[0, 0, 0]}>
+           <cylinderGeometry args={[0.815, 0.815, 0.15, 64, 1, false, -Math.PI/3.5, Math.PI/1.75]} />
+           <meshStandardMaterial color="#ffcc00" roughness={0.5} />
+         </mesh>
+         <mesh position={[0, -0.3, 0.11]} rotation={[0, 0, 0]}>
+           <cylinderGeometry args={[0.815, 0.815, 0.1, 64, 1, false, -Math.PI/3.5, Math.PI/1.75]} />
+           <meshStandardMaterial color="#cc0000" roughness={0.5} />
+         </mesh>
+      </group>
+
       <mesh position={[0, 1.25, 0]} material={bodyMaterial} castShadow>
         <sphereGeometry args={[0.8, 64, 64, 0, Math.PI * 2, 0, Math.PI / 2]} />
       </mesh>
