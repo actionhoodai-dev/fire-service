@@ -386,9 +386,10 @@ body {
 }
 
 .contact-pill:hover {
-  background: var(--primary);
-  border-color: var(--primary);
-  box-shadow: 0 0 15px var(--primary-glow);
+  background: #ffcc00;
+  border-color: #ffcc00;
+  color: #000000;
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
 }
 
 .nav-contact-header {
@@ -398,24 +399,26 @@ body {
 }
 
 .btn-primary-sm {
-  background: var(--primary);
-  color: #fff;
+  background: #ffcc00;
+  color: #000000;
   padding: 6px 14px;
   border-radius: 50px;
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 800;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 6px;
   transition: all 0.3s ease;
-  border: 1px solid var(--primary);
+  border: 1px solid #ffcc00;
+  text-transform: uppercase;
 }
 
 .btn-primary-sm:hover {
-  background: transparent;
-  color: var(--primary);
-  box-shadow: 0 0 15px var(--primary-glow);
+  background: #f2c200;
+  color: #000000;
+  border-color: #f2c200;
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
 }
 
 .mobile-menu-btn {
