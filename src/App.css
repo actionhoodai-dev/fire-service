@@ -1303,3 +1303,107 @@ input:focus, select:focus, textarea:focus {
     width: 280px !important;
   }
 }
+
+/* Category Story Navigation - Compact Style */
+.category-section {
+  padding: 30px 0 10px;
+  background: var(--dark-bg);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  overflow: hidden;
+}
+
+.category-carousel-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.category-carousel-track {
+  display: flex;
+  gap: 30px;
+  padding: 10px 20px 20px;
+  width: max-content;
+}
+
+.category-story-item {
+  width: 100px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.category-story-item:hover {
+  transform: translateY(-5px);
+}
+
+.category-circle-wrapper {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-circle-border {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(45deg, var(--primary), #ffaa00, #ff3300, var(--primary));
+  background-size: 300% 300%;
+  animation: borderAnim 4s linear infinite;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+}
+
+@keyframes borderAnim {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.category-circle-inner {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.category-circle-inner img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+.category-name-main {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .category-story-item { width: 80px; }
+  .category-circle-wrapper { width: 65px; height: 65px; }
+  .category-circle-inner { width: 58px; height: 58px; }
+  .category-name-main { font-size: 10px; letter-spacing: 1px; }
+  .category-carousel-track { gap: 15px; }
+}

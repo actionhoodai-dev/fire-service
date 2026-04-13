@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Zap, Award, FileDown } from 'lucide-react';
 import Hero3D from '../components/Hero3D';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { useInView } from 'framer-motion';
 
@@ -33,56 +33,64 @@ const Counter = ({ end, suffix }) => {
   return <span ref={ref}>{count}{suffix}</span>;
 };
 
-const ProductCarousel = () => {
-  const images = [
-    { src: "/extinguisher.png", name: "ABC Powder" }, 
-    { src: "/co2.png", name: "CO₂ Type" }, 
-    { src: "/foam.png", name: "Foam Type" }, 
-    { src: "/clean_agent.png", name: "Clean Agent" },
-    { src: "/kitchen.png", name: "Kitchen Safe" },
-    { src: "/d_class.jpg", name: "Metal Fire" },
-    { src: "/panel.jpg", name: "Alarm Panel" },
-    { src: "/detector.png", name: "Smoke Sensor" }, 
-    { src: "/call_point.jpg", name: "Manual Trigger" },
-    { src: "/gas_release.jpg", name: "Gas Systems" },
-    { src: "/hydrant.png", name: "Landing Valve" }, 
-    { src: "/hose_reel.jpg", name: "Hose Reel" },
-    { src: "/foam_monitor.jpg", name: "Foam Monitor" },
-    { src: "/water_monitor.jpg", name: "Water Monitor" },
-    { src: "/helmet.png", name: "Head Protec" }, 
-    { src: "/suit.png", name: "Body Armor" },
-    { src: "/apparatus.png", name: "Respiratory" }, 
-    { src: "/gloves.png", name: "Hand Safety" }, 
-    { src: "/shoes.png", name: "Safety Shoes" },
-    { src: "/cone.jpg", name: "Traffic Cone" },
-    { src: "/sign.jpg", name: "Safety Sign" },
-    { src: "/barricade.jpg", name: "Barricade" },
-    { src: "/tape.jpg", name: "Floor Mark" }
+const CategoryCarousel = () => {
+  const navigate = useNavigate();
+  const categories = [
+    { id: 1, name: "Fire Extinguishers", img: "/extinguisher.png", count: "10+ Models" },
+    { id: 2, name: "Fire Alarm Systems", img: "/detector.png", count: "Smart Sensors" },
+    { id: 3, name: "Hydrant & Fire Fighting", img: "/hydrant.png", count: "Industrial" },
+    { id: 4, name: "Safety Products (PPE)", img: "/helmet.png", count: "Full Armor" },
+    { id: 5, name: "Road Safety Products", img: "/cone.jpg", count: "High Viz" },
+    { id: 6, name: "Fire Suppression", img: "/clean_agent.png", count: "Auto Release" }
   ];
-  
-  // Duplicate for infinite loop
-  const duplicatedItems = [...images, ...images];
+
+  const handleCategoryClick = (catName) => {
+    navigate('/products', { state: { filter: catName } });
+  };
+
+  // Multiple duplicates for extra wide screens and smoother infinite loop
+  const duplicatedItems = [...categories, ...categories, ...categories, ...categories];
 
   return (
-    <div className="product-carousel-wrapper">
-      <motion.div 
-        className="product-carousel-track"
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{ 
-          duration: 90, 
-          ease: "linear", 
-          repeat: Infinity 
-        }}
-      >
-        {duplicatedItems.map((item, i) => (
-          <Link key={i} to="/products" className="carousel-item glass-card no-underline">
-            <div className="carousel-img-box">
-              <img src={item.src} alt={item.name} />
+    <div className="category-section mt-60">
+      <div className="section-header text-center mb-40">
+        <span className="badge">Featured Categories</span>
+        <h2 className="section-title-sm">Explore Our <span className="accent-text">Safety</span> Range</h2>
+      </div>
+      
+      <div className="category-carousel-wrapper">
+        <motion.div 
+          className="category-carousel-track"
+          drag="x"
+          dragConstraints={{ left: -2000, right: 0 }}
+          animate={{ x: ["0%", "-25%"] }} // Only shift by one set for infinite logic
+          whileHover={{ animationPlayState: 'paused' }}
+          transition={{ 
+            duration: 40, 
+            ease: "linear", 
+            repeat: Infinity 
+          }}
+        >
+          {duplicatedItems.map((item, i) => (
+            <div 
+              key={i} 
+              onClick={() => handleCategoryClick(item.name)} 
+              className="category-story-item pointer-events-auto"
+            >
+              <div className="category-circle-wrapper">
+                <div className="category-circle-border"></div>
+                <div className="category-circle-inner glass-card">
+                  <img src={item.img} alt={item.name} />
+                </div>
+              </div>
+              <div className="category-info text-center mt-15">
+                <span className="category-name-main">{item.name}</span>
+                <span className="category-count-sub text-muted">{item.count}</span>
+              </div>
             </div>
-            <span className="carousel-name mt-10">{item.name}</span>
-          </Link>
-        ))}
-      </motion.div>
+          ))}
+        </motion.div>
+      </div>
     </div>
   );
 };
@@ -126,7 +134,7 @@ const Home = () => {
 
       {/* Everything below has a solid dark background */}
       <div className="post-hero-content">
-        <ProductCarousel />
+        <CategoryCarousel />
 
         {/* About Overview Content */}
         <section className="section-padding">

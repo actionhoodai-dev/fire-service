@@ -2,9 +2,17 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingBag, ChevronRight, Filter, ShieldAlert, Droplet, BellRing, Settings, TriangleAlert, Activity, CheckCircle } from 'lucide-react';
 import { Tilt } from 'react-tilt';
+import { useLocation } from 'react-router-dom';
 
 const Products = () => {
-  const [activeCategory, setActiveCategory] = useState('All');
+  const location = useLocation();
+  const [activeCategory, setActiveCategory] = useState(location.state?.filter || 'All');
+
+  React.useEffect(() => {
+    if (location.state?.filter) {
+      setActiveCategory(location.state.filter);
+    }
+  }, [location.state]);
 
   const categories = [
     'All',
