@@ -26,11 +26,19 @@ const Footer = () => {
                 “Never Trust Fire! Trust Varatha Vinayagar Safety & Fire - Your Structural Integrity Guard.”
               </p>
 
-              <div className="glass-card" style={{ padding: '15px 25px', display: 'inline-flex', alignItems: 'center', gap: '15px' }}>
-                <ShieldCheck className="text-primary" size={24} />
+              <div className="glass-card" style={{ 
+                padding: '15px 25px', 
+                display: 'inline-flex', 
+                alignItems: 'center', 
+                gap: '15px',
+                background: '#ffcc00',
+                border: 'none',
+                boxShadow: '0 10px 25px rgba(255, 204, 0, 0.15)'
+              }}>
+                <ShieldCheck style={{ color: '#000' }} size={24} />
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  <span style={{ fontSize: '0.6rem', fontWeight: '900', color: 'var(--primary)', letterSpacing: '2px' }}>GSTIN REGISTERED</span>
-                  <span style={{ fontSize: '0.9rem', fontWeight: '800' }}>33FOCPP2123C1ZJ</span>
+                  <span style={{ fontSize: '0.65rem', fontWeight: '900', color: 'rgba(0,0,0,0.6)', letterSpacing: '2px' }}>GSTIN REGISTERED</span>
+                  <span style={{ fontSize: '1rem', fontWeight: '900', color: '#000' }}>33FOCPP2123C1ZJ</span>
                 </div>
               </div>
             </div>
