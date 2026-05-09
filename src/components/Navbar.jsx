@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, Menu, X, Flame, FileDown } from 'lucide-react';
+import { Phone, Menu, X, FileDown } from 'lucide-react';
+import LanguageToggle from './LanguageToggle';
+import { useLanguage } from '../context/LanguageContext';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -14,12 +17,10 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when route changes
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -30,11 +31,11 @@ const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Products', path: '/products' },
-    { name: 'Contact', path: '/contact' },
+    { name: t('nav_home'), path: '/' },
+    { name: t('nav_about'), path: '/about' },
+    { name: t('nav_services'), path: '/services' },
+    { name: t('nav_products'), path: '/products' },
+    { name: t('nav_contact'), path: '/contact' },
   ];
 
   return (
@@ -53,7 +54,7 @@ const Navbar = () => {
           <div className="nav-links">
             {navLinks.map((link) => (
               <Link 
-                key={link.name} 
+                key={link.path} 
                 to={link.path}
                 className={location.pathname === link.path ? 'active' : ''}
               >
@@ -63,12 +64,13 @@ const Navbar = () => {
           </div>
 
           <div className="nav-contact-header">
-             <a href="https://github.com/actionhoodai-dev/fire-service/releases/download/assets/VARATHAVINAYAGAR.FIRE.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary-sm">
-               <FileDown size={16} /> Brochure
+             <LanguageToggle />
+             <a href="https://github.com/actionhoodai-dev/fire-service/releases/download/assets/VARATHAVINAYAGAR.FIRE.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary-sm btn-alive">
+               <FileDown size={16} /> {t('nav_brochure')}
              </a>
              <a href="tel:9944677149" className="contact-pill">
               <Phone size={16} />
-              <span>+91 99446 77149</span>
+              <span>{t('nav_phone')}</span>
             </a>
           </div>
 
@@ -82,7 +84,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu - rendered as a portal-like fullscreen overlay */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div 
@@ -99,10 +101,16 @@ const Navbar = () => {
             >
               <X size={32} />
             </button>
+
+            {/* Language toggle at top of mobile menu */}
+            <div style={{ marginBottom: '20px' }}>
+              <LanguageToggle />
+            </div>
+
             <div className="mobile-menu-nav">
               {navLinks.map((link, i) => (
                 <motion.div
-                  key={link.name}
+                  key={link.path}
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 + 0.1 }}
@@ -129,18 +137,18 @@ const Navbar = () => {
                   href="https://github.com/actionhoodai-dev/fire-service/releases/download/assets/VARATHAVINAYAGAR.FIRE.pdf" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary mobile-cta" 
+                  className="btn-primary btn-alive mobile-cta" 
                   style={{ background: 'var(--primary)', color: 'white' }}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <FileDown size={18} /> Download Brochure
+                  <FileDown size={18} /> {t('home_btn_brochure')}
                 </a>
                 <Link 
                   to="/contact" 
-                  className="btn-outline mobile-cta" 
+                  className="btn-outline btn-alive mobile-cta" 
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Get Free Quote
+                  {t('home_btn_consultation')}
                 </Link>
               </div>
             </div>

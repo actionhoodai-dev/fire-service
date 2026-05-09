@@ -1,8 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Flame, Phone, Mail, MapPin, ShieldCheck } from 'lucide-react';
+import { Phone, Mail, MapPin, ShieldCheck } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Footer = () => {
+  const { t, lang } = useLanguage();
+
+  const navLinks = lang === 'ta'
+    ? [
+        { label: 'முகப்பு', path: '/' },
+        { label: 'எங்களை பற்றி', path: '/about' },
+        { label: 'சேவைகள்', path: '/services' },
+        { label: 'தயாரிப்புகள்', path: '/products' },
+        { label: 'தொடர்பு', path: '/contact' },
+      ]
+    : [
+        { label: 'Home', path: '/' },
+        { label: 'About Us', path: '/about' },
+        { label: 'Services', path: '/services' },
+        { label: 'Products', path: '/products' },
+        { label: 'Contact', path: '/contact' },
+      ];
+
   return (
     <footer className="footer-main">
       <div className="footer-atmos-foundation">
@@ -22,9 +41,7 @@ const Footer = () => {
                 </div>
               </Link>
               
-              <p className="footer-motto">
-                “Never Trust Fire! Trust Varatha Vinayagar Safety & Fire - Your Structural Integrity Guard.”
-              </p>
+              <p className="footer-motto">{t('footer_motto')}</p>
 
               <div className="glass-card" style={{ 
                 padding: '15px 25px', 
@@ -45,34 +62,26 @@ const Footer = () => {
 
             {/* Navigation Block */}
             <div className="footer-nav-block">
-              <h4>Navigation</h4>
+              <h4>{t('footer_nav')}</h4>
               <div className="footer-links-column">
-                {['Home', 'About Us', 'Services', 'Products', 'Contact'].map(link => (
-                  <Link 
-                    key={link} 
-                    to={link === 'Home' ? '/' : `/${link.toLowerCase().replace(' ', '')}`}
-                    className="footer-nav-link"
-                  >
-                    {link}
+                {navLinks.map(link => (
+                  <Link key={link.path} to={link.path} className="footer-nav-link">
+                    {link.label}
                   </Link>
                 ))}
               </div>
             </div>
 
-            {/* Support Block */}
+            {/* Contact Block */}
             <div className="footer-sync-block">
-              <h4>Data Terminals</h4>
+              <h4>{t('footer_terminals')}</h4>
               <div className="footer-links-column">
                 <a href="tel:+919944677149" className="footer-contact-item">
-                  <div className="footer-contact-icon">
-                    <Phone size={18} />
-                  </div>
+                  <div className="footer-contact-icon"><Phone size={18} /></div>
                   <span>+91 99446 77149</span>
                 </a>
                 <a href="mailto:varathavinayagar1989@gmail.com" className="footer-contact-item">
-                  <div className="footer-contact-icon">
-                    <Mail size={18} />
-                  </div>
+                  <div className="footer-contact-icon"><Mail size={18} /></div>
                   <span style={{ fontSize: '0.7rem', textTransform: 'uppercase' }}>varathavinayagar1989@gmail.com</span>
                 </a>
                 <a 
@@ -81,9 +90,7 @@ const Footer = () => {
                   rel="noopener noreferrer" 
                   className="footer-contact-item"
                 >
-                  <div className="footer-contact-icon">
-                    <MapPin size={18} />
-                  </div>
+                  <div className="footer-contact-icon"><MapPin size={18} /></div>
                   <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', lineHeight: '1.4' }}>112Q/3, Muthukrishnapuram 2nd Street, Tuticorin</span>
                 </a>
               </div>
@@ -91,8 +98,8 @@ const Footer = () => {
           </div>
 
           <div className="footer-bottom-bar">
-            <p>&copy; {new Date().getFullYear()} VV Safety & Fire. Protocol Status: SECURE</p>
-            <p style={{ color: 'var(--primary)' }}>Reliability | Integrity | Structural Protection</p>
+            <p>&copy; {new Date().getFullYear()} {t('footer_copy')}</p>
+            <p style={{ color: 'var(--primary)' }}>{t('footer_tagline')}</p>
           </div>
         </div>
       </div>

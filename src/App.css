@@ -374,7 +374,8 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 18px;
+  height: 36px; /* Match LanguageToggle and sm-buttons */
+  padding: 0 18px;
   background: var(--glass);
   border: 1px solid var(--glass-border);
   border-radius: 50px;
@@ -401,13 +402,15 @@ body {
 .btn-primary-sm {
   background: #ffcc00;
   color: #000000;
-  padding: 6px 14px;
+  height: 36px; /* Match LanguageToggle height */
+  padding: 0 18px;
   border-radius: 50px;
   font-size: 0.85rem;
   font-weight: 800;
   text-decoration: none;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   transition: all 0.3s ease;
   border: 1px solid #ffcc00;
@@ -473,10 +476,11 @@ body {
 .btn-primary {
   background: #ffcc00; /* Solid Yellow */
   color: #000000; /* Black text */
-  padding: 14px 34px;
+  padding: 10px 24px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 800;
+  font-size: 0.9rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -498,10 +502,11 @@ body {
 .btn-outline {
   background: #ffcc00; /* Solid Yellow */
   color: #000000; /* Black text */
-  padding: 14px 34px;
+  padding: 10px 24px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 800;
+  font-size: 0.9rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -596,6 +601,7 @@ body {
   display: flex;
   gap: 15px;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
 
@@ -759,7 +765,7 @@ body {
   display: flex;
   gap: 15px;
   overflow-x: auto;
-  padding-bottom: 20px;
+  padding: 15px 5px 25px; /* Added top/side padding to prevent shadow clipping */
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none; /* Hide scrollbar Firefox */
 }
@@ -771,6 +777,9 @@ body {
 .filter-scroll-wrapper button {
   white-space: nowrap;
   flex-shrink: 0;
+  padding: 6px 16px;
+  font-size: 0.75rem;
+  height: 32px;
 }
 
 .products-grid {
@@ -1597,4 +1606,214 @@ input:focus, select:focus, textarea:focus {
     text-align: center;
     gap: 15px;
   }
+}
+
+/* ============================================
+   PREMIUM ALIVE BUTTONS
+   ============================================ */
+
+/* Shimmer keyframe */
+@keyframes btnShimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Pulse glow (softer blur-based pulse instead of hard spread) */
+@keyframes btnPulseRing {
+  0%   { box-shadow: 0 0 5px rgba(255, 204, 0, 0.4), 0 4px 12px rgba(0,0,0,0.1); }
+  60%  { box-shadow: 0 0 20px rgba(255, 204, 0, 0.6), 0 6px 20px rgba(255,204,0,0.2); }
+  100% { box-shadow: 0 0 5px rgba(255, 204, 0, 0.4), 0 4px 12px rgba(0,0,0,0.1); }
+}
+
+@keyframes btnFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-3px); }
+}
+
+.btn-alive {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    110deg,
+    #ffcc00 0%,
+    #ffe066 30%,
+    #ffcc00 50%,
+    #f2c200 70%,
+    #ffcc00 100%
+  );
+  background-size: 200% auto;
+  /* Removed btnFloat from base to prevent alignment jitter */
+  animation: btnShimmer 3s linear infinite, btnPulseRing 2.5s ease-out infinite;
+  transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease;
+  will-change: transform;
+}
+
+/* Apply float only to hero buttons for that premium feel without breaking row alignment */
+.hero-btns .btn-alive {
+  animation: btnShimmer 3s linear infinite, btnPulseRing 2.5s ease-out infinite, btnFloat 4s ease-in-out infinite;
+}
+
+.btn-alive::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255,255,255,0.45) 50%,
+    transparent 60%
+  );
+  background-size: 200% auto;
+  animation: btnShimmer 2s linear infinite;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.btn-alive:hover {
+  transform: translateY(-4px) scale(1.04);
+  animation: none;
+  background: linear-gradient(110deg, #ffe066, #ffcc00);
+  box-shadow: 0 12px 30px rgba(255, 204, 0, 0.5), 0 0 0 3px rgba(255,204,0,0.18);
+}
+
+.btn-alive:active {
+  transform: translateY(-1px) scale(0.98);
+  box-shadow: 0 4px 12px rgba(255,204,0,0.3);
+}
+
+/* Red primary alive variant (used inside mobile menu) */
+.btn-alive[style*="background: var(--primary)"],
+.btn-alive[style*="background: rgb(204, 0, 0)"] {
+  background: linear-gradient(110deg, #cc0000 0%, #ff3333 40%, #cc0000 70%, #990000 100%) !important;
+  background-size: 200% auto !important;
+  animation: btnShimmerRed 3s linear infinite, btnFloatRed 4s ease-in-out infinite;
+  box-shadow: 0 4px 20px rgba(204,0,0,0.35);
+}
+
+@keyframes btnShimmerRed {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes btnFloatRed {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-3px); }
+}
+
+/* Small button alive */
+.btn-primary-sm.btn-alive {
+  animation: btnShimmer 3s linear infinite;
+}
+
+/* Filter buttons - active state alive */
+.active-filter.btn-alive {
+  background: linear-gradient(110deg, #cc0000 0%, #ff4444 40%, #cc0000 70%) !important;
+  background-size: 200% auto !important;
+  animation: btnShimmerRed 3s linear infinite;
+  box-shadow: 0 4px 18px rgba(204,0,0,0.4) !important;
+  color: white !important;
+}
+
+/* ============================================
+   LANGUAGE TOGGLE SWITCH
+   ============================================ */
+
+.lang-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.lang-toggle-track {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 106px;
+  height: 36px;
+  background: linear-gradient(135deg, #fff8e1, #fff3cd);
+  border-radius: 50px;
+  border: 2px solid rgba(255, 204, 0, 0.6);
+  box-shadow:
+    0 3px 10px rgba(255,204,0,0.25),
+    inset 0 1px 3px rgba(0,0,0,0.06);
+  transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  overflow: hidden;
+}
+
+.lang-toggle-btn:hover .lang-toggle-track {
+  border-color: #ffcc00;
+  box-shadow: 0 4px 18px rgba(255,204,0,0.4);
+  transform: scale(1.04);
+}
+
+.lang-toggle-thumb {
+  position: absolute;
+  width: 48px;
+  height: 28px;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #ffcc00, #f2b800);
+  box-shadow: 0 3px 8px rgba(255,204,0,0.45), 0 1px 2px rgba(0,0,0,0.12);
+  transition: left 0.35s cubic-bezier(0.34,1.56,0.64,1), background 0.3s ease;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.thumb-left  { left: 3px; }
+.thumb-right { left: 53px; }
+
+.lang-label {
+  position: absolute;
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  z-index: 2;
+  transition: color 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+  user-select: none;
+}
+
+.lang-label-left  { left: 10px; }
+.lang-label-right { right: 8px; font-size: 0.6rem; }
+
+.lang-label-active { color: #000; opacity: 1; }
+.lang-label:not(.lang-label-active) { color: rgba(0,0,0,0.35); opacity: 0.6; }
+
+/* Pulse animation on the toggle */
+@keyframes togglePulse {
+  0%   { box-shadow: 0 3px 10px rgba(255,204,0,0.25), inset 0 1px 3px rgba(0,0,0,0.06); }
+  50%  { box-shadow: 0 3px 18px rgba(255,204,0,0.45), inset 0 1px 3px rgba(0,0,0,0.06); }
+  100% { box-shadow: 0 3px 10px rgba(255,204,0,0.25), inset 0 1px 3px rgba(0,0,0,0.06); }
+}
+
+.lang-toggle-track {
+  animation: togglePulse 3s ease-in-out infinite;
+}
+
+/* Compact version for mobile menu */
+.lang-toggle-compact .lang-toggle-track {
+  width: 90px;
+  height: 30px;
+}
+.lang-toggle-compact .lang-toggle-thumb {
+  width: 38px;
+  height: 22px;
+}
+.lang-toggle-compact .thumb-right { left: 46px; }
+
+/* Dark/scrolled navbar - adjust toggle contrast */
+.navbar-scrolled .lang-toggle-track {
+  background: linear-gradient(135deg, #fff8e1, #fffbf0);
+  border-color: rgba(255,204,0,0.7);
+}
+
+/* Extra visibility for the toggle */
+.lang-toggle-track {
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.4), inset 0 1px 3px rgba(0,0,0,0.06);
+  border-width: 2px !important;
 }
