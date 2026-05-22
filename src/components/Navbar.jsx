@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, Menu, X, Flame, FileDown, ChevronRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const megaMenuData = [
   {

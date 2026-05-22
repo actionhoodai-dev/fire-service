@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Shield, Zap, Settings, Truck, Wrench, CheckCircle, Factory, ShieldAlert } from 'lucide-react';
 import { Tilt } from 'react-tilt';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 
 const Services = () => {
   const { t, lang } = useLanguage();
