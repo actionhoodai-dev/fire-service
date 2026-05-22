@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, Menu, X, Flame, FileDown, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import LanguageToggle from './LanguageToggle';
 
 const megaMenuData = [
   {
