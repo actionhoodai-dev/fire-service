@@ -1,8 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Contact = () => {
+  const { t, lang } = useLanguage();
+
+  const serviceOptions = lang === 'ta'
+    ? ['நிரப்புதல்', 'சேவை', 'உ.அ. சோதனை', 'உபகரண விநியோகம்']
+    : ['Refilling', 'Servicing', 'H.P. Testing', 'Equipment Supply'];
+
   return (
     <div className="contact-page pt-120 animate-fade-in">
       {/* Premium Hero Section */}

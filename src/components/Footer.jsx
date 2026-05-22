@@ -1,8 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Flame, Phone, Mail, MapPin, ShieldCheck } from 'lucide-react';
+import { Phone, Mail, MapPin, ShieldCheck } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Footer = () => {
+  const { t, lang } = useLanguage();
+
+  const navLinks = lang === 'ta'
+    ? [
+        { label: 'முகப்பு', path: '/' },
+        { label: 'எங்களை பற்றி', path: '/about' },
+        { label: 'சேவைகள்', path: '/services' },
+        { label: 'தயாரிப்புகள்', path: '/products' },
+        { label: 'தொடர்பு', path: '/contact' },
+      ]
+    : [
+        { label: 'Home', path: '/' },
+        { label: 'About Us', path: '/about' },
+        { label: 'Services', path: '/services' },
+        { label: 'Products', path: '/products' },
+        { label: 'Contact', path: '/contact' },
+      ];
+
   return (
     <footer className="footer-main">
       <div className="footer-atmos-foundation">

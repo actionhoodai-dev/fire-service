@@ -8,6 +8,7 @@ import Preloader from './components/Preloader';
 import PageTransition from './components/PageTransition';
 import FloatingActions from './components/FloatingActions';
 import ChatAssistant from './components/ChatAssistant';
+import { LanguageProvider } from './context/LanguageContext';
 
 import Home from './pages/Home';
 import Services from './pages/Services';
@@ -45,26 +46,28 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <AnimatePresence mode="wait">
-        {loading && <Preloader key="preloader" />}
-      </AnimatePresence>
+    <LanguageProvider>
+      <Router>
+        <AnimatePresence mode="wait">
+          {loading && <Preloader key="preloader" />}
+        </AnimatePresence>
 
-      <div className="app">
-        <ScrollToTop />
-        <div className="particle-background">
-          <div className="cluster-1"></div>
-          <div className="cluster-2"></div>
+        <div className="app">
+          <ScrollToTop />
+          <div className="particle-background">
+            <div className="cluster-1"></div>
+            <div className="cluster-2"></div>
+          </div>
+          <Navbar />
+          <main className="main-content">
+            <WrappedRoutes />
+          </main>
+          <ChatAssistant />
+          <FloatingActions />
+          <Footer />
         </div>
-        <Navbar />
-        <main className="main-content">
-          <WrappedRoutes />
-        </main>
-        <ChatAssistant />
-        <FloatingActions />
-        <Footer />
-      </div>
-    </Router>
+      </Router>
+    </LanguageProvider>
   );
 }
 

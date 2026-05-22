@@ -5,6 +5,8 @@ import { Tilt } from 'react-tilt';
 import { Link } from 'react-router-dom';
 
 const Services = () => {
+  const { t, lang } = useLanguage();
+
   const services = [
     {
       title: "Fire Extinguisher Supply",
@@ -50,7 +52,16 @@ const Services = () => {
     }
   ];
 
-  const industries = [
+  const industries = lang === 'ta' ? [
+    "எஃகு & இரும்பு தொழில்கள்",
+    "அனல் மின் நிலையங்கள்",
+    "கட்டுமானம் & உள்கட்டமைப்பு",
+    "பொறியியல் தொழில்கள்",
+    "ஜவுளி & ஆடை தொழில்கள்",
+    "இரசாயன தொழில்கள்",
+    "அரசு துறை",
+    "கல்வி நிறுவனங்கள்"
+  ] : [
     "Steel & Iron Industries",
     "Thermal Power Plants",
     "Construction & Infrastructure",
@@ -65,10 +76,10 @@ const Services = () => {
     <div className="services-page pt-120 animate-fade-in">
       <section className="section-padding">
         <div className="section-header text-center">
-          <span className="badge">Our Expertise</span>
-          <h1 className="section-title">Complete <span className="accent-text">Safety</span> Services</h1>
+          <span className="badge">{t('services_badge')}</span>
+          <h1 className="section-title">{t('services_h1')} <span className="accent-text">{t('services_h1_span')}</span> {t('services_h1_end')}</h1>
           <p className="mt-20 text-muted mx-auto" style={{maxWidth: '600px'}}>
-            We provide a comprehensive range of professional fire safety services to keep your environments fully protected.
+            {t('services_intro')}
           </p>
         </div>
 
@@ -95,14 +106,12 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Industries Served */}
       <section className="section-padding bg-surface">
         <div className="container">
           <div className="section-header text-center">
-            <span className="badge">Where We Serve</span>
-            <h2 className="section-title">Industries <span className="accent-text">Served</span></h2>
+            <span className="badge">{t('industries_badge')}</span>
+            <h2 className="section-title">{t('industries_title')} <span className="accent-text">{t('industries_title_span')}</span></h2>
           </div>
-          
           <div className="process-cards mt-50">
             {industries.map((ind, i) => (
                <motion.div 
