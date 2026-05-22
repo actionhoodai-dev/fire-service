@@ -25,9 +25,9 @@ const PageTransition = ({ children }) => {
           left: 0,
           right: 0,
           height: '5px',
-          background: 'linear-gradient(90deg, #ff0000 0%, #ffcc00 50%, #ff0000 100%)',
+          background: 'linear-gradient(90deg, #e62f10 0%, #ff5500 50%, #e62f10 100%)',
           zIndex: 9999,
-          boxShadow: '0 0 15px rgba(255, 0, 0, 0.6)',
+          boxShadow: '0 0 15px rgba(230, 47, 16, 0.6)',
           transformOrigin: 'left'
         }}
       />

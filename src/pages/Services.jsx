@@ -2,43 +2,51 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Zap, Settings, Truck, Wrench, CheckCircle, Factory, ShieldAlert } from 'lucide-react';
 import { Tilt } from 'react-tilt';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   const services = [
     {
       title: "Fire Extinguisher Supply",
       desc: "Delivering world-class, certified fire extinguishers perfectly suited for industrial, commercial, and residential use.",
-      icon: <Truck size={32} />
+      icon: <Truck size={32} />,
+      img: "/co2.png"
     },
     {
       title: "Fire Extinguisher Refilling",
       desc: "High-quality refilling agents matching stringent industry standards for rapid fire suppression.",
-      icon: <Zap size={32} />
+      icon: <Zap size={32} />,
+      img: "/foam.png"
     },
     {
       title: "Fire Extinguisher Servicing",
       desc: "Periodic servicing by qualified technicians to ensure your equipment is always ready.",
-      icon: <Wrench size={32} />
+      icon: <Wrench size={32} />,
+      img: "/clean_agent.png"
     },
     {
       title: "High Pressure Testing",
       desc: "Advanced hydrostatic testing ensuring container integrity under extreme conditions.",
-      icon: <Shield size={32} />
+      icon: <Shield size={32} />,
+      img: "/pressure_test.png"
     },
     {
       title: "Fire Safety Equipment Installation",
       desc: "Precision installation of fire safety pipelines, hydrants, and complete fire protection systems.",
-      icon: <Settings size={32} />
+      icon: <Settings size={32} />,
+      img: "/hydrant.png"
     },
     {
       title: "Annual Maintenance Contracts (AMC)",
       desc: "End-to-end periodic maintenance checks for complete peace of mind.",
-      icon: <CheckCircle size={32} />
+      icon: <CheckCircle size={32} />,
+      img: "/indian_team.png"
     },
     {
       title: "Industrial Safety Solutions",
       desc: "We specialize in heat protective garments, safety showers, and fall protection gear specifically for industries.",
-      icon: <ShieldAlert size={32} />
+      icon: <ShieldAlert size={32} />,
+      img: "/suit.png"
     }
   ];
 
@@ -54,7 +62,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="services-page pt-120">
+    <div className="services-page pt-120 animate-fade-in">
       <section className="section-padding">
         <div className="section-header text-center">
           <span className="badge">Our Expertise</span>
@@ -72,7 +80,10 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
             >
-              <Tilt className="service-card glass-card" options={{ max: 15, scale: 1.05 }}>
+              <Tilt className="service-card glass-card" options={{ max: 15, scale: 1.03 }}>
+                <div className="service-image-wrapper">
+                  <img src={service.img} alt={service.title} className="service-card-img" />
+                </div>
                 <div className="service-icon-box">
                   {service.icon}
                 </div>
@@ -114,7 +125,7 @@ const Services = () => {
         <div className="container">
           <h2>Ready to secure your premises?</h2>
           <p className="mb-30 mx-auto mt-10 text-muted" style={{maxWidth: '500px'}}>Contact us today for an expert consultation and a tailored safety solution for your industry.</p>
-          <a href="/contact" className="btn-primary">Book Consultation</a>
+          <Link to="/contact" className="btn-primary">Book Consultation</Link>
         </div>
       </section>
     </div>

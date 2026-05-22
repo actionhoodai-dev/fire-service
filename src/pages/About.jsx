@@ -141,6 +141,50 @@ const About = () => {
         </div>
       </section>
 
+      {/* Our Infrastructure Section */}
+      <section className="section-padding bg-surface">
+        <div className="container grid-2">
+          <motion.div 
+            className="about-content-side"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
+            <span className="badge">Physical Capacity</span>
+            <h2 className="section-title">Our <span className="accent-text">Infrastructure</span></h2>
+            <p className="mt-20">Varatha Vinayagar Safety & Fire boasts a state-of-the-art facility located in Tuticorin, fully equipped for heavy industrial operations. Our setup is tailored specifically to deliver rapid, reliable services for fire protection assets.</p>
+            <p className="mt-10">Our infrastructure features a high-capacity warehouse, professional service bays, and dedicated hydrostatic testing manifolds. We use automated dry powder refilling machines, highly accurate weight-calibrated gas filling systems, and high-pressure nitrogen/carbon dioxide chargers. This ensures every fire extinguisher refilled, serviced, or tested at our site satisfies stringent national and industrial safety guidelines.</p>
+            <div className="about-check-list mt-30">
+               <div className="check-item">
+                  <CheckCircle size={18} className="accent-text" />
+                  <span>High-capacity modern refilling workshop</span>
+               </div>
+               <div className="check-item">
+                  <CheckCircle size={18} className="accent-text" />
+                  <span>Certified hydrostatic testing manifolds</span>
+               </div>
+               <div className="check-item">
+                  <CheckCircle size={18} className="accent-text" />
+                  <span>Fully calibrated weight-checking & pressure gauges</span>
+               </div>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            className="about-visual-box relative"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
+            <div className="glass-card about-main-card overflow-hidden">
+               <img src="/infrastructure.png" alt="Varatha Vinayagar Industrial Refilling Infrastructure Factory drone view" />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
     </div>
   );
 };

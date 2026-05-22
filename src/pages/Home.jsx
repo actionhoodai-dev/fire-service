@@ -1,7 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Shield, Zap, Award, FileDown } from 'lucide-react';
-import Hero3D from '../components/Hero3D';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { useInView } from 'framer-motion';
@@ -102,32 +101,212 @@ const Home = () => {
     { label: 'Active Sites', end: 500, suffix: '+' }
   ];
 
+  const slidesData = [
+    {
+      id: 0,
+      tagline: "Tuticorin's Premium Fire Safety Partner",
+      title: "Advanced Fire",
+      accent: "Extinguishers",
+      desc: "Premium BIS-approved ABC Powder, CO₂, Foam & Clean Agent systems. Complete refilling, hydrostatic testing, and servicing with absolute standard compliance.",
+      image: "/hero_extinguisher.png",
+      alt: "Varatha Vinayagar Fire Extinguisher",
+      cta1Text: "Explore Products",
+      cta1Path: "/products",
+      cta1State: { filter: "Fire Extinguishers" },
+      cta2Text: "Get Consultation",
+      cta2Path: "/contact",
+      glowColor: "rgba(230, 47, 16, 0.42)",
+      badgeBg: "rgba(230, 47, 16, 0.1)",
+      badgeBorder: "rgba(230, 47, 16, 0.3)",
+      themeColor: "var(--primary)"
+    },
+    {
+      id: 1,
+      tagline: "Precision Early-Warning Smoke Alerting",
+      title: "Intelligent Alarm",
+      accent: "Systems",
+      desc: "State-of-the-art addressable panels, optical smoke detectors, rate-of-rise heat sensors, and automated gas release systems for early warning hazard protection.",
+      image: "/hero_detector.png",
+      alt: "Intelligent Smoke Alarm Systems",
+      cta1Text: "View Systems",
+      cta1Path: "/products",
+      cta1State: { filter: "Fire Alarm Systems" },
+      cta2Text: "Request Safety Audit",
+      cta2Path: "/contact",
+      glowColor: "rgba(245, 158, 11, 0.3)",
+      badgeBg: "rgba(245, 158, 11, 0.1)",
+      badgeBorder: "rgba(245, 158, 11, 0.35)",
+      themeColor: "#facc15"
+    },
+    {
+      id: 2,
+      tagline: "Heavy-Duty Emergency Control Systems",
+      title: "Hydrant & Suppression",
+      accent: "Gear",
+      desc: "High-pressure landing valves, 2-way/4-way fire hydrants, durable hose reel systems, heavy-duty foam monitors, and high trajectory water stream monitors.",
+      image: "/hero_hydrant.png",
+      alt: "Fire Hydrant Landing Valves",
+      cta1Text: "Explore Hydrants",
+      cta1Path: "/products",
+      cta1State: { filter: "Hydrant & Fire Fighting" },
+      cta2Text: "Get Free Quote",
+      cta2Path: "/contact",
+      glowColor: "rgba(59, 130, 246, 0.3)",
+      badgeBg: "rgba(59, 130, 246, 0.1)",
+      badgeBorder: "rgba(59, 130, 246, 0.35)",
+      themeColor: "#3b82f6"
+    }
+  ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slidesData.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [slidesData.length]);
+
+  const activeSlide = slidesData[currentSlide];
+
   return (
     <div className="home-page">
-      {/* Hero Section - single viewport height, no sticky tricks */}
+      {/* Hero Section - two column grid layout */}
       <section className="hero-section">
-        <Hero3D />
-        <div className="visual-overlay"></div>
+        <div className="hero-grid-bg"></div>
+        <div 
+          className="hero-glow-bg"
+          style={{ 
+            background: `radial-gradient(circle at 75% 50%, ${activeSlide.glowColor} 0%, transparent 65%)`,
+            transition: 'background 1s ease-in-out'
+          }}
+        ></div>
+        
+        {/* Background "PROTECTION" Text */}
         <div className="hero-title-overlay">
           <motion.h1 
             initial={{ letterSpacing: '40px', opacity: 0 }}
-            animate={{ letterSpacing: '8px', opacity: 1 }}
+            animate={{ letterSpacing: '8px', opacity: 0.03 }}
             transition={{ duration: 2 }}
             className="protection-text"
           >
             PROTECTION
           </motion.h1>
         </div>
-        <div className="hero-bottom-content">
-          <span className="badge">Varatha Vinayagar Safety & Fire</span>
-          <h2>Complete <span className="glow-text">Fire Safety</span> Solutions</h2>
-          <p>Tuticorin's premium partner for Refilling, Servicing & H.P. Testing. We don't just sell equipment; we sell peace of mind.</p>
-          <div className="hero-btns">
-            <Link to="/contact" className="btn-primary">Get Consultation</Link>
-            <a href="https://github.com/actionhoodai-dev/fire-service/releases/download/assets/VARATHAVINAYAGAR.FIRE.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <FileDown size={20} /> Download Brochure
-            </a>
+
+        <div style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', alignItems: 'center' }}>
+          <div className="hero-container container">
+            {/* Left Text Content Column */}
+            <div className="hero-text-content">
+              <AnimatePresence mode="wait">
+                <motion.div 
+                  key={currentSlide}
+                  initial={{ opacity: 0, x: -35 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 35 }}
+                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ width: '100%' }}
+                >
+                  <div className="hero-tagline-sub-wrapper">
+                    <span 
+                      className="badge hero-tagline-sub"
+                      style={{ 
+                        background: activeSlide.badgeBg,
+                        borderColor: activeSlide.badgeBorder,
+                        color: activeSlide.themeColor,
+                        transition: 'all 0.5s ease'
+                      }}
+                    >
+                      {activeSlide.tagline}
+                    </span>
+                  </div>
+                  
+                  <h1 className="hero-business-title">
+                    {activeSlide.title} <span className="glow-text" style={{ textShadow: `0 0 35px ${activeSlide.glowColor}`, color: activeSlide.themeColor }}>{activeSlide.accent}</span>
+                  </h1>
+                  
+                  <p className="hero-desc">
+                    {activeSlide.desc}
+                  </p>
+                  
+                  <div className="hero-btns">
+                    <Link 
+                      to={activeSlide.cta1Path} 
+                      state={activeSlide.cta1State}
+                      className="btn-primary"
+                      style={{ 
+                        background: activeSlide.themeColor, 
+                        borderColor: activeSlide.themeColor,
+                        boxShadow: `0 8px 25px ${activeSlide.glowColor}`
+                      }}
+                    >
+                      {activeSlide.cta1Text}
+                    </Link>
+                    <Link 
+                      to={activeSlide.cta2Path} 
+                      className="btn-outline"
+                    >
+                      {activeSlide.cta2Text}
+                    </Link>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Right Image Visual Column */}
+            <div className="hero-image-content">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentSlide}
+                  initial={{ opacity: 0, scale: 0.82, rotate: -2, y: 15 }}
+                  animate={{ opacity: 1, scale: 1, rotate: 0, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.82, rotate: 2, y: -15 }}
+                  transition={{ 
+                    duration: 0.6, 
+                    ease: [0.16, 1, 0.3, 1],
+                    delay: 0.15 /* Staggered delay for high-end feel */
+                  }}
+                  style={{ 
+                    width: '100%', 
+                    display: 'flex', 
+                    justifyContent: 'center', 
+                    alignItems: 'center' 
+                  }}
+                >
+                  <img 
+                    src={activeSlide.image} 
+                    alt={activeSlide.alt} 
+                    className="hero-extinguisher-img" 
+                    style={{ 
+                      filter: `drop-shadow(0 25px 50px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 50px ${activeSlide.glowColor})`
+                    }}
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </div>
           </div>
+        </div>
+
+        {/* Slide Indicators / Navigation Controls */}
+        <div className="hero-indicators">
+          {slidesData.map((slide, idx) => (
+            <button
+              key={slide.id}
+              onClick={() => setCurrentSlide(idx)}
+              className={`hero-indicator-dot ${currentSlide === idx ? 'active' : ''}`}
+              aria-label={`Go to slide ${idx + 1}`}
+            >
+              {currentSlide === idx && (
+                <motion.div 
+                  className="hero-indicator-progress"
+                  initial={{ width: '0%' }}
+                  animate={{ width: '100%' }}
+                  transition={{ duration: 6, ease: 'linear' }}
+                  style={{ background: slide.themeColor }}
+                />
+              )}
+            </button>
+          ))}
         </div>
       </section>
 

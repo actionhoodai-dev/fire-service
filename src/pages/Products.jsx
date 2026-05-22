@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingBag, ChevronRight, Filter, ShieldAlert, Droplet, BellRing, Settings, TriangleAlert, Activity, CheckCircle } from 'lucide-react';
-import { Tilt } from 'react-tilt';
 import { useLocation } from 'react-router-dom';
 
 const Products = () => {
@@ -82,7 +81,7 @@ const Products = () => {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`btn-outline ${activeCategory === cat ? 'active-filter' : ''}`}
-                style={activeCategory === cat ? { background: '#cc0000', color: 'white', borderColor: '#cc0000' } : {}}
+                style={activeCategory === cat ? { background: 'var(--primary)', color: 'white', borderColor: 'var(--primary)' } : {}}
               >
                 {cat}
               </button>
@@ -100,15 +99,14 @@ const Products = () => {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Tilt 
-                    className={`product-card-detailed glass-card product-card-floating`} 
-                    options={{ max: 15, scale: 1.05, speed: 1000 }}
-                    style={{ animationDelay: `${i * 0.5}s` }}
+                  <div 
+                    className="product-card-detailed glass-card"
+                    style={{ animationDelay: `${i * 0.1}s` }}
                   >
                     <div className="product-visual-large relative">
-                      <span className="badge" style={{position: 'absolute', top: '20px', left: '20px', zIndex: 10}}>{product.category}</span>
+                      <span className="product-category-badge" style={{position: 'absolute', top: '20px', left: '20px', zIndex: 10}}>{product.category}</span>
                       {product.img ? (
-                        <img src={product.img} alt={product.name} className="product-img-full" style={{ filter: 'drop-shadow(0 0 20px rgba(255, 0, 0, 0.3))' }} />
+                        <img src={product.img} alt={product.name} className="product-img-full" style={{ filter: 'drop-shadow(0 0 20px rgba(230, 47, 16, 0.3))' }} />
                       ) : (
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', width: '100%', opacity: 0.5, color: 'var(--primary)' }}>
                           {product.icon}
@@ -135,7 +133,7 @@ const Products = () => {
                         </button>
                       </div>
                     </div>
-                  </Tilt>
+                  </div>
                 </motion.div>
               ))}
             </AnimatePresence>
