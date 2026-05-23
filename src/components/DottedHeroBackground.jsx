@@ -1,8 +1,17 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const DottedHeroBackground = ({ themeColor = 'var(--primary)' }) => {
   const canvasRef = useRef(null);
   const colorRef = useRef({ r: 230, g: 47, b: 16 }); // Initial red color
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Parse CSS variable or hex color to RGB
   useEffect(() => {
@@ -193,6 +202,8 @@ const DottedHeroBackground = ({ themeColor = 'var(--primary)' }) => {
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
+
+  if (isMobile) return null;
 
   return (
     <canvas

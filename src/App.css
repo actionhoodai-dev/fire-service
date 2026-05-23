@@ -1107,12 +1107,21 @@ body {
 }
 
 .about-logo-wrapper img {
-  width: auto;
-  height: auto;
-  max-width: 90%;
-  max-height: 320px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
   object-fit: contain;
+  background: #ffffff;
+  padding: 20px;
+  border: 3.5px solid var(--primary);
+  box-shadow: 0 0 25px var(--primary-glow);
+  transition: var(--transition);
   opacity: 1;
+}
+
+.about-logo-wrapper img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px var(--primary);
 }
 
 @media (max-width: 768px) {
@@ -1121,7 +1130,11 @@ body {
     padding: 20px;
   }
   .about-logo-wrapper img {
-    max-height: 200px;
+    width: 160px;
+    height: 160px;
+    padding: 12px;
+    border-width: 2.5px;
+    box-shadow: 0 0 15px var(--primary-glow);
   }
 }
 
