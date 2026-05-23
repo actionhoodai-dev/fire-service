@@ -2543,3 +2543,14 @@ input:focus, select:focus, textarea:focus {
   line-height: 30px; /* Adjusted to fit perfectly */
 }
 
+/* Hide floating action buttons and corner controls when hamburger mobile menu is open */
+body.mobile-menu-open .floating-actions-container,
+body.mobile-menu-open .chat-assistant-container,
+body.mobile-menu-open .side-tab-left,
+body.mobile-menu-open .side-tab-right,
+body.mobile-menu-open .floating-btn {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
