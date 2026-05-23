@@ -2240,30 +2240,32 @@ input:focus, select:focus, textarea:focus {
   display: flex;
   align-items: center;
   position: relative;
-  width: 100px;
-  height: 36px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  width: 104px;
+  height: 38px;
+  /* Solid dark background so it always stands out on the navbar */
+  background: rgba(10, 10, 14, 0.75);
+  border: 1.5px solid rgba(230, 47, 16, 0.55);
   border-radius: 50px;
   overflow: hidden;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255,255,255,0.05);
 }
 
 .lang-toggle-btn:hover .lang-toggle-track {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(230, 47, 16, 0.3);
-  box-shadow: 0 0 15px rgba(230, 47, 16, 0.1);
+  border-color: rgba(230, 47, 16, 0.9);
+  box-shadow: 0 4px 20px rgba(230, 47, 16, 0.25), inset 0 1px 0 rgba(255,255,255,0.05);
+  background: rgba(10, 10, 14, 0.9);
 }
 
 .lang-toggle-thumb {
   position: absolute;
   top: 3px;
-  width: 46px;
-  height: 28px;
-  background: var(--primary);
+  width: 48px;
+  height: 30px;
+  background: linear-gradient(135deg, #e62f10 0%, #c0250c 100%);
   border-radius: 50px;
   transition: left 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 2px 10px rgba(230, 47, 16, 0.4);
+  box-shadow: 0 3px 12px rgba(230, 47, 16, 0.6);
   z-index: 1;
 }
 
@@ -2272,7 +2274,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .lang-toggle-thumb.thumb-right {
-  left: 49px;
+  left: 51px;
 }
 
 .lang-label {
@@ -2281,37 +2283,40 @@ input:focus, select:focus, textarea:focus {
   flex: 1;
   text-align: center;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  /* Clearly visible muted-white for the inactive side */
+  color: rgba(255, 255, 255, 0.55);
   transition: color 0.3s ease;
   pointer-events: none;
-  line-height: 36px;
+  line-height: 38px;
 }
 
 .lang-label-active {
+  /* Bright white on the red thumb */
   color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* Compact variant for mobile */
 .lang-toggle-compact .lang-toggle-track {
-  width: 88px;
-  height: 32px;
+  width: 92px;
+  height: 34px;
 }
 
 .lang-toggle-compact .lang-toggle-thumb {
-  width: 40px;
-  height: 24px;
+  width: 42px;
+  height: 26px;
   top: 3px;
 }
 
 .lang-toggle-compact .lang-toggle-thumb.thumb-right {
-  left: 44px;
+  left: 46px;
 }
 
 .lang-toggle-compact .lang-label {
-  font-size: 0.65rem;
-  line-height: 32px;
+  font-size: 0.67rem;
+  line-height: 34px;
 }
 
