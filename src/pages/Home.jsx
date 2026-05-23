@@ -339,7 +339,7 @@ const Home = () => {
               viewport={{ once: true }}
             >
               <div className="glass-card about-main-card overflow-hidden">
-                <img src="/logo.png" alt="Business Logo" className="logo-img-circular" />
+                <img src="/logo.png" alt="Business Logo" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
               </div>
             </motion.div>
 
