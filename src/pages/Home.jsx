@@ -338,7 +338,7 @@ const Home = () => {
               transition={{ duration: 1 }}
               viewport={{ once: true }}
             >
-              <div className="glass-card about-main-card about-logo-wrapper">
+              <div className="glass-card about-logo-card about-logo-wrapper">
     <img src="/logo.png" alt="Business Logo" />
 </div>
   

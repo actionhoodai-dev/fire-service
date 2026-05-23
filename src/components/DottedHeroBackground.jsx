@@ -50,23 +50,33 @@ const DottedHeroBackground = ({ themeColor = 'var(--primary)' }) => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
+    const isMobileDevice = window.innerWidth < 768;
+
     // Particle grid settings
-    const cols = 45;
-    const rows = 28;
-    const spacingX = 40;
-    const spacingY = 32;
+    const cols = isMobileDevice ? 18 : 45;
+    const rows = isMobileDevice ? 16 : 28;
+    const spacingX = isMobileDevice ? 24 : 40;
+    const spacingY = isMobileDevice ? 20 : 32;
     const dots = [];
 
     // Initialize grid of particles
     for (let x = 0; x < cols; x++) {
       for (let y = 0; y < rows; y++) {
+        // Add random jitter to break the horizontal line patterns on mobile
+        const jitterMagnitudeX = isMobileDevice ? 16 : 0;
+        const jitterMagnitudeY = isMobileDevice ? 12 : 0;
+        const jitterX = (Math.random() - 0.5) * jitterMagnitudeX;
+        const jitterY = (Math.random() - 0.5) * jitterMagnitudeY;
+
         dots.push({
           gridX: x,
           gridY: y,
-          // Base 3D coordinate (relative to center of grid)
-          bx: (x - cols / 2) * spacingX,
-          by: (y - rows / 2) * spacingY + 80, // Offset down slightly for floor perspective
-          bz: 0
+          // Base 3D coordinate (relative to center of grid) with random jitter to create scattered crystals
+          bx: (x - cols / 2) * spacingX + jitterX,
+          by: (y - rows / 2) * spacingY + 80 + jitterY,
+          bz: 0,
+          phase: Math.random() * Math.PI * 2, // Random phase for independent crystal sparkling
+          sparkleSpeed: 0.8 + Math.random() * 1.5 // Random speed of sparkling
         });
       }
     }
@@ -135,17 +145,23 @@ const DottedHeroBackground = ({ themeColor = 'var(--primary)' }) => {
           // Draw if within boundaries (with padding)
           if (projX > -50 && projX < w + 50 && projY > -50 && projY < h + 50) {
             const isMobile = window.innerWidth < 768;
-            // Minimise the size of dots on mobile view
-            const size = isMobile ? Math.max(0.35, scale * 1.5) : Math.max(0.6, scale * 3.5);
+            // Use micro size for beautiful dotted crystal look on mobile
+            const size = isMobile ? Math.max(0.22, scale * 0.95) : Math.max(0.6, scale * 3.5);
             
             // Deep gradient mask to fade out particles at the edges and in the distance
             const edgeFadeX = Math.sin((dot.gridX / cols) * Math.PI);
             const edgeFadeY = Math.sin((dot.gridY / rows) * Math.PI);
             const distanceOpacity = Math.max(0, Math.min(1, scale * 1.5));
             
-            // Minimise the opacity on mobile view to look extremely subtle and distinct
-            const baseOpacity = isMobile ? 0.22 : 0.45;
-            const opacity = baseOpacity * edgeFadeX * edgeFadeY * distanceOpacity;
+            // Add independent sparkling to the micro dotted crystals on mobile
+            let sparkle = 1.0;
+            if (isMobile) {
+              sparkle = 0.45 + 0.55 * Math.sin(time * dot.sparkleSpeed + dot.phase);
+            }
+            
+            // Keep micro-crystals subtle, distinct, and sparkling
+            const baseOpacity = isMobile ? 0.32 : 0.45;
+            const opacity = baseOpacity * edgeFadeX * edgeFadeY * distanceOpacity * sparkle;
 
             if (opacity > 0.01) {
               ctx.beginPath();
