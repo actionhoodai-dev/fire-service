@@ -2030,7 +2030,7 @@ input:focus, select:focus, textarea:focus {
 /* Rotated Sticky Vertical CTA Side-Tabs */
 .side-tab-left, .side-tab-right {
   position: fixed;
-  top: 50%;
+  top: 60%;
   z-index: 9999;
   display: flex;
   align-items: center;
