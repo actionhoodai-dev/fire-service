@@ -6,6 +6,32 @@ import { useLanguage } from '../context/LanguageContext';
 const Contact = () => {
   const { t, lang } = useLanguage();
 
+  const [formData, setFormData] = React.useState({
+    name: '',
+    phone: '',
+    service: t('contact_svc_refilling'),
+    message: ''
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    
+    // Construct customized WhatsApp message
+    const formattedMessage = `Hello Varatha Vinayagar Safety & Fire!\n\nI would like to inquire about your services.\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Service Requested:* ${formData.service}\n*Message:* ${formData.message || 'N/A'}`;
+    
+    // Encode for URL
+    const encodedText = encodeURIComponent(formattedMessage);
+    const whatsappUrl = `https://wa.me/919944677149?text=${encodedText}`;
+    
+    // Open in a new tab
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <div className="contact-page pt-120 animate-fade-in">
       {/* Premium Hero Section */}
@@ -85,32 +111,56 @@ const Contact = () => {
               </div>
             </div>
 
-            <form className="glass-card contact-form-main">
+            <form onSubmit={handleFormSubmit} className="glass-card contact-form-main">
               <h3>{t('contact_form_title')}</h3>
               <div className="form-grid">
                 <div className="form-group">
                   <label>{t('contact_name')}</label>
-                  <input type="text" placeholder={t('contact_name_placeholder')} required />
+                  <input 
+                    type="text" 
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder={t('contact_name_placeholder')} 
+                    required 
+                  />
                 </div>
                 <div className="form-group">
                   <label>{t('contact_phone_label')}</label>
-                  <input type="tel" placeholder={t('contact_phone_placeholder')} required />
+                  <input 
+                    type="tel" 
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    placeholder={t('contact_phone_placeholder')} 
+                    required 
+                  />
                 </div>
                 <div className="form-group full-width">
                   <label>{t('contact_service')}</label>
-                  <select>
-                    <option>{t('contact_svc_refilling')}</option>
-                    <option>{t('contact_svc_servicing')}</option>
-                    <option>{t('contact_svc_hptesting')}</option>
-                    <option>{t('contact_svc_supply')}</option>
+                  <select 
+                    name="service"
+                    value={formData.service}
+                    onChange={handleInputChange}
+                  >
+                    <option value={t('contact_svc_refilling')}>{t('contact_svc_refilling')}</option>
+                    <option value={t('contact_svc_servicing')}>{t('contact_svc_servicing')}</option>
+                    <option value={t('contact_svc_hptesting')}>{t('contact_svc_hptesting')}</option>
+                    <option value={t('contact_svc_supply')}>{t('contact_svc_supply')}</option>
                   </select>
                 </div>
                 <div className="form-group full-width">
                   <label>{t('contact_message')}</label>
-                  <textarea rows="5" placeholder={t('contact_message_placeholder')}></textarea>
+                  <textarea 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    rows="5" 
+                    placeholder={t('contact_message_placeholder')}
+                  ></textarea>
                 </div>
               </div>
-              <button className="btn-primary w-full mt-20">{t('contact_send')}</button>
+              <button type="submit" className="btn-primary w-full mt-20">{t('contact_send')}</button>
             </form>
           </div>
 

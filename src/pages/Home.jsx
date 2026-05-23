@@ -91,12 +91,7 @@ const CategoryCarousel = () => {
 const Home = () => {
   const { t } = useLanguage();
 
-  const stats = [
-    { label: t('stat_compliance'), end: 100, suffix: '%' },
-    { label: t('stat_experience'), end: 12, suffix: '+' },
-    { label: t('stat_staff'), end: 25, suffix: '+' },
-    { label: t('stat_sites'), end: 500, suffix: '+' }
-  ];
+  const complianceStat = { label: t('stat_compliance'), end: 100, suffix: '%' };
 
   const slidesData = [
     {
@@ -361,22 +356,20 @@ const Home = () => {
         </section>
 
         <section className="section-padding bg-surface">
-          <div className="stats-grid container">
-            {stats.map((stat, i) => (
-              <motion.div 
-                key={i}
-                className="stat-box glass-card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="stat-num" style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--primary)' }}>
-                  <Counter end={stat.end} suffix={stat.suffix} />
-                </h3>
-                <p className="stat-label">{stat.label}</p>
-              </motion.div>
-            ))}
+          <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
+            <motion.div 
+              className="stat-box glass-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              viewport={{ once: true }}
+              style={{ maxWidth: '320px', width: '100%', textAlign: 'center' }}
+            >
+              <h3 className="stat-num" style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--primary)' }}>
+                <Counter end={complianceStat.end} suffix={complianceStat.suffix} />
+              </h3>
+              <p className="stat-label">{complianceStat.label}</p>
+            </motion.div>
           </div>
         </section>
 
