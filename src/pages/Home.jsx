@@ -339,7 +339,7 @@ const Home = () => {
               viewport={{ once: true }}
             >
               <div className="glass-card about-main-card overflow-hidden">
-                <img src="/indian_team.png" alt="Varatha Vinayagar Safety & Fire — Indian Workers" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src="/logo.png" alt="Business Logo" className="logo-img-circular" />
               </div>
             </motion.div>
 
