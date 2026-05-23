@@ -9,68 +9,18 @@ const Services = () => {
   const { t, lang } = useLanguage();
 
   const services = [
-    {
-      title: "Fire Extinguisher Supply",
-      desc: "Delivering world-class, certified fire extinguishers perfectly suited for industrial, commercial, and residential use.",
-      icon: <Truck size={32} />,
-      img: "/co2.png"
-    },
-    {
-      title: "Fire Extinguisher Refilling",
-      desc: "High-quality refilling agents matching stringent industry standards for rapid fire suppression.",
-      icon: <Zap size={32} />,
-      img: "/foam.png"
-    },
-    {
-      title: "Fire Extinguisher Servicing",
-      desc: "Periodic servicing by qualified technicians to ensure your equipment is always ready.",
-      icon: <Wrench size={32} />,
-      img: "/clean_agent.png"
-    },
-    {
-      title: "High Pressure Testing",
-      desc: "Advanced hydrostatic testing ensuring container integrity under extreme conditions.",
-      icon: <Shield size={32} />,
-      img: "/pressure_test.png"
-    },
-    {
-      title: "Fire Safety Equipment Installation",
-      desc: "Precision installation of fire safety pipelines, hydrants, and complete fire protection systems.",
-      icon: <Settings size={32} />,
-      img: "/hydrant.png"
-    },
-    {
-      title: "Annual Maintenance Contracts (AMC)",
-      desc: "End-to-end periodic maintenance checks for complete peace of mind.",
-      icon: <CheckCircle size={32} />,
-      img: "/indian_team.png"
-    },
-    {
-      title: "Industrial Safety Solutions",
-      desc: "We specialize in heat protective garments, safety showers, and fall protection gear specifically for industries.",
-      icon: <ShieldAlert size={32} />,
-      img: "/suit.png"
-    }
+    { title: t('svc_supply_title'), desc: t('svc_supply_desc'), icon: <Truck size={32} />, img: "/co2.png" },
+    { title: t('svc_refill_title'), desc: t('svc_refill_desc'), icon: <Zap size={32} />, img: "/foam.png" },
+    { title: t('svc_service_title'), desc: t('svc_service_desc'), icon: <Wrench size={32} />, img: "/clean_agent.png" },
+    { title: t('svc_hptest_title'), desc: t('svc_hptest_desc'), icon: <Shield size={32} />, img: "/pressure_test.png" },
+    { title: t('svc_install_title'), desc: t('svc_install_desc'), icon: <Settings size={32} />, img: "/hydrant.png" },
+    { title: t('svc_amc_title'), desc: t('svc_amc_desc'), icon: <CheckCircle size={32} />, img: "/indian_team.png" },
+    { title: t('svc_industrial_title'), desc: t('svc_industrial_desc'), icon: <ShieldAlert size={32} />, img: "/suit.png" },
   ];
 
-  const industries = lang === 'ta' ? [
-    "எஃகு & இரும்பு தொழில்கள்",
-    "அனல் மின் நிலையங்கள்",
-    "கட்டுமானம் & உள்கட்டமைப்பு",
-    "பொறியியல் தொழில்கள்",
-    "ஜவுளி & ஆடை தொழில்கள்",
-    "இரசாயன தொழில்கள்",
-    "அரசு துறை",
-    "கல்வி நிறுவனங்கள்"
-  ] : [
-    "Steel & Iron Industries",
-    "Thermal Power Plants",
-    "Construction & Infrastructure",
-    "Engineering Industries",
-    "Textile & Garment Industries",
-    "Chemical Industries",
-    "Government Sector",
-    "Educational Institutions"
+  const industries = [
+    t('ind_steel'), t('ind_thermal'), t('ind_construction'), t('ind_engineering'),
+    t('ind_textile'), t('ind_chemical'), t('ind_government'), t('ind_education')
   ];
 
   return (
@@ -133,9 +83,9 @@ const Services = () => {
 
       <section className="cta-section section-padding text-center">
         <div className="container">
-          <h2>Ready to secure your premises?</h2>
-          <p className="mb-30 mx-auto mt-10 text-muted" style={{maxWidth: '500px'}}>Contact us today for an expert consultation and a tailored safety solution for your industry.</p>
-          <Link to="/contact" className="btn-primary">Book Consultation</Link>
+          <h2>{t('cta_title')}</h2>
+          <p className="mb-30 mx-auto mt-10 text-muted" style={{maxWidth: '500px'}}>{t('cta_desc')}</p>
+          <Link to="/contact" className="btn-primary">{t('cta_btn')}</Link>
         </div>
       </section>
     </div>

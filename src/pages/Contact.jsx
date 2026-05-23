@@ -6,30 +6,25 @@ import { useLanguage } from '../context/LanguageContext';
 const Contact = () => {
   const { t, lang } = useLanguage();
 
-  const serviceOptions = lang === 'ta'
-    ? ['நிரப்புதல்', 'சேவை', 'உ.அ. சோதனை', 'உபகரண விநியோகம்']
-    : ['Refilling', 'Servicing', 'H.P. Testing', 'Equipment Supply'];
-
   return (
     <div className="contact-page pt-120 animate-fade-in">
       {/* Premium Hero Section */}
       <section className="contact-hero section-padding">
         <div className="container contact-hero-grid">
           <div className="contact-hero-text">
-            <span className="badge">Direct Terminals</span>
+            <span className="badge">{t('contact_hero_badge')}</span>
             <h1 className="hero-title mt-10">
-              Reach Out to Our <span className="accent-text">Safety Protocol</span> Team
+              {t('contact_hero_title_1')} <span className="accent-text">{t('contact_hero_title_span')}</span> {t('contact_hero_title_2')}
             </h1>
             <p className="mt-20 text-muted" style={{ fontSize: '1.05rem', lineHeight: '1.7' }}>
-              Have an urgent safety requirement, extinguisher refilling request, or system installation query? 
-              Our certified fire safety engineers are standby 24/7 to provide rapid support, quotes, and structural hazard consultation.
+              {t('contact_hero_desc')}
             </p>
             <div className="contact-hero-actions mt-30" style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
               <a href="tel:9944677149" className="btn-primary">
-                <Phone size={18} /> Call Emergency Team
+                <Phone size={18} /> {t('contact_call_btn')}
               </a>
               <a href="#quote-form" className="btn-outline">
-                Request Free Quote
+                {t('contact_quote_btn')}
               </a>
             </div>
           </div>
@@ -49,15 +44,15 @@ const Contact = () => {
       <section className="section-padding pt-0" id="quote-form">
         <div className="container">
           <div className="section-header text-center mb-60">
-            <span className="badge">Support Options</span>
-            <h2 className="section-title">Send a <span className="accent-text">Direct Terminal</span> Query</h2>
+            <span className="badge">{t('contact_support_badge')}</span>
+            <h2 className="section-title">{t('contact_support_title_1')} <span className="accent-text">{t('contact_support_title_span')}</span> {t('contact_support_title_2')}</h2>
           </div>
 
           <div className="contact-grid">
             <div className="contact-info-panel">
               <div className="contact-box glass-card mb-20">
                 <Phone className="accent-text mb-10" />
-                <h3>Phone Numbers</h3>
+                <h3>{t('contact_phones')}</h3>
                 <div className="phone-list mt-10" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   <a href="tel:9944677149" className="btn-primary" style={{ justifyContent: 'center' }}>
                     <Phone size={16} /> +91 99446 77149
@@ -70,52 +65,52 @@ const Contact = () => {
 
               <div className="contact-box glass-card mb-20">
                 <Mail className="accent-text mb-10" />
-                <h3>Email</h3>
+                <h3>{t('contact_email')}</h3>
                 <a href="mailto:varathavinayagar1989@gmail.com" className="btn-outline mt-10" style={{ justifyContent: 'center', width: '100%' }}>
-                  <Mail size={16} /> Email Us
+                  <Mail size={16} /> {t('contact_email_btn')}
                 </a>
               </div>
 
               <div className="contact-box glass-card">
                 <MapPin className="accent-text mb-10" />
-                <h3>Location</h3>
-                <p>112Q/3, Muthukrishnapuram 2nd Street, Tuticorin, Tamil Nadu</p>
+                <h3>{t('contact_location')}</h3>
+                <p>{t('contact_location_addr')}</p>
               </div>
               
               <div className="contact-box glass-card mt-20">
                 <Clock className="accent-text mb-10" />
-                <h3>Emergency Service</h3>
-                <p className="text-muted mt-5">24/7 Availability</p>
-                <p className="mt-10" style={{ fontSize: '0.9rem' }}>Our team is fully equipped and on standby around the clock for rapid emergency response.</p>
+                <h3>{t('contact_emergency')}</h3>
+                <p className="text-muted mt-5">{t('contact_emergency_avail')}</p>
+                <p className="mt-10" style={{ fontSize: '0.9rem' }}>{t('contact_emergency_desc')}</p>
               </div>
             </div>
 
             <form className="glass-card contact-form-main">
-              <h3>Request a Quote</h3>
+              <h3>{t('contact_form_title')}</h3>
               <div className="form-grid">
                 <div className="form-group">
-                  <label>Full Name</label>
-                  <input type="text" placeholder="John Doe" required />
+                  <label>{t('contact_name')}</label>
+                  <input type="text" placeholder={t('contact_name_placeholder')} required />
                 </div>
                 <div className="form-group">
-                  <label>Contact Number</label>
-                  <input type="tel" placeholder="+91 00000 00000" required />
+                  <label>{t('contact_phone_label')}</label>
+                  <input type="tel" placeholder={t('contact_phone_placeholder')} required />
                 </div>
                 <div className="form-group full-width">
-                  <label>Service Required</label>
+                  <label>{t('contact_service')}</label>
                   <select>
-                    <option>Refilling</option>
-                    <option>Servicing</option>
-                    <option>H.P. Testing</option>
-                    <option>Equipment Supply</option>
+                    <option>{t('contact_svc_refilling')}</option>
+                    <option>{t('contact_svc_servicing')}</option>
+                    <option>{t('contact_svc_hptesting')}</option>
+                    <option>{t('contact_svc_supply')}</option>
                   </select>
                 </div>
                 <div className="form-group full-width">
-                  <label>Message</label>
-                  <textarea rows="5" placeholder="Tell us about your requirements..."></textarea>
+                  <label>{t('contact_message')}</label>
+                  <textarea rows="5" placeholder={t('contact_message_placeholder')}></textarea>
                 </div>
               </div>
-              <button className="btn-primary w-full mt-20">Send Message</button>
+              <button className="btn-primary w-full mt-20">{t('contact_send')}</button>
             </form>
           </div>
 

@@ -108,7 +108,7 @@ const Navbar = () => {
           {/* Desktop Nav */}
           <div className="nav-links">
             {navLinks.map((link) => {
-              if (link.name === 'Products') {
+              if (link.path === '/products') {
                 return (
                   <div
                     key={link.name}
@@ -200,11 +200,11 @@ const Navbar = () => {
               
               <div className="mega-menu-footer">
                 <div className="mega-footer-content">
-                  <span className="badge">Varatha Vinayagar Safety & Fire</span>
-                  <p>Need specialized high-pressure testing, gas release panels, or bespoke safety installations? We provide standard-compliant setup.</p>
+                  <span className="badge">{t('mega_footer_badge')}</span>
+                  <p>{t('mega_footer_desc')}</p>
                 </div>
                 <Link to="/contact" className="btn-primary-sm" onClick={() => setIsProductsHovered(false)}>
-                  Get Free Consultation
+                  {t('mega_footer_btn')}
                 </Link>
               </div>
             </motion.div>
@@ -255,7 +255,7 @@ const Navbar = () => {
             </div>
 
             <div className="mobile-menu-footer">
-              <p className="mobile-menu-label">24/7 Emergency Support</p>
+              <p className="mobile-menu-label">{t('mobile_emergency_label')}</p>
               <div className="mobile-phone-list">
                 <a href="tel:9944677149"><Phone size={16} /> +91 99446 77149</a>
                 <a href="tel:7200763674"><Phone size={16} /> +91 72007 63674</a>

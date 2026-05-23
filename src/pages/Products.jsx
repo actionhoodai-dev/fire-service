@@ -15,16 +15,16 @@ const Products = () => {
 
   const categories = ['All', 'Fire Extinguishers', 'Fire Alarm Systems', 'Hydrant & Fire Fighting', 'Safety Products (PPE)', 'Road Safety Products'];
 
-  const catLabels = lang === 'ta' ? {
-    'All': 'அனைத்தும்',
-    'Fire Extinguishers': 'தீ அணைப்பான்கள்',
-    'Fire Alarm Systems': 'தீ எச்சரிக்கை அமைப்புகள்',
-    'Hydrant & Fire Fighting': 'ஹைட்ரன்ட் & தீயணைப்பு',
-    'Safety Products (PPE)': 'பாதுகாப்பு பொருட்கள்',
-    'Road Safety Products': 'சாலை பாதுகாப்பு'
-  } : {};
+  const catKeyMap = {
+    'All': 'products_all',
+    'Fire Extinguishers': 'cat_fire_extinguishers',
+    'Fire Alarm Systems': 'cat_fire_alarm',
+    'Hydrant & Fire Fighting': 'cat_hydrant',
+    'Safety Products (PPE)': 'cat_ppe',
+    'Road Safety Products': 'cat_road_safety',
+  };
 
-  const getCatLabel = (cat) => catLabels[cat] || cat;
+  const getCatLabel = (cat) => t(catKeyMap[cat]) || cat;
 
   const productsData = [
     { name: "Powder Type (ABC)", category: "Fire Extinguishers", img: "/extinguisher.png", desc: "Multi-purpose dry chemical.", icon: <Droplet size={80} />, features: ["Mono Ammonium Phosphate based", "Suitable for Class A, B, C & Electrical", "BIS Approved (IS 15683)", "CE Certified (on demand)", "Rechargeable, brass/nickel valve"] },

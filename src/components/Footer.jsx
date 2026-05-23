@@ -6,21 +6,13 @@ import { useLanguage } from '../context/LanguageContext';
 const Footer = () => {
   const { t, lang } = useLanguage();
 
-  const navLinks = lang === 'ta'
-    ? [
-        { label: 'முகப்பு', path: '/' },
-        { label: 'எங்களை பற்றி', path: '/about' },
-        { label: 'சேவைகள்', path: '/services' },
-        { label: 'தயாரிப்புகள்', path: '/products' },
-        { label: 'தொடர்பு', path: '/contact' },
-      ]
-    : [
-        { label: 'Home', path: '/' },
-        { label: 'About Us', path: '/about' },
-        { label: 'Services', path: '/services' },
-        { label: 'Products', path: '/products' },
-        { label: 'Contact', path: '/contact' },
-      ];
+  const navLinks = [
+    { label: t('nav_home'), path: '/' },
+    { label: t('nav_about'), path: '/about' },
+    { label: t('nav_services'), path: '/services' },
+    { label: t('nav_products'), path: '/products' },
+    { label: t('nav_contact'), path: '/contact' },
+  ];
 
   return (
     <footer className="footer-main">
@@ -36,12 +28,12 @@ const Footer = () => {
               <img src="/logo.png" alt="VV Safety" className="logo-img-circular" style={{ width: '60px', height: '60px' }} />
               <div className="logo-text">
                 <span className="brand-name" style={{ fontSize: '1.4rem' }}>VARATHA VINAYAGAR</span>
-                <span className="brand-sub">SAFETY & FIRE PROTOCOL</span>
+                <span className="brand-sub">{t('footer_brand_sub')}</span>
               </div>
             </Link>
             
             <p className="footer-motto">
-              “Never Trust Fire! Trust Varatha Vinayagar Safety & Fire - Your Structural Integrity Guard.”
+              {t('footer_motto')}
             </p>
 
             <div className="glass-card" style={{ 
@@ -56,7 +48,7 @@ const Footer = () => {
             }}>
               <ShieldCheck style={{ color: 'var(--primary)' }} size={24} />
               <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <span style={{ fontSize: '0.65rem', fontWeight: '900', color: 'var(--text-muted)', letterSpacing: '2px' }}>GSTIN REGISTERED</span>
+                <span style={{ fontSize: '0.65rem', fontWeight: '900', color: 'var(--text-muted)', letterSpacing: '2px' }}>{t('footer_gstin_label')}</span>
                 <span style={{ fontSize: '1rem', fontWeight: '900', color: '#fff', fontFamily: 'monospace' }}>33FOCPP2123C1ZJ</span>
               </div>
             </div>
@@ -64,15 +56,15 @@ const Footer = () => {
 
           {/* Navigation Block */}
           <div className="footer-nav-block">
-            <h4>Navigation</h4>
+            <h4>{t('footer_nav')}</h4>
             <div className="footer-links-column">
-              {['Home', 'About Us', 'Services', 'Products', 'Contact'].map(link => (
+              {navLinks.map(link => (
                 <Link 
-                  key={link} 
-                  to={link === 'Home' ? '/' : `/${link.toLowerCase().replace(' ', '')}`}
+                  key={link.path} 
+                  to={link.path}
                   className="footer-nav-link"
                 >
-                  {link}
+                  {link.label}
                 </Link>
               ))}
             </div>
@@ -80,7 +72,7 @@ const Footer = () => {
 
           {/* Support Block */}
           <div className="footer-sync-block">
-            <h4>Data Terminals</h4>
+            <h4>{t('footer_terminals')}</h4>
             <div className="footer-links-column">
               <a href="tel:+919944677149" className="footer-contact-item">
                 <div className="footer-contact-icon">
@@ -103,15 +95,15 @@ const Footer = () => {
                 <div className="footer-contact-icon">
                   <MapPin size={18} />
                 </div>
-                <span style={{ fontSize: '0.85rem', lineHeight: '1.4' }}>112Q/3, Muthukrishnapuram 2nd Street, Tuticorin</span>
+                <span style={{ fontSize: '0.85rem', lineHeight: '1.4' }}>{t('contact_location_addr')}</span>
               </a>
             </div>
           </div>
         </div>
 
         <div className="footer-bottom-bar">
-          <p>&copy; {new Date().getFullYear()} VV Safety & Fire. Protocol Status: SECURE</p>
-          <p style={{ color: 'var(--primary)' }}>Reliability | Integrity | Structural Protection</p>
+          <p>&copy; {new Date().getFullYear()} {t('footer_copy')}</p>
+          <p style={{ color: 'var(--primary)' }}>{t('footer_tagline')}</p>
         </div>
       </div>
     </footer>

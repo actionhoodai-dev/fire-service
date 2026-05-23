@@ -35,12 +35,12 @@ const CategoryCarousel = () => {
   const navigate = useNavigate();
   const { t } = useLanguage();
   const categories = [
-    { id: 1, name: "Fire Extinguishers", img: "/extinguisher.png" },
-    { id: 2, name: "Fire Alarm Systems", img: "/detector.png" },
-    { id: 3, name: "Hydrant & Fire Fighting", img: "/hydrant.png" },
-    { id: 4, name: "Safety Products (PPE)", img: "/helmet.png" },
-    { id: 5, name: "Road Safety Products", img: "/cone.jpg" },
-    { id: 6, name: "Fire Suppression", img: "/clean_agent.png" }
+    { id: 1, name: "Fire Extinguishers", nameKey: 'cat_fire_extinguishers', img: "/extinguisher.png" },
+    { id: 2, name: "Fire Alarm Systems", nameKey: 'cat_fire_alarm', img: "/detector.png" },
+    { id: 3, name: "Hydrant & Fire Fighting", nameKey: 'cat_hydrant', img: "/hydrant.png" },
+    { id: 4, name: "Safety Products (PPE)", nameKey: 'cat_ppe', img: "/helmet.png" },
+    { id: 5, name: "Road Safety Products", nameKey: 'cat_road_safety', img: "/cone.jpg" },
+    { id: 6, name: "Fire Suppression", nameKey: 'cat_suppression', img: "/clean_agent.png" }
   ];
 
   const handleCategoryClick = (catName) => {
@@ -77,7 +77,7 @@ const CategoryCarousel = () => {
                 </div>
               </div>
               <div className="category-info text-center mt-15">
-                <span className="category-name-main">{item.name}</span>
+                <span className="category-name-main">{t(item.nameKey)}</span>
               </div>
             </div>
           ))}
@@ -100,16 +100,16 @@ const Home = () => {
   const slidesData = [
     {
       id: 0,
-      tagline: "Tuticorin's Premium Fire Safety Partner",
-      title: "Advanced Fire",
-      accent: "Extinguishers",
-      desc: "Premium BIS-approved ABC Powder, CO₂, Foam & Clean Agent systems. Complete refilling, hydrostatic testing, and servicing with absolute standard compliance.",
+      tagline: t('hero_slide0_tagline'),
+      title: t('hero_slide0_title'),
+      accent: t('hero_slide0_accent'),
+      desc: t('hero_slide0_desc'),
       image: "/hero_extinguisher.png",
       alt: "Varatha Vinayagar Fire Extinguisher",
-      cta1Text: "Explore Products",
+      cta1Text: t('hero_slide0_cta1'),
       cta1Path: "/products",
       cta1State: { filter: "Fire Extinguishers" },
-      cta2Text: "Get Consultation",
+      cta2Text: t('hero_slide0_cta2'),
       cta2Path: "/contact",
       glowColor: "rgba(230, 47, 16, 0.42)",
       badgeBg: "rgba(230, 47, 16, 0.1)",
@@ -118,16 +118,16 @@ const Home = () => {
     },
     {
       id: 1,
-      tagline: "Precision Early-Warning Smoke Alerting",
-      title: "Intelligent Alarm",
-      accent: "Systems",
-      desc: "State-of-the-art addressable panels, optical smoke detectors, rate-of-rise heat sensors, and automated gas release systems for early warning hazard protection.",
+      tagline: t('hero_slide1_tagline'),
+      title: t('hero_slide1_title'),
+      accent: t('hero_slide1_accent'),
+      desc: t('hero_slide1_desc'),
       image: "/hero_detector.png",
       alt: "Intelligent Smoke Alarm Systems",
-      cta1Text: "View Systems",
+      cta1Text: t('hero_slide1_cta1'),
       cta1Path: "/products",
       cta1State: { filter: "Fire Alarm Systems" },
-      cta2Text: "Request Safety Audit",
+      cta2Text: t('hero_slide1_cta2'),
       cta2Path: "/contact",
       glowColor: "rgba(245, 158, 11, 0.3)",
       badgeBg: "rgba(245, 158, 11, 0.1)",
@@ -136,16 +136,16 @@ const Home = () => {
     },
     {
       id: 2,
-      tagline: "Heavy-Duty Emergency Control Systems",
-      title: "Hydrant & Suppression",
-      accent: "Gear",
-      desc: "High-pressure landing valves, 2-way/4-way fire hydrants, durable hose reel systems, heavy-duty foam monitors, and high trajectory water stream monitors.",
+      tagline: t('hero_slide2_tagline'),
+      title: t('hero_slide2_title'),
+      accent: t('hero_slide2_accent'),
+      desc: t('hero_slide2_desc'),
       image: "/hero_hydrant.png",
       alt: "Fire Hydrant Landing Valves",
-      cta1Text: "Explore Hydrants",
+      cta1Text: t('hero_slide2_cta1'),
       cta1Path: "/products",
       cta1State: { filter: "Hydrant & Fire Fighting" },
-      cta2Text: "Get Free Quote",
+      cta2Text: t('hero_slide2_cta2'),
       cta2Path: "/contact",
       glowColor: "rgba(59, 130, 246, 0.3)",
       badgeBg: "rgba(59, 130, 246, 0.1)",

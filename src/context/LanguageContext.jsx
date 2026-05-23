@@ -14,6 +14,34 @@ export const translations = {
     nav_phone: '+91 99446 77149',
     lang_toggle_label: 'Switch to Tamil',
 
+    // Navbar Mega Menu
+    mega_footer_badge: 'Varatha Vinayagar Safety & Fire',
+    mega_footer_desc: 'Need specialized high-pressure testing, gas release panels, or bespoke safety installations? We provide standard-compliant setup.',
+    mega_footer_btn: 'Get Free Consultation',
+    mobile_emergency_label: '24/7 Emergency Support',
+
+    // Home Hero Slides
+    hero_slide0_tagline: "Tuticorin's Premium Fire Safety Partner",
+    hero_slide0_title: 'Advanced Fire',
+    hero_slide0_accent: 'Extinguishers',
+    hero_slide0_desc: 'Premium BIS-approved ABC Powder, CO₂, Foam & Clean Agent systems. Complete refilling, hydrostatic testing, and servicing with absolute standard compliance.',
+    hero_slide0_cta1: 'Explore Products',
+    hero_slide0_cta2: 'Get Consultation',
+
+    hero_slide1_tagline: 'Precision Early-Warning Smoke Alerting',
+    hero_slide1_title: 'Intelligent Alarm',
+    hero_slide1_accent: 'Systems',
+    hero_slide1_desc: 'State-of-the-art addressable panels, optical smoke detectors, rate-of-rise heat sensors, and automated gas release systems for early warning hazard protection.',
+    hero_slide1_cta1: 'View Systems',
+    hero_slide1_cta2: 'Request Safety Audit',
+
+    hero_slide2_tagline: 'Heavy-Duty Emergency Control Systems',
+    hero_slide2_title: 'Hydrant & Suppression',
+    hero_slide2_accent: 'Gear',
+    hero_slide2_desc: 'High-pressure landing valves, 2-way/4-way fire hydrants, durable hose reel systems, heavy-duty foam monitors, and high trajectory water stream monitors.',
+    hero_slide2_cta1: 'Explore Hydrants',
+    hero_slide2_cta2: 'Get Free Quote',
+
     // Home
     home_badge: 'Varatha Vinayagar Safety & Fire',
     home_hero_h2: 'Complete',
@@ -27,6 +55,14 @@ export const translations = {
     home_cat_title: 'Explore Our',
     home_cat_title_span: 'Safety',
     home_cat_title_end: 'Range',
+
+    // Home Category Names
+    cat_fire_extinguishers: 'Fire Extinguishers',
+    cat_fire_alarm: 'Fire Alarm Systems',
+    cat_hydrant: 'Hydrant & Fire Fighting',
+    cat_ppe: 'Safety Products (PPE)',
+    cat_road_safety: 'Road Safety Products',
+    cat_suppression: 'Fire Suppression',
 
     home_about_badge: 'Welcome to Varatha Vinayagar',
     home_about_h1: 'Your Trusted Partner in',
@@ -68,9 +104,35 @@ export const translations = {
     services_h1_span: 'Safety',
     services_h1_end: 'Services',
     services_intro: 'We provide a comprehensive range of professional fire safety services to keep your environments fully protected.',
+
+    svc_supply_title: 'Fire Extinguisher Supply',
+    svc_supply_desc: 'Delivering world-class, certified fire extinguishers perfectly suited for industrial, commercial, and residential use.',
+    svc_refill_title: 'Fire Extinguisher Refilling',
+    svc_refill_desc: 'High-quality refilling agents matching stringent industry standards for rapid fire suppression.',
+    svc_service_title: 'Fire Extinguisher Servicing',
+    svc_service_desc: 'Periodic servicing by qualified technicians to ensure your equipment is always ready.',
+    svc_hptest_title: 'High Pressure Testing',
+    svc_hptest_desc: 'Advanced hydrostatic testing ensuring container integrity under extreme conditions.',
+    svc_install_title: 'Fire Safety Equipment Installation',
+    svc_install_desc: 'Precision installation of fire safety pipelines, hydrants, and complete fire protection systems.',
+    svc_amc_title: 'Annual Maintenance Contracts (AMC)',
+    svc_amc_desc: 'End-to-end periodic maintenance checks for complete peace of mind.',
+    svc_industrial_title: 'Industrial Safety Solutions',
+    svc_industrial_desc: 'We specialize in heat protective garments, safety showers, and fall protection gear specifically for industries.',
+
     industries_badge: 'Where We Serve',
     industries_title: 'Industries',
     industries_title_span: 'Served',
+
+    ind_steel: 'Steel & Iron Industries',
+    ind_thermal: 'Thermal Power Plants',
+    ind_construction: 'Construction & Infrastructure',
+    ind_engineering: 'Engineering Industries',
+    ind_textile: 'Textile & Garment Industries',
+    ind_chemical: 'Chemical Industries',
+    ind_government: 'Government Sector',
+    ind_education: 'Educational Institutions',
+
     cta_title: 'Ready to secure your premises?',
     cta_desc: 'Contact us today for an expert consultation and a tailored safety solution for your industry.',
     cta_btn: 'Book Consultation',
@@ -79,6 +141,7 @@ export const translations = {
     products_badge: 'Our Catalog',
     products_h1: 'Premium Safety',
     products_h1_span: 'Products',
+    products_all: 'All',
     enquire_now: 'Enquire Now',
 
     // About
@@ -98,7 +161,48 @@ export const translations = {
     about_mission_title: 'Our Mission',
     about_quality_title: 'Quality Policy',
 
+    about_vision_desc: 'To become a highly respected safety solutions provider delivering:',
+    about_vision_1: 'Complete safety systems and services',
+    about_vision_2: 'Advanced technology-based solutions',
+    about_vision_3: 'Continuous improvement and innovation',
+    about_vision_4: 'Strong customer-focused approach',
+
+    about_mission_desc: 'Driving excellence via:',
+    about_mission_1: "Achieve top position in India's safety industry",
+    about_mission_2: 'Focus on innovation, quality, and service excellence',
+    about_mission_3: 'Promote safety awareness and responsibility',
+    about_mission_4: 'Deliver high-value products and solutions',
+
+    about_quality_desc: 'We ensure quality through:',
+    about_quality_1: 'Strict quality control from design to testing',
+    about_quality_2: 'Advanced technology integration',
+    about_quality_3: 'Skilled professionals and experienced team',
+    about_quality_4: 'Customer-centric service approach',
+
+    // About Infrastructure
+    infra_badge: 'Physical Capacity',
+    infra_title: 'Our',
+    infra_title_span: 'Infrastructure',
+    infra_p1: 'Varatha Vinayagar Safety & Fire boasts a state-of-the-art facility located in Tuticorin, fully equipped for heavy industrial operations. Our setup is tailored specifically to deliver rapid, reliable services for fire protection assets.',
+    infra_p2: 'Our infrastructure features a high-capacity warehouse, professional service bays, and dedicated hydrostatic testing manifolds. We use automated dry powder refilling machines, highly accurate weight-calibrated gas filling systems, and high-pressure nitrogen/carbon dioxide chargers. This ensures every fire extinguisher refilled, serviced, or tested at our site satisfies stringent national and industrial safety guidelines.',
+    infra_check1: 'High-capacity modern refilling workshop',
+    infra_check2: 'Certified hydrostatic testing manifolds',
+    infra_check3: 'Fully calibrated weight-checking & pressure gauges',
+
     // Contact
+    contact_hero_badge: 'Direct Terminals',
+    contact_hero_title_1: 'Reach Out to Our',
+    contact_hero_title_span: 'Safety Protocol',
+    contact_hero_title_2: 'Team',
+    contact_hero_desc: 'Have an urgent safety requirement, extinguisher refilling request, or system installation query? Our certified fire safety engineers are standby 24/7 to provide rapid support, quotes, and structural hazard consultation.',
+    contact_call_btn: 'Call Emergency Team',
+    contact_quote_btn: 'Request Free Quote',
+
+    contact_support_badge: 'Support Options',
+    contact_support_title_1: 'Send a',
+    contact_support_title_span: 'Direct Terminal',
+    contact_support_title_2: 'Query',
+
     contact_badge: 'Get in Touch',
     contact_h1: 'Contact',
     contact_h1_span: 'Safety',
@@ -117,12 +221,18 @@ export const translations = {
     contact_phone_label: 'Contact Number',
     contact_phone_placeholder: '+91 00000 00000',
     contact_service: 'Service Required',
+    contact_svc_refilling: 'Refilling',
+    contact_svc_servicing: 'Servicing',
+    contact_svc_hptesting: 'H.P. Testing',
+    contact_svc_supply: 'Equipment Supply',
     contact_message: 'Message',
     contact_message_placeholder: 'Tell us about your requirements...',
     contact_send: 'Send Message',
 
     // Footer
+    footer_brand_sub: 'SAFETY & FIRE PROTOCOL',
     footer_motto: '"Never Trust Fire! Trust Varatha Vinayagar Safety & Fire - Your Structural Integrity Guard."',
+    footer_gstin_label: 'GSTIN REGISTERED',
     footer_nav: 'Navigation',
     footer_terminals: 'Data Terminals',
     footer_copy: 'VV Safety & Fire. Protocol Status: SECURE',
@@ -140,6 +250,34 @@ export const translations = {
     nav_phone: '+91 99446 77149',
     lang_toggle_label: 'Switch to English',
 
+    // Navbar Mega Menu
+    mega_footer_badge: 'வரத விநாயகர் பாதுகாப்பு & தீ',
+    mega_footer_desc: 'சிறப்பு உயர் அழுத்த சோதனை, வாயு வெளியீட்டு பேனல்கள் அல்லது தனிப்பயன் பாதுகாப்பு நிறுவல்கள் தேவையா? தர இணக்கமான அமைப்பை வழங்குகிறோம்.',
+    mega_footer_btn: 'இலவச ஆலோசனை பெறுக',
+    mobile_emergency_label: '24/7 அவசர ஆதரவு',
+
+    // Home Hero Slides
+    hero_slide0_tagline: 'தூத்துக்குடியின் முன்னணி தீ பாதுகாப்பு பங்காளி',
+    hero_slide0_title: 'மேம்பட்ட தீ',
+    hero_slide0_accent: 'அணைப்பான்கள்',
+    hero_slide0_desc: 'BIS-அங்கீகரிக்கப்பட்ட ABC பொடி, CO₂, நுரை & சுத்தமான முகவர் அமைப்புகள். முழுமையான நிரப்புதல், ஹைட்ரோஸ்டாடிக் சோதனை மற்றும் தரநிலை இணக்கத்துடன் சேவை.',
+    hero_slide0_cta1: 'தயாரிப்புகளை ஆராயுங்கள்',
+    hero_slide0_cta2: 'ஆலோசனை பெறுக',
+
+    hero_slide1_tagline: 'துல்லியமான முன்கூட்டிய எச்சரிக்கை புகை எச்சரிப்பு',
+    hero_slide1_title: 'புத்திசாலி எச்சரிக்கை',
+    hero_slide1_accent: 'அமைப்புகள்',
+    hero_slide1_desc: 'அதிநவீன முகவரியிடக்கூடிய பேனல்கள், ஒளியியல் புகை கண்டறிப்பான்கள், வெப்பநிலை உணர்விகள் மற்றும் தானியங்கி வாயு வெளியீட்டு அமைப்புகள்.',
+    hero_slide1_cta1: 'அமைப்புகளைக் காண்க',
+    hero_slide1_cta2: 'பாதுகாப்பு ஆய்வு கோரிக்கை',
+
+    hero_slide2_tagline: 'கனரக அவசர கட்டுப்பாட்டு அமைப்புகள்',
+    hero_slide2_title: 'ஹைட்ரன்ட் & அடக்குதல்',
+    hero_slide2_accent: 'உபகரணங்கள்',
+    hero_slide2_desc: 'உயர் அழுத்த தரையிறக்க வால்வுகள், 2-வழி/4-வழி தீ ஹைட்ரன்ட்கள், நீடித்த குழாய் ரீல் அமைப்புகள், கனரக நுரை கண்காணிப்பான்கள்.',
+    hero_slide2_cta1: 'ஹைட்ரன்ட்களை ஆராயுங்கள்',
+    hero_slide2_cta2: 'இலவச மதிப்பீடு பெறுக',
+
     // Home
     home_badge: 'வரத விநாயகர் பாதுகாப்பு & தீ சேவை',
     home_hero_h2: 'முழுமையான',
@@ -153,6 +291,14 @@ export const translations = {
     home_cat_title: 'எங்கள்',
     home_cat_title_span: 'பாதுகாப்பு',
     home_cat_title_end: 'வரம்பை ஆராயுங்கள்',
+
+    // Home Category Names
+    cat_fire_extinguishers: 'தீ அணைப்பான்கள்',
+    cat_fire_alarm: 'தீ எச்சரிக்கை அமைப்புகள்',
+    cat_hydrant: 'ஹைட்ரன்ட் & தீயணைப்பு',
+    cat_ppe: 'பாதுகாப்பு பொருட்கள் (PPE)',
+    cat_road_safety: 'சாலை பாதுகாப்பு பொருட்கள்',
+    cat_suppression: 'தீ அடக்குதல்',
 
     home_about_badge: 'வரத விநாயகருக்கு வரவேற்கிறோம்',
     home_about_h1: 'உங்கள் நம்பகமான பங்காளி',
@@ -194,9 +340,35 @@ export const translations = {
     services_h1_span: 'பாதுகாப்பு',
     services_h1_end: 'சேவைகள்',
     services_intro: 'உங்கள் சூழலை முழுமையாக பாதுகாக்க, நாங்கள் விரிவான தொழில்முறை தீ பாதுகாப்பு சேவைகளை வழங்குகிறோம்.',
+
+    svc_supply_title: 'தீ அணைப்பான் விநியோகம்',
+    svc_supply_desc: 'தொழில்துறை, வணிக மற்றும் குடியிருப்பு பயன்பாட்டிற்கு ஏற்ற சான்றளிக்கப்பட்ட தீ அணைப்பான்களை வழங்குகிறோம்.',
+    svc_refill_title: 'தீ அணைப்பான் நிரப்புதல்',
+    svc_refill_desc: 'விரைவான தீ அடக்குதலுக்கான கடுமையான தொழில்துறை தரங்களுக்கு ஏற்ற உயர்தர நிரப்பு முகவர்கள்.',
+    svc_service_title: 'தீ அணைப்பான் சேவை',
+    svc_service_desc: 'தகுதிவாய்ந்த தொழில்நுட்ப வல்லுநர்களால் உங்கள் உபகரணம் எப்போதும் தயாராக இருப்பதை உறுதிசெய்ய அவ்வப்போது சேவை.',
+    svc_hptest_title: 'உயர் அழுத்த சோதனை',
+    svc_hptest_desc: 'தீவிர நிலைகளில் கொள்கலன் ஒருமைப்பாட்டை உறுதிசெய்யும் மேம்பட்ட ஹைட்ரோஸ்டாடிக் சோதனை.',
+    svc_install_title: 'தீ பாதுகாப்பு உபகரண நிறுவல்',
+    svc_install_desc: 'தீ பாதுகாப்பு குழாய்கள், ஹைட்ரன்ட்கள் மற்றும் முழுமையான தீ பாதுகாப்பு அமைப்புகளின் துல்லியமான நிறுவல்.',
+    svc_amc_title: 'வருடாந்திர பராமரிப்பு ஒப்பந்தங்கள் (AMC)',
+    svc_amc_desc: 'முழுமையான மன அமைதிக்காக முழுமையான அவ்வப்போது பராமரிப்பு சோதனைகள்.',
+    svc_industrial_title: 'தொழில்துறை பாதுகாப்பு தீர்வுகள்',
+    svc_industrial_desc: 'வெப்ப பாதுகாப்பு ஆடைகள், பாதுகாப்பு மழை நீராடிகள் மற்றும் விழுதல் பாதுகாப்பு கருவிகளில் நிபுணத்துவம் பெற்றவர்கள்.',
+
     industries_badge: 'நாங்கள் சேவை செய்யும் இடங்கள்',
     industries_title: 'சேவை பெறும்',
     industries_title_span: 'தொழில்கள்',
+
+    ind_steel: 'எஃகு & இரும்பு தொழில்கள்',
+    ind_thermal: 'அனல் மின் நிலையங்கள்',
+    ind_construction: 'கட்டுமானம் & உள்கட்டமைப்பு',
+    ind_engineering: 'பொறியியல் தொழில்கள்',
+    ind_textile: 'ஜவுளி & ஆடை தொழில்கள்',
+    ind_chemical: 'இரசாயன தொழில்கள்',
+    ind_government: 'அரசு துறை',
+    ind_education: 'கல்வி நிறுவனங்கள்',
+
     cta_title: 'உங்கள் வளாகத்தை பாதுகாக்க தயாரா?',
     cta_desc: 'உங்கள் தொழில்துறைக்கான தனிப்பயன் பாதுகாப்பு தீர்வுக்கு இன்றே தொடர்பு கொள்ளுங்கள்.',
     cta_btn: 'ஆலோசனை பதிவு',
@@ -205,6 +377,7 @@ export const translations = {
     products_badge: 'எங்கள் பட்டியல்',
     products_h1: 'உயரிய பாதுகாப்பு',
     products_h1_span: 'தயாரிப்புகள்',
+    products_all: 'அனைத்தும்',
     enquire_now: 'இப்போது விசாரிக்கவும்',
 
     // About
@@ -224,7 +397,48 @@ export const translations = {
     about_mission_title: 'எங்கள் நோக்கம்',
     about_quality_title: 'தர கொள்கை',
 
+    about_vision_desc: 'மிகவும் மதிப்புமிக்க பாதுகாப்பு தீர்வு வழங்குநராக மாறுவது:',
+    about_vision_1: 'முழுமையான பாதுகாப்பு அமைப்புகள்',
+    about_vision_2: 'மேம்பட்ட தொழில்நுட்ப தீர்வுகள்',
+    about_vision_3: 'தொடர்ச்சியான மேம்பாடு',
+    about_vision_4: 'வாடிக்கையாளர் கவனம்',
+
+    about_mission_desc: 'சிறப்பை நோக்கி உந்தும்:',
+    about_mission_1: 'இந்தியாவின் பாதுகாப்பு துறையில் முதலிடம்',
+    about_mission_2: 'புதுமை, தரம் மற்றும் சேவை சிறப்பு',
+    about_mission_3: 'பாதுகாப்பு விழிப்புணர்வை ஊக்குவித்தல்',
+    about_mission_4: 'உயர் மதிப்பு பொருட்கள் வழங்கல்',
+
+    about_quality_desc: 'தரத்தை உறுதிப்படுத்துகிறோம்:',
+    about_quality_1: 'வடிவமைப்பிலிருந்து சோதனை வரை கண்டிப்பான தர கட்டுப்பாடு',
+    about_quality_2: 'மேம்பட்ட தொழில்நுட்ப ஒருங்கிணைப்பு',
+    about_quality_3: 'திறமையான நிபுணர்கள் மற்றும் அனுபவமிக்க குழு',
+    about_quality_4: 'வாடிக்கையாளர் கேந்திர சேவை அணுகுமுறை',
+
+    // About Infrastructure
+    infra_badge: 'உடல் திறன்',
+    infra_title: 'எங்கள்',
+    infra_title_span: 'உள்கட்டமைப்பு',
+    infra_p1: 'வரத விநாயகர் பாதுகாப்பு & தீ, தூத்துக்குடியில் அமைந்த அதிநவீன வசதியைக் கொண்டுள்ளது, கனரக தொழில்துறை செயல்பாடுகளுக்கு முழுமையாக தயாராக உள்ளது.',
+    infra_p2: 'எங்கள் உள்கட்டமைப்பு அதிக திறன் கொண்ட கிடங்கு, தொழில்முறை சேவை பகுதிகள் மற்றும் அர்ப்பணிக்கப்பட்ட ஹைட்ரோஸ்டாடிக் சோதனை அமைப்புகளை கொண்டுள்ளது. தேசிய மற்றும் தொழில்துறை பாதுகாப்பு வழிகாட்டுதல்களை பூர்த்தி செய்கிறது.',
+    infra_check1: 'அதிக திறன் கொண்ட நவீன நிரப்புதல் பட்டறை',
+    infra_check2: 'சான்றளிக்கப்பட்ட ஹைட்ரோஸ்டாடிக் சோதனை அமைப்புகள்',
+    infra_check3: 'முழுமையாக அளவீடு செய்யப்பட்ட எடை சோதனை & அழுத்த கேஜ்கள்',
+
     // Contact
+    contact_hero_badge: 'நேரடி தொடர்பு',
+    contact_hero_title_1: 'எங்கள்',
+    contact_hero_title_span: 'பாதுகாப்பு குழுவை',
+    contact_hero_title_2: 'தொடர்புகொள்ளுங்கள்',
+    contact_hero_desc: 'அவசர பாதுகாப்பு தேவை, அணைப்பான் நிரப்புதல் கோரிக்கை அல்லது அமைப்பு நிறுவல் வினா உள்ளதா? எங்கள் சான்றளிக்கப்பட்ட தீ பாதுகாப்பு பொறியாளர்கள் 24/7 தயாராக உள்ளனர்.',
+    contact_call_btn: 'அவசர குழுவை அழைக்கவும்',
+    contact_quote_btn: 'இலவச மதிப்பீடு கோரிக்கை',
+
+    contact_support_badge: 'ஆதரவு விருப்பங்கள்',
+    contact_support_title_1: 'ஒரு',
+    contact_support_title_span: 'நேரடி தொடர்பு',
+    contact_support_title_2: 'வினா அனுப்புக',
+
     contact_badge: 'தொடர்பு கொள்ளுங்கள்',
     contact_h1: 'தொடர்பு கொள்ளுங்கள்',
     contact_h1_span: 'பாதுகாப்பு',
@@ -243,12 +457,18 @@ export const translations = {
     contact_phone_label: 'தொடர்பு எண்',
     contact_phone_placeholder: '+91 00000 00000',
     contact_service: 'தேவையான சேவை',
+    contact_svc_refilling: 'நிரப்புதல்',
+    contact_svc_servicing: 'சேவை',
+    contact_svc_hptesting: 'உ.அ. சோதனை',
+    contact_svc_supply: 'உபகரண விநியோகம்',
     contact_message: 'செய்தி',
     contact_message_placeholder: 'உங்கள் தேவைகளை பற்றி கூறுங்கள்...',
     contact_send: 'செய்தி அனுப்பு',
 
     // Footer
+    footer_brand_sub: 'பாதுகாப்பு & தீ நெறிமுறை',
     footer_motto: '"தீயை நம்பாதீர்கள்! வரத விநாயகர் பாதுகாப்பை நம்புங்கள் - உங்கள் கட்டமைப்பு நலன் காவலர்."',
+    footer_gstin_label: 'GSTIN பதிவு',
     footer_nav: 'வழிசெலுத்தல்',
     footer_terminals: 'தொடர்பு',
     footer_copy: 'VV பாதுகாப்பு & தீ. நிலை: பாதுகாப்பானது',

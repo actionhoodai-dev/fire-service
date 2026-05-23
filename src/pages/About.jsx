@@ -33,21 +33,13 @@ const PartnerCarousel = () => {
 const About = () => {
   const { t, lang } = useLanguage();
 
-  const visionItems = lang === 'ta' 
-    ? ['முழுமையான பாதுகாப்பு அமைப்புகள்', 'மேம்பட்ட தொழில்நுட்ப தீர்வுகள்', 'தொடர்ச்சியான மேம்பாடு', 'வாடிக்கையாளர் கவனம்']
-    : ['Complete safety systems and services', 'Advanced technology-based solutions', 'Continuous improvement and innovation', 'Strong customer-focused approach'];
+  const visionItems = [t('about_vision_1'), t('about_vision_2'), t('about_vision_3'), t('about_vision_4')];
+  const missionItems = [t('about_mission_1'), t('about_mission_2'), t('about_mission_3'), t('about_mission_4')];
+  const qualityItems = [t('about_quality_1'), t('about_quality_2'), t('about_quality_3'), t('about_quality_4')];
 
-  const missionItems = lang === 'ta'
-    ? ['இந்தியாவின் பாதுகாப்பு துறையில் முதலிடம்', 'புதுமை, தரம் மற்றும் சேவை சிறப்பு', 'பாதுகாப்பு விழிப்புணர்வை ஊக்குவித்தல்', 'உயர் மதிப்பு பொருட்கள் வழங்கல்']
-    : ['Achieve top position in India\'s safety industry', 'Focus on innovation, quality, and service excellence', 'Promote safety awareness and responsibility', 'Deliver high-value products and solutions'];
-
-  const qualityItems = lang === 'ta'
-    ? ['வடிவமைப்பு முதல் சோதனை வரை தர கட்டுப்பாடு', 'மேம்பட்ட தொழில்நுட்பம்', 'திறமையான நிபுணர்கள்', 'வாடிக்கையாளர் கேந்திர அணுகுமுறை']
-    : ['Strict quality control from design to testing', 'Advanced technology integration', 'Skilled professionals and experienced team', 'Customer-centric service approach'];
-
-  const visionDesc = lang === 'ta' ? 'மிகவும் மதிப்புமிக்க பாதுகாப்பு தீர்வு வழங்குநராக மாறுவது:' : 'To become a highly respected safety solutions provider delivering:';
-  const missionDesc = lang === 'ta' ? 'சிறப்பை நோக்கி உந்தும்:' : 'Driving excellence via:';
-  const qualityDesc = lang === 'ta' ? 'தரத்தை உறுதிப்படுத்துகிறோம்:' : 'We ensure quality through:';
+  const visionDesc = t('about_vision_desc');
+  const missionDesc = t('about_mission_desc');
+  const qualityDesc = t('about_quality_desc');
 
   return (
     <div className="about-page pt-120">
@@ -144,22 +136,22 @@ const About = () => {
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            <span className="badge">Physical Capacity</span>
-            <h2 className="section-title">Our <span className="accent-text">Infrastructure</span></h2>
-            <p className="mt-20">Varatha Vinayagar Safety & Fire boasts a state-of-the-art facility located in Tuticorin, fully equipped for heavy industrial operations. Our setup is tailored specifically to deliver rapid, reliable services for fire protection assets.</p>
-            <p className="mt-10">Our infrastructure features a high-capacity warehouse, professional service bays, and dedicated hydrostatic testing manifolds. We use automated dry powder refilling machines, highly accurate weight-calibrated gas filling systems, and high-pressure nitrogen/carbon dioxide chargers. This ensures every fire extinguisher refilled, serviced, or tested at our site satisfies stringent national and industrial safety guidelines.</p>
+            <span className="badge">{t('infra_badge')}</span>
+            <h2 className="section-title">{t('infra_title')} <span className="accent-text">{t('infra_title_span')}</span></h2>
+            <p className="mt-20">{t('infra_p1')}</p>
+            <p className="mt-10">{t('infra_p2')}</p>
             <div className="about-check-list mt-30">
                <div className="check-item">
                   <CheckCircle size={18} className="accent-text" />
-                  <span>High-capacity modern refilling workshop</span>
+                  <span>{t('infra_check1')}</span>
                </div>
                <div className="check-item">
                   <CheckCircle size={18} className="accent-text" />
-                  <span>Certified hydrostatic testing manifolds</span>
+                  <span>{t('infra_check2')}</span>
                </div>
                <div className="check-item">
                   <CheckCircle size={18} className="accent-text" />
-                  <span>Fully calibrated weight-checking & pressure gauges</span>
+                  <span>{t('infra_check3')}</span>
                </div>
             </div>
           </motion.div>
