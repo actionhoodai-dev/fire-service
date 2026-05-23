@@ -341,7 +341,7 @@ const Home = () => {
               <div className="glass-card about-main-card about-logo-wrapper">
     <img src="/logo.png" alt="Business Logo" />
 </div>
-              </div>
+  
             </motion.div>
 
             <motion.div 
