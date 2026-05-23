@@ -4,6 +4,7 @@ import { Shield, Zap, Award, Star, Quote } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useInView } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
+import DottedHeroBackground from '../components/DottedHeroBackground';
 
 const Counter = ({ end, suffix }) => {
   const [count, setCount] = React.useState(0);
@@ -129,10 +130,10 @@ const Home = () => {
       cta1State: { filter: "Fire Alarm Systems" },
       cta2Text: t('hero_slide1_cta2'),
       cta2Path: "/contact",
-      glowColor: "rgba(245, 158, 11, 0.3)",
-      badgeBg: "rgba(245, 158, 11, 0.1)",
-      badgeBorder: "rgba(245, 158, 11, 0.35)",
-      themeColor: "#facc15"
+      glowColor: "rgba(230, 47, 16, 0.42)",
+      badgeBg: "rgba(230, 47, 16, 0.1)",
+      badgeBorder: "rgba(230, 47, 16, 0.3)",
+      themeColor: "var(--primary)"
     },
     {
       id: 2,
@@ -147,10 +148,10 @@ const Home = () => {
       cta1State: { filter: "Hydrant & Fire Fighting" },
       cta2Text: t('hero_slide2_cta2'),
       cta2Path: "/contact",
-      glowColor: "rgba(59, 130, 246, 0.3)",
-      badgeBg: "rgba(59, 130, 246, 0.1)",
-      badgeBorder: "rgba(59, 130, 246, 0.35)",
-      themeColor: "#3b82f6"
+      glowColor: "rgba(230, 47, 16, 0.42)",
+      badgeBg: "rgba(230, 47, 16, 0.1)",
+      badgeBorder: "rgba(230, 47, 16, 0.3)",
+      themeColor: "var(--primary)"
     }
   ];
 
@@ -169,7 +170,7 @@ const Home = () => {
     <div className="home-page">
       {/* Hero Section - two column grid layout */}
       <section className="hero-section">
-        <div className="hero-grid-bg"></div>
+        <DottedHeroBackground themeColor={activeSlide.themeColor} />
         <div 
           className="hero-glow-bg"
           style={{ 

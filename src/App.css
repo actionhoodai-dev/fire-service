@@ -782,31 +782,104 @@ body {
   50% { transform: translateY(-15px); }
 }
 
+/* ── 3-D Perspective Dot Grid ─────────────────────── */
+
+/* Layer 1: 3D perspective floor grid */
 .hero-grid-bg {
   position: absolute;
   inset: 0;
-  background-image: 
-    radial-gradient(rgba(230, 47, 16, 0.15) 1px, transparent 1px),
-    radial-gradient(rgba(255, 255, 255, 0.04) 0.8px, transparent 0.8px);
-  background-size: 30px 30px, 15px 15px;
-  background-position: 0 0, 7.5px 7.5px;
-  mask-image: radial-gradient(circle at 75% 50%, black 20%, transparent 80%);
-  -webkit-mask-image: radial-gradient(circle at 75% 50%, black 20%, transparent 80%);
   z-index: 2;
   pointer-events: none;
-  opacity: 0.85;
+  overflow: hidden;
 }
 
+.hero-grid-bg::before {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  transform: translateX(-50%) perspective(600px) rotateX(55deg);
+  transform-origin: center bottom;
+  width: 220%;
+  height: 180%;
+  background-image:
+    radial-gradient(circle, rgba(230, 47, 16, 0.55) 1.2px, transparent 1.2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.08) 0.7px, transparent 0.7px);
+  background-size: 38px 38px, 19px 19px;
+  background-position: 0 0, 9.5px 9.5px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 100%, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 100%, black 30%, transparent 80%);
+  animation: gridDrift 14s linear infinite;
+  opacity: 0.75;
+}
+
+/* Layer 2: Flat dot field on top half (sky dots) */
+.hero-grid-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(230, 47, 16, 0.18) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255,255,255,0.04) 0.6px, transparent 0.6px);
+  background-size: 44px 44px, 22px 22px;
+  background-position: 0 0, 11px 11px;
+  mask-image: radial-gradient(ellipse 90% 60% at 50% 20%, black 5%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 20%, black 5%, transparent 75%);
+  opacity: 0.6;
+}
+
+@keyframes gridDrift {
+  0%   { background-position: 0 0, 9.5px 9.5px; }
+  100% { background-position: 0 38px, 9.5px 47.5px; }
+}
+
+/* Glow blob — reactive to slide colour via inline style */
 .hero-glow-bg {
   position: absolute;
   right: -10%;
-  top: 30%;
-  width: 60vw;
-  height: 60vw;
+  top: 25%;
+  width: 65vw;
+  height: 65vw;
   background: radial-gradient(circle, rgba(230, 47, 16, 0.22) 0%, rgba(230, 47, 16, 0.06) 45%, transparent 70%);
-  filter: blur(60px);
+  filter: blur(70px);
   z-index: 1;
   pointer-events: none;
+}
+
+/* Floating particle dots */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-particles span {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(230, 47, 16, 0.7);
+  box-shadow: 0 0 8px rgba(230, 47, 16, 0.6);
+  animation: floatParticle linear infinite;
+  opacity: 0;
+}
+
+.hero-particles span:nth-child(1)  { width:3px;  height:3px;  left:8%;   animation-duration:9s;  animation-delay:0s; }
+.hero-particles span:nth-child(2)  { width:2px;  height:2px;  left:18%;  animation-duration:13s; animation-delay:2s; }
+.hero-particles span:nth-child(3)  { width:4px;  height:4px;  left:30%;  animation-duration:11s; animation-delay:0.5s; }
+.hero-particles span:nth-child(4)  { width:2px;  height:2px;  left:44%;  animation-duration:8s;  animation-delay:3s; }
+.hero-particles span:nth-child(5)  { width:3px;  height:3px;  left:58%;  animation-duration:14s; animation-delay:1s; background:rgba(255,200,100,0.6); }
+.hero-particles span:nth-child(6)  { width:2px;  height:2px;  left:70%;  animation-duration:10s; animation-delay:4s; }
+.hero-particles span:nth-child(7)  { width:5px;  height:5px;  left:80%;  animation-duration:12s; animation-delay:0s; }
+.hero-particles span:nth-child(8)  { width:2px;  height:2px;  left:90%;  animation-duration:7s;  animation-delay:2s; }
+.hero-particles span:nth-child(9)  { width:3px;  height:3px;  left:25%;  animation-duration:15s; animation-delay:5s; }
+.hero-particles span:nth-child(10) { width:2px;  height:2px;  left:65%;  animation-duration:9s;  animation-delay:1.5s; background:rgba(255,200,100,0.5); }
+
+@keyframes floatParticle {
+  0%   { bottom: -5%;  opacity: 0;   transform: translateX(0) scale(1); }
+  10%  { opacity: 0.9; }
+  80%  { opacity: 0.6; }
+  100% { bottom: 105%; opacity: 0;   transform: translateX(30px) scale(0.4); }
 }
 
 .hero-title-overlay {
@@ -2030,9 +2103,9 @@ input:focus, select:focus, textarea:focus {
 /* Rotated Sticky Vertical CTA Side-Tabs */
 .side-tab-left, .side-tab-right {
   position: fixed;
-  top: 60%;
-  z-index: 9999;
-  display: flex;
+  top: 67%; /* Slightly lowered position as requested */
+  z-index: 99999 !important; /* Extremely high z-index to ensure it sits above all overlays */
+  display: flex !important; /* Explicitly forced flex */
   align-items: center;
   gap: 10px;
   padding: 14px 28px;
@@ -2043,8 +2116,8 @@ input:focus, select:focus, textarea:focus {
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: #ffffff !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -2060,7 +2133,7 @@ input:focus, select:focus, textarea:focus {
 .side-tab-left:hover {
   transform: translateY(-50%) rotate(-90deg) translate(0, 8px); /* Slide out towards right */
   background: #ff3b1e;
-  box-shadow: 0 15px 35px rgba(230, 47, 16, 0.4);
+  box-shadow: 0 15px 35px rgba(230, 47, 16, 0.5);
 }
 
 .side-tab-right {
@@ -2075,16 +2148,19 @@ input:focus, select:focus, textarea:focus {
 .side-tab-right:hover {
   transform: translateY(-50%) rotate(90deg) translate(0, 8px); /* Slide out towards left */
   background: #ff3b1e;
-  box-shadow: 0 15px 35px rgba(230, 47, 16, 0.4);
+  box-shadow: 0 15px 35px rgba(230, 47, 16, 0.5);
 }
 
-/* Mobile — keep visible but scale down */
+/* Mobile — keep visible but scale down and sit flat against edges */
 @media (max-width: 768px) {
   .side-tab-left, .side-tab-right {
-    padding: 10px 18px;
-    font-size: 0.65rem;
+    top: 67%; /* Explicitly set for mobile too */
+    padding: 10px 20px;
+    font-size: 0.68rem;
     letter-spacing: 1px;
     gap: 6px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    display: flex !important; /* Force visibility on mobile corners */
   }
 }
 
@@ -2333,26 +2409,26 @@ input:focus, select:focus, textarea:focus {
   position: relative;
   width: 104px;
   height: 38px;
-  /* Solid dark background so it always stands out on the navbar */
-  background: rgba(10, 10, 14, 0.75);
-  border: 1.5px solid rgba(230, 47, 16, 0.55);
+  /* 100% solid, fully opaque premium dark background so it NEVER blends with light backgrounds */
+  background: #0f0f14 !important;
+  border: 2px solid #e62f10;
   border-radius: 50px;
   overflow: hidden;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255,255,255,0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.05);
 }
 
 .lang-toggle-btn:hover .lang-toggle-track {
-  border-color: rgba(230, 47, 16, 0.9);
-  box-shadow: 0 4px 20px rgba(230, 47, 16, 0.25), inset 0 1px 0 rgba(255,255,255,0.05);
-  background: rgba(10, 10, 14, 0.9);
+  border-color: #ff3b1e;
+  box-shadow: 0 6px 20px rgba(230, 47, 16, 0.35), inset 0 1px 0 rgba(255,255,255,0.05);
+  background: #08080c !important;
 }
 
 .lang-toggle-thumb {
   position: absolute;
   top: 3px;
   width: 48px;
-  height: 30px;
+  height: 28px; /* Adjusted to fit perfectly inside 2px border */
   background: linear-gradient(135deg, #e62f10 0%, #c0250c 100%);
   border-radius: 50px;
   transition: left 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -2365,7 +2441,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .lang-toggle-thumb.thumb-right {
-  left: 51px;
+  left: 49px; /* Adjusted to fit inside 2px border */
 }
 
 .lang-label {
@@ -2377,11 +2453,11 @@ input:focus, select:focus, textarea:focus {
   font-size: 0.73rem;
   font-weight: 800;
   letter-spacing: 0.6px;
-  /* Clearly visible muted-white for the inactive side */
-  color: rgba(255, 255, 255, 0.55);
+  /* Solid grey for inactive side - never washes out on solid dark track */
+  color: #8e8e93;
   transition: color 0.3s ease;
   pointer-events: none;
-  line-height: 38px;
+  line-height: 34px; /* Adjusted for centered alignment */
 }
 
 .lang-label-active {
@@ -2398,16 +2474,16 @@ input:focus, select:focus, textarea:focus {
 
 .lang-toggle-compact .lang-toggle-thumb {
   width: 42px;
-  height: 26px;
+  height: 24px; /* Adjusted to fit inside border */
   top: 3px;
 }
 
 .lang-toggle-compact .lang-toggle-thumb.thumb-right {
-  left: 46px;
+  left: 43px; /* Adjusted to fit inside border */
 }
 
 .lang-toggle-compact .lang-label {
   font-size: 0.67rem;
-  line-height: 34px;
+  line-height: 30px; /* Adjusted to fit perfectly */
 }
 
