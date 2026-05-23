@@ -23,11 +23,14 @@
   box-sizing: border-box;
 }
 
+html,
 body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-dark);
   color: var(--text-main);
-  overflow-x: hidden;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }

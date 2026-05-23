@@ -5,7 +5,7 @@ import { Flame } from 'lucide-react';
 const Preloader = () => {
   React.useEffect(() => {
     document.body.style.overflow = 'hidden';
-    return () => { document.body.style.overflow = 'auto'; };
+    return () => { document.body.style.overflow = ''; };
   }, []);
 
   return (
@@ -19,8 +19,10 @@ const Preloader = () => {
         position: 'fixed',
         top: 0,
         left: 0,
-        width: '100vw',
-        height: '100vh',
+        right: 0,
+        bottom: 0,
+        width: '100%',
+        height: '100%',
         background: '#ffffff',
         display: 'flex',
         flexDirection: 'column',
