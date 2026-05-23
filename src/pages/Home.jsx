@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, Zap, Award, FileDown } from 'lucide-react';
+import { Shield, Zap, Award, Star, Quote } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useInView } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
@@ -307,6 +307,25 @@ const Home = () => {
       </section>
 
       <div className="post-hero-content">
+
+        {/* Authorised Partners Strip — right below hero */}
+        <section className="section-padding bg-surface" style={{ padding: '50px 0' }}>
+          <div className="section-header text-center mb-40" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <span className="badge">{t('home_partners_badge')}</span>
+            <h2 className="section-title-sm">{t('home_partners_title')} <span className="accent-text">{t('home_partners_title_span')}</span></h2>
+          </div>
+          <div className="partner-carousel-wrapper">
+            <motion.div
+              className="partner-carousel-track"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ duration: 45, ease: "linear", repeat: Infinity }}
+            >
+              <div className="partner-strip"><img src="/partners_strip.png" alt="Authorised Partner Brands" /></div>
+              <div className="partner-strip"><img src="/partners_strip.png" alt="Authorised Partner Brands" /></div>
+            </motion.div>
+          </div>
+        </section>
+
         <CategoryCarousel />
 
         <section className="section-padding">
@@ -318,8 +337,8 @@ const Home = () => {
               transition={{ duration: 1 }}
               viewport={{ once: true }}
             >
-              <div className="logo-display-circular glass-card">
-                <img src="/logo.png" alt="Varatha Vinayagar Business Logo" />
+              <div className="glass-card about-main-card overflow-hidden">
+                <img src="/indian_team.png" alt="Varatha Vinayagar Safety & Fire — Indian Workers" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
             </motion.div>
 
@@ -413,6 +432,52 @@ const Home = () => {
             </div>
           </div>
         </section>
+
+        {/* Testimonials Section */}
+        <section className="section-padding">
+          <div className="container">
+            <div className="section-header text-center">
+              <span className="badge">{t('home_testimonials_badge')}</span>
+              <h2 className="section-title">{t('home_testimonials_title')} <span className="accent-text">{t('home_testimonials_title_span')}</span> {t('home_testimonials_title_end')}</h2>
+            </div>
+            <div className="testimonials-grid mt-50">
+              {[
+                { name: 'Rajesh Kumar', role: 'Safety Manager, Steel Plant', text: 'Varatha Vinayagar has been our go-to partner for fire extinguisher refilling for over 5 years. Always on time, always certified. Highly recommended!', stars: 5 },
+                { name: 'Meena Sundaram', role: 'Factory Owner, Textile Industry', text: 'The team serviced all 80 of our extinguishers in a single day with zero disruption to operations. Exceptional speed and professionalism.', stars: 5 },
+                { name: 'Arjun Pillai', role: 'HSE Officer, Chemical Plant', text: 'Their high-pressure testing and AMC services are thorough and well-documented. Compliance audits have never been easier thanks to VV Safety.', stars: 5 },
+                { name: 'Priya Nataraj', role: 'Principal, Educational Institution', text: 'Quick response, quality products, and staff who truly understand safety. Our campus is fully protected because of Varatha Vinayagar.', stars: 5 },
+                { name: 'Siva Raman', role: 'Procurement Head, Construction Group', text: 'From hydrant systems to PPE equipment — complete one-stop procurement. Competitive pricing with no compromise on product quality.', stars: 5 },
+                { name: 'Deepa Krishnaswamy', role: 'Admin Manager, Government Hospital', text: 'Installed all fire alarm panels across 3 buildings flawlessly. The team is knowledgeable, courteous, and completed ahead of schedule.', stars: 5 },
+              ].map((review, i) => (
+                <motion.div
+                  key={i}
+                  className="testimonial-card glass-card"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.08 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -6 }}
+                >
+                  <Quote size={28} className="testimonial-quote-icon" />
+                  <p className="testimonial-text">"{review.text}"</p>
+                  <div className="testimonial-stars">
+                    {[...Array(review.stars)].map((_, s) => (
+                      <Star key={s} size={14} fill="#facc15" color="#facc15" />
+                    ))}
+                  </div>
+                  <div className="testimonial-author">
+                    <div className="testimonial-avatar">{review.name.charAt(0)}</div>
+                    <div>
+                      <div className="testimonial-name">{review.name}</div>
+                      <div className="testimonial-role">{review.role}</div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
       </div>
     </div>
   );

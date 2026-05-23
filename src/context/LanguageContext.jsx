@@ -98,6 +98,17 @@ export const translations = {
     why_certified: 'Certified Handling',
     why_certified_desc: 'Expert technicians with decades of collective experience.',
 
+    // Home Testimonials
+    home_testimonials_badge: 'Client Reviews',
+    home_testimonials_title: 'Trusted by',
+    home_testimonials_title_span: 'Hundreds',
+    home_testimonials_title_end: 'Across Tamil Nadu',
+
+    // Home Partners
+    home_partners_badge: 'Authorised Partners',
+    home_partners_title: 'Trusted Brands &',
+    home_partners_title_span: 'Certifications',
+
     // Services
     services_badge: 'Our Expertise',
     services_h1: 'Complete',
@@ -330,6 +341,18 @@ export const translations = {
     why_compliance: 'தர இணக்கம்',
     why_compliance_desc: 'தொழில்துறை பாதுகாப்பு தரங்களால் உரிமம் பெற்றது.',
     why_support: '24/7 ஆதரவு',
+
+    // Home Testimonials
+    home_testimonials_badge: 'வாடிக்கையாளர் கருத்துகள்',
+    home_testimonials_title: 'நூற்றுக்கணக்கானோர்',
+    home_testimonials_title_span: 'நம்பும்',
+    home_testimonials_title_end: 'தமிழ்நாடு முழுவதும்',
+
+    // Home Partners
+    home_partners_badge: 'அங்கீகரிக்கப்பட்ட கூட்டாளிகள்',
+    home_partners_title: 'நம்பகமான பிராண்டுகள் &',
+    home_partners_title_span: 'சான்றிதழ்கள்',
+
     why_support_desc: 'அனைத்து பாதுகாப்பு தேவைகளுக்கும் தொடர்ச்சியான அவசர கால ஆதரவு.',
     why_certified: 'சான்றளிக்கப்பட்ட கையாளுதல்',
     why_certified_desc: 'பல தசாப்தங்கள் அனுபவம் கொண்ட நிபுணர் தொழில்நுட்பவியலாளர்கள்.',
