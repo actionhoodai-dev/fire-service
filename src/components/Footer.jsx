@@ -80,6 +80,12 @@ const Footer = () => {
                 </div>
                 <span>+91 99446 77149</span>
               </a>
+              <a href="tel:+917200763674" className="footer-contact-item">
+                <div className="footer-contact-icon">
+                  <Phone size={18} />
+                </div>
+                <span>+91 72007 63674</span>
+              </a>
               <a href="mailto:varathavinayagar1989@gmail.com" className="footer-contact-item">
                 <div className="footer-contact-icon">
                   <Mail size={18} />
