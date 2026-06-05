@@ -111,7 +111,7 @@ const Products = () => {
                         </div>
                       )}
                     </div>
-                    <div className="product-details-content bg-surface" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+                    <div className="product-details-content" style={{ flex: 1, display: 'flex', flexDirection: 'column', background: '#ffffff', borderTop: '1px solid #e2e4e9' }}>
                       <h3 style={{ fontSize: '1.4rem' }}>{product.name}</h3>
                       <p className="text-muted mt-10 mb-20">{product.desc}</p>
                       <ul className="product-specs mt-10 mb-20">

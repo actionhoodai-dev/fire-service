@@ -1240,7 +1240,10 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  background: #ffffff;
+  box-shadow: none;
+  border: 1.5px solid #e2e4e9;
+  border-radius: 16px;
 }
 
 .product-visual-large {
@@ -1801,14 +1804,15 @@ input:focus, select:focus, textarea:focus {
 
 .product-card-detailed {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: none;
+  border: 1.5px solid #e2e4e9;
+  background: #ffffff;
 }
 
 .product-card-detailed:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.06);
-  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-color: #d0d3d9;
 }
 
 @media (max-width: 768px) {
