@@ -7,9 +7,9 @@
   --bg-dark: #fcfdfe; /* Pure Light Background */
   --bg-card: #ffffff; /* Card backgrounds are pure white */
   --bg-surface: #f5f6f9; /* Sleek light-grey panels */
-  --glass: rgba(255, 255, 255, 0.78); /* Premium white glass backing */
-  --glass-border: rgba(0, 0, 0, 0.08); /* Subtle low-contrast border */
-  --glass-glow: rgba(230, 47, 16, 0.05);
+  --glass: rgba(255, 255, 255, 1); /* Pure white glass backing */
+  --glass-border: rgba(0, 0, 0, 0.06); /* Subtle low-contrast border */
+  --glass-glow: rgba(230, 47, 16, 0.03);
   --text-main: #1e293b; /* Dark slate-charcoal text */
   --text-muted: #64748b; /* Muted slate text */
   --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -669,9 +669,9 @@ body {
 }
 
 .glass-card:hover {
-  border-color: var(--primary);
-  background: var(--glass);
-  box-shadow: 0 15px 40px rgba(230, 47, 16, 0.08);
+  border-color: rgba(0, 0, 0, 0.12);
+  background: #ffffff;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
   transform: translateY(-5px);
 }
 
@@ -1244,7 +1244,7 @@ body {
 
 .product-visual-large {
   height: 350px;
-  background: radial-gradient(circle at center, rgba(0,0,0,0.05), transparent);
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1254,7 +1254,7 @@ body {
   max-width: 85%;
   max-height: 85%;
   object-fit: contain;
-  filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.3));
+  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.08));
 }
 
 .product-details-content {
@@ -1805,8 +1805,8 @@ input:focus, select:focus, textarea:focus {
 
 .product-card-detailed:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 35px rgba(230, 47, 16, 0.06);
-  border-color: rgba(230, 47, 16, 0.25);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.12);
 }
 
 @media (max-width: 768px) {
@@ -2294,8 +2294,8 @@ input:focus, select:focus, textarea:focus {
   flex-direction: column;
   height: 100%;
   border-radius: 28px;
-  background: var(--glass);
-  border: 1px solid var(--glass-border);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
@@ -2303,8 +2303,8 @@ input:focus, select:focus, textarea:focus {
 
 .service-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(230, 47, 16, 0.08);
-  border-color: rgba(230, 47, 16, 0.2);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 .service-image-wrapper {
@@ -2313,18 +2313,18 @@ input:focus, select:focus, textarea:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(230, 47, 16, 0.02);
+  background: #ffffff;
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-  border: 1px solid rgba(230, 47, 16, 0.05);
+  border: none;
   margin-bottom: 30px;
   transition: all 0.4s ease;
 }
 
 .service-card:hover .service-image-wrapper {
-  background: rgba(230, 47, 16, 0.04);
-  border-color: rgba(230, 47, 16, 0.12);
+  background: #ffffff;
+  border-color: transparent;
 }
 
 .service-card-img {
@@ -2337,7 +2337,7 @@ input:focus, select:focus, textarea:focus {
 
 .service-card:hover .service-card-img {
   transform: translateY(-8px) scale(1.05);
-  filter: drop-shadow(0 20px 40px rgba(230, 47, 16, 0.2));
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
 }
 
 .service-icon-box {
