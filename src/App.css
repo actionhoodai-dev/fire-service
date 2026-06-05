@@ -1064,13 +1064,14 @@ body {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 80px; /* Spacious gap for better readability */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
 }
 
 
 .service-card {
-  padding: 45px;
+  padding: 0;
+  overflow: hidden;
 }
 
 .service-icon {
@@ -1243,18 +1244,19 @@ body {
 }
 
 .product-visual-large {
-  height: 350px;
+  height: auto;
   background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
 .product-img-full {
-  max-width: 85%;
-  max-height: 85%;
+  width: 100%;
+  max-height: 280px;
   object-fit: contain;
-  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.08));
+  filter: none;
 }
 
 .product-details-content {
@@ -2289,14 +2291,14 @@ input:focus, select:focus, textarea:focus {
 
 /* Services Page Cards Re-engineering */
 .service-card {
-  padding: 40px;
+  padding: 0;
   display: flex;
   flex-direction: column;
   height: 100%;
-  border-radius: 28px;
+  border-radius: 20px;
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
 }
@@ -2309,16 +2311,18 @@ input:focus, select:focus, textarea:focus {
 
 .service-image-wrapper {
   width: 100%;
-  height: 220px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #ffffff;
-  border-radius: 20px;
+  border-radius: 0;
   overflow: hidden;
   position: relative;
   border: none;
-  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  margin-bottom: 0;
+  padding: 20px;
   transition: all 0.4s ease;
 }
 
@@ -2328,10 +2332,10 @@ input:focus, select:focus, textarea:focus {
 }
 
 .service-card-img {
-  max-width: 85%;
-  max-height: 85%;
+  width: 100%;
+  max-height: 220px;
   object-fit: contain;
-  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.12));
+  filter: none;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 

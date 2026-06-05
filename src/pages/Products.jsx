@@ -104,7 +104,7 @@ const Products = () => {
                     <div className="product-visual-large relative">
                       <span className="product-category-badge" style={{position: 'absolute', top: '20px', left: '20px', zIndex: 10}}>{product.category}</span>
                       {product.img ? (
-                        <img src={product.img} alt={product.name} className="product-img-full" style={{ filter: 'drop-shadow(0 0 20px rgba(230, 47, 16, 0.3))' }} />
+                        <img src={product.img} alt={product.name} className="product-img-full" />
                       ) : (
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', width: '100%', opacity: 0.5, color: 'var(--primary)' }}>
                           {product.icon}

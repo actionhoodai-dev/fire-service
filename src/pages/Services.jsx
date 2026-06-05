@@ -46,11 +46,13 @@ const Services = () => {
                 <div className="service-image-wrapper">
                   <img src={service.img} alt={service.title} className="service-card-img" />
                 </div>
-                <div className="service-icon-box">
-                  {service.icon}
+                <div style={{ padding: '25px 30px 30px' }}>
+                  <div className="service-icon-box">
+                    {service.icon}
+                  </div>
+                  <h3 className="mt-15">{service.title}</h3>
+                  <p className="mt-10 text-muted">{service.desc}</p>
                 </div>
-                <h3 className="mt-20">{service.title}</h3>
-                <p className="mt-10 text-muted">{service.desc}</p>
               </Tilt>
             </motion.div>
           ))}
