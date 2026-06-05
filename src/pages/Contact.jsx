@@ -92,9 +92,14 @@ const Contact = () => {
               <div className="contact-box glass-card mb-20">
                 <Mail className="accent-text mb-10" />
                 <h3>{t('contact_email')}</h3>
-                <a href="mailto:varathavinayagar1989@gmail.com" className="btn-outline mt-10" style={{ justifyContent: 'center', width: '100%' }}>
-                  <Mail size={16} /> {t('contact_email_btn')}
-                </a>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '10px' }}>
+                  <a href="mailto:varathavinayagar1989@gmail.com" className="btn-outline" style={{ justifyContent: 'center', width: '100%' }}>
+                    <Mail size={16} /> varathavinayagar1989
+                  </a>
+                  <a href="mailto:essakirajaiyaz@gmail.com" className="btn-outline" style={{ justifyContent: 'center', width: '100%' }}>
+                    <Mail size={16} /> essakirajaiyaz
+                  </a>
+                </div>
               </div>
 
               <div className="contact-box glass-card">

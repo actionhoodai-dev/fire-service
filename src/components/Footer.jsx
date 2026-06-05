@@ -92,6 +92,12 @@ const Footer = () => {
                 </div>
                 <span style={{ fontSize: '0.85rem' }}>varathavinayagar1989@gmail.com</span>
               </a>
+              <a href="mailto:essakirajaiyaz@gmail.com" className="footer-contact-item">
+                <div className="footer-contact-icon">
+                  <Mail size={18} />
+                </div>
+                <span style={{ fontSize: '0.85rem' }}>essakirajaiyaz@gmail.com</span>
+              </a>
               <a 
                 href="https://www.google.com/maps/search/?api=1&query=112Q%2F3%2C+Muthukrishnapuram+2nd+Street%2C+Tuticorin" 
                 target="_blank" 
