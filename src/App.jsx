@@ -8,6 +8,7 @@ import Preloader from './components/Preloader';
 import PageTransition from './components/PageTransition';
 import FloatingActions from './components/FloatingActions';
 import ChatAssistant from './components/ChatAssistant';
+import PromoBanner from './components/PromoBanner';
 import { LanguageProvider } from './context/LanguageContext';
 
 import Home from './pages/Home';
@@ -64,6 +65,7 @@ function App() {
           </main>
           <ChatAssistant />
           <FloatingActions />
+          {!loading && <PromoBanner />}
           <Footer />
         </div>
       </Router>
