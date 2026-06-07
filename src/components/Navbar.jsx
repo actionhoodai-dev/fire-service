@@ -174,43 +174,45 @@ const Navbar = () => {
               onMouseEnter={() => setIsProductsHovered(true)}
               onMouseLeave={() => setIsProductsHovered(false)}
             >
-              <div className="mega-menu-grid">
-                {megaMenuData.map((col, idx) => (
-                  <div key={idx} className="mega-menu-col">
-                    <Link 
-                      to="/products" 
-                      state={{ filter: col.category }}
-                      className="mega-menu-col-title"
-                      onClick={() => setIsProductsHovered(false)}
-                    >
-                      {col.category}
-                    </Link>
-                    <div className="mega-menu-items">
-                      {col.products.map((prod) => (
-                        <Link 
-                          key={prod} 
-                          to="/products" 
-                          state={{ filter: col.category }}
-                          className="mega-menu-item"
-                          onClick={() => setIsProductsHovered(false)}
-                        >
-                          <ChevronRight size={10} className="mega-item-icon" />
-                          <span>{prod}</span>
-                        </Link>
-                      ))}
+              <div className="mega-menu-content-wrapper">
+                <div className="mega-menu-grid">
+                  {megaMenuData.map((col, idx) => (
+                    <div key={idx} className="mega-menu-col">
+                      <Link 
+                        to="/products" 
+                        state={{ filter: col.category }}
+                        className="mega-menu-col-title"
+                        onClick={() => setIsProductsHovered(false)}
+                      >
+                        {col.category}
+                      </Link>
+                      <div className="mega-menu-items">
+                        {col.products.map((prod) => (
+                          <Link 
+                            key={prod} 
+                            to="/products" 
+                            state={{ filter: col.category }}
+                            className="mega-menu-item"
+                            onClick={() => setIsProductsHovered(false)}
+                          >
+                            <ChevronRight size={10} className="mega-item-icon" />
+                            <span>{prod}</span>
+                          </Link>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-              
-              <div className="mega-menu-footer">
-                <div className="mega-footer-content">
-                  <span className="badge">{t('mega_footer_badge')}</span>
-                  <p>{t('mega_footer_desc')}</p>
+                  ))}
                 </div>
-                <Link to="/contact" className="btn-primary-sm" onClick={() => setIsProductsHovered(false)}>
-                  {t('mega_footer_btn')}
-                </Link>
+                
+                <div className="mega-menu-footer">
+                  <div className="mega-footer-content">
+                    <span className="badge">{t('mega_footer_badge')}</span>
+                    <p>{t('mega_footer_desc')}</p>
+                  </div>
+                  <Link to="/contact" className="btn-primary-sm" onClick={() => setIsProductsHovered(false)}>
+                    {t('mega_footer_btn')}
+                  </Link>
+                </div>
               </div>
             </motion.div>
           )}
