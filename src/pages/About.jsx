@@ -128,11 +128,12 @@ const About = () => {
  
       {/* Our Infrastructure Section */}
       <section className="section-padding bg-surface">
-        <div className="container grid-2">
+        <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
           <motion.div 
             className="about-content-side"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            style={{ maxWidth: '800px', width: '100%' }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
@@ -153,18 +154,6 @@ const About = () => {
                   <CheckCircle size={18} className="accent-text" />
                   <span>{t('infra_check3')}</span>
                </div>
-            </div>
-          </motion.div>
- 
-          <motion.div 
-            className="about-visual-box relative"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-          >
-            <div className="glass-card about-main-card overflow-hidden">
-               <img src="/pressure_test.png" alt="Certified Hydrostatic Pressure Testing Setup" />
             </div>
           </motion.div>
         </div>
