@@ -37,7 +37,7 @@ const Preloader = () => {
         animate={{ scale: [0.8, 1.2, 1], opacity: 1 }}
         transition={{ duration: 1, repeat: Infinity, repeatType: 'reverse' }}
       >
-        <Flame size={80} color="#ff4d00" strokeWidth={1.5} style={{ filter: 'drop-shadow(0 0 15px rgba(255, 77, 0, 0.5))' }} />
+        <Flame size={80} color="#ff4d00" strokeWidth={1.5} />
       </motion.div>
       <motion.p
         className="mt-20"

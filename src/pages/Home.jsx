@@ -214,7 +214,7 @@ const Home = () => {
                   </div>
                   
                   <h1 className="hero-business-title">
-                    {activeSlide.title} <span className="glow-text" style={{ textShadow: `0 0 35px ${activeSlide.glowColor}`, color: activeSlide.themeColor }}>{activeSlide.accent}</span>
+                    {activeSlide.title} <span className="glow-text" style={{ color: activeSlide.themeColor }}>{activeSlide.accent}</span>
                   </h1>
                   
                   <p className="hero-desc">
@@ -229,7 +229,7 @@ const Home = () => {
                       style={{ 
                         background: activeSlide.themeColor, 
                         borderColor: activeSlide.themeColor,
-                        boxShadow: `0 8px 25px ${activeSlide.glowColor}`
+                        boxShadow: '0 8px 25px rgba(0, 0, 0, 0.08)'
                       }}
                     >
                       {activeSlide.cta1Text}
@@ -270,7 +270,7 @@ const Home = () => {
                     alt={activeSlide.alt} 
                     className="hero-extinguisher-img" 
                     style={{ 
-                      filter: `drop-shadow(0 25px 50px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 50px ${activeSlide.glowColor})`
+                      filter: 'drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15))'
                     }}
                   />
                 </motion.div>

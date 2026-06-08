@@ -216,8 +216,7 @@ const DottedHeroBackground = ({ themeColor = 'var(--primary)' }) => {
         height: '100%',
         zIndex: 2,
         pointerEvents: 'none',
-        mixBlendMode: 'screen',
-        opacity: 0.85
+        opacity: 0.15
       }}
     />
   );
