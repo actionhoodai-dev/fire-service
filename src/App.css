@@ -1014,16 +1014,17 @@ body {
 
 /* About Page Specific */
 .about-main-card {
-  height: 500px;
+  height: auto;
   position: relative;
   overflow: hidden;
 }
 
 .about-main-card img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.8;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  opacity: 1;
 }
 
 /* Homepage About Logo Specific */
@@ -1420,12 +1421,19 @@ input:focus, select:focus, textarea:focus {
   box-shadow: 0 4px 10px rgba(250, 204, 21, 0.2); /* yellow glow shadow */
 }
 
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
 /* Mobile & Tablet Responsiveness */
 @media (max-width: 1024px) {
   .contact-grid { grid-template-columns: 1fr; }
   .footer-content { grid-template-columns: 1fr 1fr; gap: 40px; }
   .grid-2 { grid-template-columns: 1fr; gap: 40px; }
-  .about-visual-box { min-height: 400px; }
+  .about-visual-box { min-height: auto; }
   .process-cards { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 }
 

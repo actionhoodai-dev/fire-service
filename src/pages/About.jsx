@@ -52,7 +52,7 @@ const About = () => {
             transition={{ duration: 1 }}
           >
             <div className="glass-card about-main-card overflow-hidden">
-               <img src="/indian_team.png" alt="Indian Safety Engineers Team" />
+               <img src="/infrastructure.png" alt="Fire Extinguisher, Hydrant, and Alarm Products Showcase" />
             </div>
           </motion.div>
 
@@ -88,11 +88,11 @@ const About = () => {
           </motion.div>
         </div>
       </section>
-
+ 
       <section className="section-padding bg-surface" style={{ padding: '60px 0' }}>
          <PartnerCarousel />
       </section>
-
+ 
       <section className="section-padding">
         <div className="container">
           <div className="values-grid">
@@ -104,7 +104,7 @@ const About = () => {
                 {visionItems.map((item, i) => <li key={i}>{item}</li>)}
               </ul>
             </motion.div>
-
+ 
             <motion.div className="glass-card value-card" whileHover={{ y: -5 }}>
               <div className="value-icon"><Rocket size={30} /></div>
               <h3>{t('about_mission_title')}</h3>
@@ -113,7 +113,7 @@ const About = () => {
                 {missionItems.map((item, i) => <li key={i}>{item}</li>)}
               </ul>
             </motion.div>
-
+ 
             <motion.div className="glass-card value-card" whileHover={{ y: -5 }}>
               <div className="value-icon"><ThumbsUp size={30} /></div>
               <h3>{t('about_quality_title')}</h3>
@@ -125,7 +125,7 @@ const About = () => {
           </div>
         </div>
       </section>
-
+ 
       {/* Our Infrastructure Section */}
       <section className="section-padding bg-surface">
         <div className="container grid-2">
@@ -155,7 +155,7 @@ const About = () => {
                </div>
             </div>
           </motion.div>
-
+ 
           <motion.div 
             className="about-visual-box relative"
             initial={{ opacity: 0, x: 50 }}
@@ -164,7 +164,7 @@ const About = () => {
             viewport={{ once: true }}
           >
             <div className="glass-card about-main-card overflow-hidden">
-               <img src="/infrastructure.png" alt="Varatha Vinayagar Industrial Refilling Infrastructure Factory drone view" />
+               <img src="/pressure_test.png" alt="Certified Hydrostatic Pressure Testing Setup" />
             </div>
           </motion.div>
         </div>
