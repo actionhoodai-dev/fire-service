@@ -244,7 +244,7 @@ export const translations = {
     contact_send: 'Send Message',
 
     // Footer
-    footer_brand_sub: 'SAFETY & FIRE PROTOCOL',
+    footer_brand_sub: 'SAFETY & FIRE',
     footer_motto: '"Never Trust Fire! Trust Varatha Vinayagar Safety & Fire - Your Structural Integrity Guard."',
     footer_gstin_label: 'GSTIN REGISTERED',
     footer_nav: 'Navigation',
@@ -495,7 +495,7 @@ export const translations = {
     contact_send: 'செய்தி அனுப்பு',
 
     // Footer
-    footer_brand_sub: 'பாதுகாப்பு & தீ நெறிமுறை',
+    footer_brand_sub: 'பாதுகாப்பு & தீ',
     footer_motto: '"தீயை நம்பாதீர்கள்! வரத விநாயகர் பாதுகாப்பை நம்புங்கள் - உங்கள் கட்டமைப்பு நலன் காவலர்."',
     footer_gstin_label: 'GSTIN பதிவு',
     footer_nav: 'வழிசெலுத்தல்',
