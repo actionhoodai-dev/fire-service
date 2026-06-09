@@ -38,15 +38,16 @@ const CategoryCarousel = () => {
   const { t } = useLanguage();
   
   const categoryMapping = [
-    { id: 1, name: "Fire Extinguishers", nameKey: 'cat_fire_extinguishers', productName: "Powder Type (ABC)" },
-    { id: 2, name: "Fire Alarm Systems", nameKey: 'cat_fire_alarm', productName: "Smoke Detectors" },
-    { id: 3, name: "Hydrant & Fire Fighting", nameKey: 'cat_hydrant', productName: "Fire Hydrants (2-way / 4-way)" },
-    { id: 4, name: "Safety Products (PPE)", nameKey: 'cat_ppe', productName: "Head Protection" },
-    { id: 5, name: "Road Safety Products", nameKey: 'cat_road_safety', productName: "Traffic Cones" },
+    { id: 1, name: "Fire Extinguishers", nameKey: 'cat_fire_extinguishers', img: "/cat_extinguishers.jpg" },
+    { id: 2, name: "Fire Alarm Systems", nameKey: 'cat_fire_alarm', img: "/cat_alarms.jpg" },
+    { id: 3, name: "Hydrant & Fire Fighting", nameKey: 'cat_hydrant', img: "/cat_hydrants.jpg" },
+    { id: 4, name: "Safety Products (PPE)", nameKey: 'cat_ppe', img: "/cat_ppe.jpg" },
+    { id: 5, name: "Road Safety Products", nameKey: 'cat_road_safety', img: "/cat_road_safety.jpg" },
     { id: 6, name: "Fire Suppression", nameKey: 'cat_suppression', productName: "Clean Agent (FE-36)" }
   ];
 
   const categories = categoryMapping.map(cat => {
+    if (cat.img) return cat;
     const matchedProduct = productsData.find(p => p.name === cat.productName);
     return {
       ...cat,
