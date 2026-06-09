@@ -73,7 +73,7 @@ const Products = () => {
                     style={{ animationDelay: `${i * 0.1}s` }}
                   >
                     <div className="product-visual-large relative">
-                      <span className="product-category-badge" style={{position: 'absolute', top: '20px', left: '20px', zIndex: 10}}>{product.category}</span>
+                      <span className="product-category-badge" style={{position: 'absolute', top: '20px', left: '20px', zIndex: 10}}>{getCatLabel(product.category)}</span>
                       {product.img ? (
                         <img src={product.img} alt={product.name} className="product-img-full" />
                       ) : (
