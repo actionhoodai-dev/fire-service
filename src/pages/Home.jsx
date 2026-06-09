@@ -202,12 +202,6 @@ const Home = () => {
           <div className="hero-container container">
             {/* Left Text Content Column */}
             <div className="hero-text-content">
-              {/* Premium ISO Certification Badge */}
-              <div className="hero-iso-badge-wrapper" style={{ marginBottom: '15px' }}>
-                <span className="badge" style={{ background: 'rgba(255, 77, 0, 0.08)', borderColor: 'rgba(255, 77, 0, 0.25)', color: '#ff4d00', letterSpacing: '1px', textTransform: 'uppercase', fontSize: '0.72rem', fontWeight: '800', margin: 0 }}>
-                  {t('hero_iso_certification')}
-                </span>
-              </div>
               <AnimatePresence mode="wait">
                 <motion.div 
                   key={currentSlide}
