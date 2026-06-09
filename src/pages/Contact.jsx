@@ -58,7 +58,7 @@ const Contact = () => {
           <div className="contact-hero-image-wrapper">
             <div className="contact-hero-image-glow" />
             <img 
-              src="/contact_hero.png" 
+              src="/contact_hero_new.png" 
               alt="VV Safety Command Center" 
               className="contact-hero-img" 
             />
