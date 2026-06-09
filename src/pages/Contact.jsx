@@ -3,38 +3,8 @@ import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
-const pinpoints = [
-  { name: 'Chennai', x: '86%', y: '9%' },
-  { name: 'Tiruvallur', x: '80%', y: '6%' },
-  { name: 'Kanchipuram', x: '76%', y: '14%' },
-  { name: 'Chengalpattu', x: '82%', y: '19%' },
-  { name: 'Ranipet', x: '70%', y: '11%' },
-  { name: 'Vellore', x: '62%', y: '13%' },
-  { name: 'Krishnagiri', x: '40%', y: '18%' },
-  { name: 'Dharmapuri', x: '42%', y: '27%' },
-  { name: 'Salem', x: '44%', y: '34%' },
-  { name: 'Erode', x: '28%', y: '37%' },
-  { name: 'Nilgiris (Ooty)', x: '12%', y: '38%' },
-  { name: 'Coimbatore', x: '16%', y: '50%' },
-  { name: 'Tiruppur', x: '27%', y: '48%' },
-  { name: 'Karur', x: '43%', y: '48%' },
-  { name: 'Trichy', x: '52%', y: '47%' },
-  { name: 'Thanjavur', x: '63%', y: '50%' },
-  { name: 'Tiruvarur', x: '72%', y: '52%' },
-  { name: 'Nagapattinam', x: '78%', y: '55%' },
-  { name: 'Pudukkottai', x: '56%', y: '57%' },
-  { name: 'Dindigul', x: '36%', y: '57%' },
-  { name: 'Madurai', x: '40%', y: '65%' },
-  { name: 'Theni', x: '28%', y: '66%' },
-  { name: 'Sivaganga', x: '54%', y: '64%' },
-  { name: 'Virudhunagar', x: '34%', y: '72%' },
-  { name: 'Ramanathapuram', x: '58%', y: '75%' },
-  { name: 'Tuticorin', x: '42%', y: '83%' },
-  { name: 'Tirunelveli', x: '28%', y: '88%' },
-  { name: 'Tenkasi', x: '26%', y: '80%' },
-  { name: 'Kanyakumari', x: '22%', y: '94%' },
-  { name: 'Nagercoil', x: '20%', y: '92%' }
-];
+
+
 
 const Contact = () => {
   const { t, lang } = useLanguage();
@@ -167,7 +137,7 @@ const Contact = () => {
         <div className="container">
           <div className="get-in-touch-grid">
             
-            {/* Left side: Interactive Map */}
+            {/* Left side: Cities We Serve */}
             <div className="get-in-touch-map-box">
               <div className="get-in-touch-header-overlay mb-30">
                 <span className="badge">{t('about_operation_badge')}</span>
@@ -176,28 +146,25 @@ const Contact = () => {
                 </h2>
               </div>
               
-              <div className="map-visual-container glass-card">
-                <img 
-                  src="/tamilnadu_districts.svg" 
-                  alt="Tamil Nadu Districts Map" 
-                  className="tn-map-svg" 
-                  style={{ width: '100%', height: 'auto', maxHeight: '420px', display: 'block' }} 
-                />
-
-                {/* Pinpoints overlay */}
-                {pinpoints.map((pin, idx) => (
-                  <div
-                    key={idx}
-                    className="map-pinpoint"
-                    style={{ left: pin.x, top: pin.y }}
-                  >
-                    <div className="pin-ripple"></div>
-                    <div className="pin-tooltip">{pin.name}</div>
+              <div className="contact-cities-grid">
+                {[
+                  'Chennai', 'Tiruvallur', 'Kanchipuram', 'Chengalpattu', 'Ranipet',
+                  'Vellore', 'Tirupattur', 'Tiruvannamalai', 'Krishnagiri', 'Dharmapuri',
+                  'Salem', 'Namakkal', 'Erode', 'Nilgiris', 'Coimbatore',
+                  'Tiruppur', 'Karur', 'Dindigul', 'Madurai', 'Theni',
+                  'Virudhunagar', 'Sivaganga', 'Ramanathapuram', 'Pudukkottai', 'Trichy',
+                  'Perambalur', 'Ariyalur', 'Thanjavur', 'Tiruvarur', 'Nagapattinam',
+                  'Mayiladuthurai', 'Cuddalore', 'Kallakurichi', 'Villupuram', 'Tuticorin',
+                  'Tenkasi', 'Tirunelveli', 'Kanyakumari', 'Nagercoil', 'Hosur'
+                ].map((city, idx) => (
+                  <div key={idx} className="contact-city-chip">
+                    <span className="contact-city-dot"></span>
+                    {city}
                   </div>
                 ))}
               </div>
               
-              <p className="contact-map-desc mt-35 text-muted">
+              <p className="contact-map-desc mt-25 text-muted">
                 {t('contact_protect_desc')}
               </p>
             </div>
