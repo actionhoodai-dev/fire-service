@@ -43,17 +43,10 @@ const CategoryCarousel = () => {
     { id: 3, name: "Hydrant & Fire Fighting", nameKey: 'cat_hydrant', img: "/cat_hydrants.jpg" },
     { id: 4, name: "Safety Products (PPE)", nameKey: 'cat_ppe', img: "/cat_ppe.jpg" },
     { id: 5, name: "Road Safety Products", nameKey: 'cat_road_safety', img: "/cat_road_safety.jpg" },
-    { id: 6, name: "Fire Suppression", nameKey: 'cat_suppression', productName: "Clean Agent (FE-36)" }
+    { id: 6, name: "Fire Suppression", nameKey: 'cat_suppression', img: "/cat_suppression.jpg" }
   ];
 
-  const categories = categoryMapping.map(cat => {
-    if (cat.img) return cat;
-    const matchedProduct = productsData.find(p => p.name === cat.productName);
-    return {
-      ...cat,
-      img: matchedProduct ? matchedProduct.img : "/logo.png"
-    };
-  });
+  const categories = categoryMapping;
 
   const handleCategoryClick = (catName) => {
     navigate('/products', { state: { filter: catName } });
