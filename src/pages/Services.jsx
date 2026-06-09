@@ -9,11 +9,11 @@ const Services = () => {
   const { t, lang } = useLanguage();
 
   const services = [
-    { title: t('svc_supply_title'), desc: t('svc_supply_desc'), icon: <Truck size={32} />, img: "/co2.png" },
-    { title: t('svc_refill_title'), desc: t('svc_refill_desc'), icon: <Zap size={32} />, img: "/foam.png" },
-    { title: t('svc_service_title'), desc: t('svc_service_desc'), icon: <Wrench size={32} />, img: "/clean_agent.png" },
-    { title: t('svc_hptest_title'), desc: t('svc_hptest_desc'), icon: <Shield size={32} />, img: "/pressure_test.png" },
-    { title: t('svc_install_title'), desc: t('svc_install_desc'), icon: <Settings size={32} />, img: "/hydrant.png" },
+    { title: t('svc_supply_title'), desc: t('svc_supply_desc'), icon: <Truck size={32} />, img: "/service_supply.png" },
+    { title: t('svc_refill_title'), desc: t('svc_refill_desc'), icon: <Zap size={32} />, img: "/service_refill.png" },
+    { title: t('svc_service_title'), desc: t('svc_service_desc'), icon: <Wrench size={32} />, img: "/service_maintenance.png" },
+    { title: t('svc_hptest_title'), desc: t('svc_hptest_desc'), icon: <Shield size={32} />, img: "/service_hptest.jpg" },
+    { title: t('svc_install_title'), desc: t('svc_install_desc'), icon: <Settings size={32} />, img: "/service_install.png" },
     { title: t('svc_amc_title'), desc: t('svc_amc_desc'), icon: <CheckCircle size={32} />, img: "/indian_team.png" },
     { title: t('svc_industrial_title'), desc: t('svc_industrial_desc'), icon: <ShieldAlert size={32} />, img: "/suit.png" },
   ];
