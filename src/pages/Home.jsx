@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useInView } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import DottedHeroBackground from '../components/DottedHeroBackground';
+import { productsData } from '../data/productsData';
 
 const Counter = ({ end, suffix }) => {
   const [count, setCount] = React.useState(0);
@@ -35,14 +36,23 @@ const Counter = ({ end, suffix }) => {
 const CategoryCarousel = () => {
   const navigate = useNavigate();
   const { t } = useLanguage();
-  const categories = [
-    { id: 1, name: "Fire Extinguishers", nameKey: 'cat_fire_extinguishers', img: "/extinguisher.png" },
-    { id: 2, name: "Fire Alarm Systems", nameKey: 'cat_fire_alarm', img: "/detector.png" },
-    { id: 3, name: "Hydrant & Fire Fighting", nameKey: 'cat_hydrant', img: "/hydrant.png" },
-    { id: 4, name: "Safety Products (PPE)", nameKey: 'cat_ppe', img: "/prod_helmet.png" },
-    { id: 5, name: "Road Safety Products", nameKey: 'cat_road_safety', img: "/prod_cone.png" },
-    { id: 6, name: "Fire Suppression", nameKey: 'cat_suppression', img: "/clean_agent.png" }
+  
+  const categoryMapping = [
+    { id: 1, name: "Fire Extinguishers", nameKey: 'cat_fire_extinguishers', productName: "Powder Type (ABC)" },
+    { id: 2, name: "Fire Alarm Systems", nameKey: 'cat_fire_alarm', productName: "Smoke Detectors" },
+    { id: 3, name: "Hydrant & Fire Fighting", nameKey: 'cat_hydrant', productName: "Fire Hydrants (2-way / 4-way)" },
+    { id: 4, name: "Safety Products (PPE)", nameKey: 'cat_ppe', productName: "Head Protection" },
+    { id: 5, name: "Road Safety Products", nameKey: 'cat_road_safety', productName: "Traffic Cones" },
+    { id: 6, name: "Fire Suppression", nameKey: 'cat_suppression', productName: "Clean Agent (FE-36)" }
   ];
+
+  const categories = categoryMapping.map(cat => {
+    const matchedProduct = productsData.find(p => p.name === cat.productName);
+    return {
+      ...cat,
+      img: matchedProduct ? matchedProduct.img : "/logo.png"
+    };
+  });
 
   const handleCategoryClick = (catName) => {
     navigate('/products', { state: { filter: catName } });
