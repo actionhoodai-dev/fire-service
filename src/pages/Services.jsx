@@ -14,8 +14,8 @@ const Services = () => {
     { title: t('svc_service_title'), desc: t('svc_service_desc'), icon: <Wrench size={32} />, img: "/service_maintenance.png" },
     { title: t('svc_hptest_title'), desc: t('svc_hptest_desc'), icon: <Shield size={32} />, img: "/service_hptest.jpg" },
     { title: t('svc_install_title'), desc: t('svc_install_desc'), icon: <Settings size={32} />, img: "/service_install.png" },
-    { title: t('svc_amc_title'), desc: t('svc_amc_desc'), icon: <CheckCircle size={32} />, img: "/indian_team.png" },
-    { title: t('svc_industrial_title'), desc: t('svc_industrial_desc'), icon: <ShieldAlert size={32} />, img: "/suit.png" },
+    { title: t('svc_amc_title'), desc: t('svc_amc_desc'), icon: <CheckCircle size={32} />, img: "/service_amc.png" },
+    { title: t('svc_industrial_title'), desc: t('svc_industrial_desc'), icon: <ShieldAlert size={32} />, img: "/service_suit.jpg" },
   ];
 
   const industries = [
