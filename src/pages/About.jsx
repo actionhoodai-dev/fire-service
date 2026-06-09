@@ -231,17 +231,12 @@ const About = () => {
 
             {/* Right Column: Tamil Nadu Pinpoint Map */}
             <div className="map-visual-container glass-card">
-              <svg viewBox="0 0 400 500" className="tn-map-svg" style={{ width: '100%', height: 'auto', maxHeight: '450px' }}>
-                <path
-                  d="M 195,38 L 225,40 L 255,42 L 285,47 L 298,52 L 308,60 L 318,75 L 322,95 L 328,110 L 332,122 L 328,140 L 320,165 L 314,190 L 305,210 L 290,225 L 278,245 L 274,265 L 280,285 L 282,305 L 274,325 L 260,345 L 245,370 L 232,390 L 222,410 L 210,430 L 195,455 L 190,470 L 180,478 L 172,468 L 170,450 L 174,430 L 176,415 L 165,400 L 150,392 L 135,385 L 125,370 L 120,350 L 122,330 L 124,312 L 118,300 L 105,290 L 90,282 L 72,275 L 58,268 L 48,258 L 52,242 L 68,225 L 82,210 L 98,198 L 108,180 L 106,160 L 104,142 L 108,125 L 120,105 L 138,82 L 152,65 Z"
-                  fill="none"
-                  stroke="var(--primary)"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  filter="drop-shadow(0 8px 16px rgba(230, 47, 16, 0.1))"
-                />
-              </svg>
+              <img 
+                src="/tamilnadu_districts.svg" 
+                alt="Tamil Nadu Districts Map" 
+                className="tn-map-svg" 
+                style={{ width: '100%', height: 'auto', maxHeight: '450px', display: 'block' }} 
+              />
 
               {/* Pinpoints overlay */}
               {pinpoints.map((pin, idx) => (

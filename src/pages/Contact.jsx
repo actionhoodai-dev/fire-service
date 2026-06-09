@@ -3,12 +3,46 @@ import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
+const pinpoints = [
+  { name: 'Chennai', x: '78%', y: '12%' },
+  { name: 'Tiruvallur', x: '72%', y: '10%' },
+  { name: 'Kanchipuram', x: '74%', y: '16%' },
+  { name: 'Chengalpattu', x: '78%', y: '19%' },
+  { name: 'Ranipet', x: '68%', y: '17%' },
+  { name: 'Vellore', x: '64%', y: '19%' },
+  { name: 'Krishnagiri', x: '52%', y: '22%' },
+  { name: 'Dharmapuri', x: '48%', y: '30%' },
+  { name: 'Salem', x: '52%', y: '40%' },
+  { name: 'Erode', x: '38%', y: '48%' },
+  { name: 'Nilgiris (Ooty)', x: '24%', y: '48%' },
+  { name: 'Coimbatore', x: '28%', y: '58%' },
+  { name: 'Tiruppur', x: '35%', y: '58%' },
+  { name: 'Karur', x: '46%', y: '54%' },
+  { name: 'Trichy', x: '56%', y: '55%' },
+  { name: 'Thanjavur', x: '65%', y: '60%' },
+  { name: 'Tiruvarur', x: '72%', y: '60%' },
+  { name: 'Nagapattinam', x: '78%', y: '61%' },
+  { name: 'Pudukkottai', x: '58%', y: '68%' },
+  { name: 'Dindigul', x: '44%', y: '66%' },
+  { name: 'Madurai', x: '48%', y: '73%' },
+  { name: 'Theni', x: '36%', y: '74%' },
+  { name: 'Sivaganga', x: '58%', y: '75%' },
+  { name: 'Virudhunagar', x: '46%', y: '80%' },
+  { name: 'Ramanathapuram', x: '68%', y: '81%' },
+  { name: 'Tuticorin', x: '50%', y: '86%' },
+  { name: 'Tirunelveli', x: '40%', y: '88%' },
+  { name: 'Tenkasi', x: '32%', y: '87%' },
+  { name: 'Kanyakumari', x: '36%', y: '95%' },
+  { name: 'Nagercoil', x: '34%', y: '93%' }
+];
+
 const Contact = () => {
   const { t, lang } = useLanguage();
 
   const [formData, setFormData] = React.useState({
     name: '',
     phone: '',
+    email: '',
     service: t('contact_svc_refilling'),
     message: ''
   });
@@ -21,8 +55,8 @@ const Contact = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     
-    // Construct customized WhatsApp message
-    const formattedMessage = `Hello Varatha Vinayagar Safety & Fire!\n\nI would like to inquire about your services.\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Service Requested:* ${formData.service}\n*Message:* ${formData.message || 'N/A'}`;
+    // Construct customized WhatsApp message with email field
+    const formattedMessage = `Hello Varatha Vinayagar Safety & Fire!\n\nI would like to inquire about your services.\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Email:* ${formData.email}\n*Service Requested:* ${formData.service}\n*Message:* ${formData.message || 'N/A'}`;
     
     // Encode for URL
     const encodedText = encodeURIComponent(formattedMessage);
@@ -66,61 +100,115 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Grid and Quote Form Section */}
-      <section className="section-padding pt-0" id="quote-form">
+      {/* Direct Quick Terminals Block */}
+      <section className="section-padding pt-0 pb-40">
         <div className="container">
-          <div className="section-header text-center mb-60">
-            <span className="badge">{t('contact_support_badge')}</span>
-            <h2 className="section-title">{t('contact_support_title_1')} <span className="accent-text">{t('contact_support_title_span')}</span> {t('contact_support_title_2')}</h2>
-          </div>
-
-          <div className="contact-grid">
-            <div className="contact-info-panel">
-              <div className="contact-box glass-card mb-20">
-                <Phone className="accent-text mb-10" />
+          <div className="contact-info-row">
+            <div className="contact-box-horizontal glass-card">
+              <div className="contact-box-icon-shell">
+                <Phone className="accent-text" size={20} />
+              </div>
+              <div className="contact-box-content">
                 <h3>{t('contact_phones')}</h3>
-                <div className="phone-list mt-10" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  <a href="tel:9944677149" className="btn-primary" style={{ justifyContent: 'center' }}>
-                    <Phone size={16} /> +91 99446 77149
-                  </a>
-                  <a href="tel:7200763674" className="btn-outline" style={{ justifyContent: 'center' }}>
-                    <Phone size={16} /> Customer Care No: +91 72007 63674
-                  </a>
-                </div>
-              </div>
-
-              <div className="contact-box glass-card mb-20">
-                <Mail className="accent-text mb-10" />
-                <h3>{t('contact_email')}</h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '10px' }}>
-                  <a href="mailto:varathavinayagar1989@gmail.com" className="btn-outline" style={{ justifyContent: 'center', width: '100%' }}>
-                    <Mail size={16} /> varathavinayagar1989
-                  </a>
-                  <a href="mailto:essakirajaiyaz@gmail.com" className="btn-outline" style={{ justifyContent: 'center', width: '100%' }}>
-                    <Mail size={16} /> essakirajaiyaz
-                  </a>
-                </div>
-              </div>
-
-              <div className="contact-box glass-card">
-                <MapPin className="accent-text mb-10" />
-                <h3>{t('contact_location')}</h3>
-                <p>{t('contact_location_addr')}</p>
-              </div>
-              
-              <div className="contact-box glass-card mt-20">
-                <Clock className="accent-text mb-10" />
-                <h3>{t('contact_emergency')}</h3>
-                <p className="text-muted mt-5">{t('contact_emergency_avail')}</p>
-                <p className="mt-10" style={{ fontSize: '0.9rem' }}>{t('contact_emergency_desc')}</p>
+                <p className="mt-5">
+                  <a href="tel:9944677149" className="contact-card-link">+91 99446 77149</a>
+                </p>
+                <p className="mt-2">
+                  <a href="tel:7200763674" className="contact-card-link-secondary">Care: +91 72007 63674</a>
+                </p>
               </div>
             </div>
 
+            <div className="contact-box-horizontal glass-card">
+              <div className="contact-box-icon-shell">
+                <Mail className="accent-text" size={20} />
+              </div>
+              <div className="contact-box-content">
+                <h3>{t('contact_email')}</h3>
+                <p className="mt-5">
+                  <a href="mailto:varathavinayagar1989@gmail.com" className="contact-card-link" style={{ fontSize: '0.82rem' }}>varathavinayagar1989@gmail.com</a>
+                </p>
+                <p className="mt-2">
+                  <a href="mailto:essakirajaiyaz@gmail.com" className="contact-card-link-secondary" style={{ fontSize: '0.82rem' }}>essakirajaiyaz@gmail.com</a>
+                </p>
+              </div>
+            </div>
+
+            <div className="contact-box-horizontal glass-card">
+              <div className="contact-box-icon-shell">
+                <MapPin className="accent-text" size={20} />
+              </div>
+              <div className="contact-box-content">
+                <h3>{t('contact_location')}</h3>
+                <p className="mt-5" style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: '1.4' }}>
+                  {t('contact_location_addr')}
+                </p>
+              </div>
+            </div>
+
+            <div className="contact-box-horizontal glass-card">
+              <div className="contact-box-icon-shell">
+                <Clock className="accent-text" size={20} />
+              </div>
+              <div className="contact-box-content">
+                <h3>{t('contact_emergency')}</h3>
+                <p className="mt-5 contact-card-link">{t('contact_emergency_avail')}</p>
+                <p className="mt-2" style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+                  {t('contact_emergency_desc')}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Interactive Map & Quote Form Area */}
+      <section className="section-padding bg-surface" id="quote-form">
+        <div className="container">
+          <div className="get-in-touch-grid">
+            
+            {/* Left side: Interactive Map */}
+            <div className="get-in-touch-map-box">
+              <div className="get-in-touch-header-overlay mb-30">
+                <span className="badge">{t('about_operation_badge')}</span>
+                <h2 className="section-title-sm mt-10">
+                  <span className="accent-text">{t('contact_get_in_touch')}</span>
+                </h2>
+              </div>
+              
+              <div className="map-visual-container glass-card">
+                <img 
+                  src="/tamilnadu_districts.svg" 
+                  alt="Tamil Nadu Districts Map" 
+                  className="tn-map-svg" 
+                  style={{ width: '100%', height: 'auto', maxHeight: '420px', display: 'block' }} 
+                />
+
+                {/* Pinpoints overlay */}
+                {pinpoints.map((pin, idx) => (
+                  <div
+                    key={idx}
+                    className="map-pinpoint"
+                    style={{ left: pin.x, top: pin.y }}
+                  >
+                    <div className="pin-ripple"></div>
+                    <div className="pin-tooltip">{pin.name}</div>
+                  </div>
+                ))}
+              </div>
+              
+              <p className="contact-map-desc mt-35 text-muted">
+                {t('contact_protect_desc')}
+              </p>
+            </div>
+
+            {/* Right side: Quote Form */}
             <form onSubmit={handleFormSubmit} className="glass-card contact-form-main">
-              <h3>{t('contact_form_title')}</h3>
-              <div className="form-grid">
+              <h3 className="form-quote-title">{t('contact_form_free_quote')}</h3>
+              
+              <div className="form-grid mt-20">
                 <div className="form-group">
-                  <label>{t('contact_name')}</label>
+                  <label>{t('contact_name')} *</label>
                   <input 
                     type="text" 
                     name="name"
@@ -130,8 +218,9 @@ const Contact = () => {
                     required 
                   />
                 </div>
+                
                 <div className="form-group">
-                  <label>{t('contact_phone_label')}</label>
+                  <label>{t('contact_phone_label')} *</label>
                   <input 
                     type="tel" 
                     name="phone"
@@ -141,6 +230,19 @@ const Contact = () => {
                     required 
                   />
                 </div>
+                
+                <div className="form-group full-width">
+                  <label>{t('contact_email_label')} *</label>
+                  <input 
+                    type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="example@mail.com" 
+                    required 
+                  />
+                </div>
+                
                 <div className="form-group full-width">
                   <label>{t('contact_service')}</label>
                   <select 
@@ -154,26 +256,32 @@ const Contact = () => {
                     <option value={t('contact_svc_supply')}>{t('contact_svc_supply')}</option>
                   </select>
                 </div>
+                
                 <div className="form-group full-width">
                   <label>{t('contact_message')}</label>
                   <textarea 
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
-                    rows="5" 
+                    rows="4" 
                     placeholder={t('contact_message_placeholder')}
                   ></textarea>
                 </div>
               </div>
-              <button type="submit" className="btn-primary w-full mt-20">{t('contact_send')}</button>
+              
+              <button type="submit" className="btn-primary w-full mt-25">
+                {t('contact_send')}
+              </button>
             </form>
+
           </div>
 
+          {/* Physical Office Location */}
           <div className="map-container-main glass-card overflow-hidden mt-80">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.712202728212!2d78.15088527399394!3d8.813084792333468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b03efe149ba4967%3A0xbf24fd03611dea1!2sVARATHA%20VINAYAGAR%20SAFETY%20%26%20FIRE%20SALES%20AND%20SERVICES!5e0!3m2!1sen!2sin!4v1775810818175!5m2!1sen!2sin" 
               width="100%" 
-              height="450" 
+              height="420" 
               style={{ border: 0 }} 
               allowFullScreen="" 
               loading="lazy"

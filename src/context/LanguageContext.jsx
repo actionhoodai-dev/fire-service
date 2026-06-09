@@ -299,6 +299,10 @@ export const translations = {
     contact_message: 'Message',
     contact_message_placeholder: 'Tell us about your requirements...',
     contact_send: 'Send Message',
+    contact_email_label: 'Email Address',
+    contact_get_in_touch: 'Get In Touch',
+    contact_protect_desc: 'Ready to protect what matters most? Contact our fire safety experts for a free consultation and customized fire protection solution.',
+    contact_form_free_quote: 'Request a Free Quote',
 
     // Footer
     footer_brand_sub: 'SAFETY & FIRE',
@@ -607,6 +611,10 @@ export const translations = {
     contact_message: 'செய்தி',
     contact_message_placeholder: 'உங்கள் தேவைகளை பற்றி கூறுங்கள்...',
     contact_send: 'செய்தி அனுப்பு',
+    contact_email_label: 'மின்னஞ்சல் முகவரி',
+    contact_get_in_touch: 'தொடர்பு கொள்ள',
+    contact_protect_desc: 'மிகவும் முக்கியமானவற்றைப் பாதுகாக்கத் தயாரா? இலவச ஆலோசனை மற்றும் தனிப்பயனாக்கப்பட்ட தீ பாதுகாப்புத் தீர்வுக்கு எங்கள் தீ பாதுகாப்பு நிபுணர்களைத் தொடர்பு கொள்ளுங்கள்.',
+    contact_form_free_quote: 'இலவச மதிப்பீடு கோரிக்கை',
 
     // Footer
     footer_brand_sub: 'பாதுகாப்பு & தீ',
