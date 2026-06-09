@@ -39,8 +39,8 @@ const CategoryCarousel = () => {
     { id: 1, name: "Fire Extinguishers", nameKey: 'cat_fire_extinguishers', img: "/extinguisher.png" },
     { id: 2, name: "Fire Alarm Systems", nameKey: 'cat_fire_alarm', img: "/detector.png" },
     { id: 3, name: "Hydrant & Fire Fighting", nameKey: 'cat_hydrant', img: "/hydrant.png" },
-    { id: 4, name: "Safety Products (PPE)", nameKey: 'cat_ppe', img: "/helmet.png" },
-    { id: 5, name: "Road Safety Products", nameKey: 'cat_road_safety', img: "/cone.jpg" },
+    { id: 4, name: "Safety Products (PPE)", nameKey: 'cat_ppe', img: "/prod_helmet.png" },
+    { id: 5, name: "Road Safety Products", nameKey: 'cat_road_safety', img: "/prod_cone.png" },
     { id: 6, name: "Fire Suppression", nameKey: 'cat_suppression', img: "/clean_agent.png" }
   ];
 
