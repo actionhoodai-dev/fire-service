@@ -21,6 +21,7 @@ export const translations = {
     mobile_emergency_label: '24/7 Emergency Support',
 
     // Home Hero Slides
+    hero_iso_certification: 'ISO 9001:2015 | ISO 45001:2018 CERTIFIED COMPANY',
     hero_slide0_tagline: "Tuticorin's Premium Fire Safety Partner",
     hero_slide0_title: 'Advanced Fire',
     hero_slide0_accent: 'Extinguishers',
@@ -268,6 +269,7 @@ export const translations = {
     mobile_emergency_label: '24/7 அவசர ஆதரவு',
 
     // Home Hero Slides
+    hero_iso_certification: 'ISO 9001:2015 | ISO 45001:2018 சான்றளிக்கப்பட்ட நிறுவனம்',
     hero_slide0_tagline: 'தூத்துக்குடியின் முன்னணி தீ பாதுகாப்பு பங்காளி',
     hero_slide0_title: 'மேம்பட்ட தீ',
     hero_slide0_accent: 'அணைப்பான்கள்',
