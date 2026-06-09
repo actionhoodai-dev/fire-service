@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, Zap, Award, Star, Quote } from 'lucide-react';
+import { Shield, Zap, Award, Star, Quote, Anchor, Bolt, FlaskConical, Fuel, Droplet, Sprout, Paintbrush, Car, FileText, Server, Hospital, Atom, Plane, FileCheck } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useInView } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
@@ -330,6 +330,56 @@ const Home = () => {
 
         <CategoryCarousel />
 
+        {/* Industries We Serve Section */}
+        <section className="section-padding bg-surface">
+          <div className="container">
+            <div className="section-header text-center">
+              <span className="badge">{t('home_industries_badge')}</span>
+              <h2 className="section-title">
+                {t('home_industries_title')} <span className="accent-text">{t('home_industries_title_span')}</span>
+              </h2>
+              <p className="text-muted mt-15" style={{ maxWidth: '600px', margin: '15px auto 0 auto' }}>
+                {t('home_industries_desc')}
+              </p>
+            </div>
+
+            <div className="industries-grid">
+              {[
+                { icon: <Anchor size={28} />, titleKey: 'ind_ports_title', descKey: 'ind_ports_desc' },
+                { icon: <Zap size={28} />, titleKey: 'ind_power_title', descKey: 'ind_power_desc' },
+                { icon: <Bolt size={28} />, titleKey: 'ind_substations_title', descKey: 'ind_substations_desc' },
+                { icon: <FlaskConical size={28} />, titleKey: 'ind_chemical_title', descKey: 'ind_chemical_desc' },
+                { icon: <Fuel size={28} />, titleKey: 'ind_refineries_title', descKey: 'ind_refineries_desc' },
+                { icon: <Droplet size={28} />, titleKey: 'ind_petrochemicals_title', descKey: 'ind_petrochemicals_desc' },
+                { icon: <Sprout size={28} />, titleKey: 'ind_fertilizer_title', descKey: 'ind_fertilizer_desc' },
+                { icon: <Paintbrush size={28} />, titleKey: 'ind_paint_title', descKey: 'ind_paint_desc' },
+                { icon: <Car size={28} />, titleKey: 'ind_automobile_title', descKey: 'ind_automobile_desc' },
+                { icon: <FileText size={28} />, titleKey: 'ind_paper_title', descKey: 'ind_paper_desc' },
+                { icon: <Server size={28} />, titleKey: 'ind_it_title', descKey: 'ind_it_desc' },
+                { icon: <Hospital size={28} />, titleKey: 'ind_hospitals_title', descKey: 'ind_hospitals_desc' },
+                { icon: <Shield size={28} />, titleKey: 'ind_defense_title', descKey: 'ind_defense_desc' },
+                { icon: <Atom size={28} />, titleKey: 'ind_nuclear_title', descKey: 'ind_nuclear_desc' },
+                { icon: <Plane size={28} />, titleKey: 'ind_aircraft_title', descKey: 'ind_aircraft_desc' }
+              ].map((ind, idx) => (
+                <motion.div
+                  key={idx}
+                  className="industry-card"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: (idx % 3) * 0.08, duration: 0.5 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="industry-icon-wrapper">
+                    {ind.icon}
+                  </div>
+                  <h3>{t(ind.titleKey)}</h3>
+                  <p>{t(ind.descKey)}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="section-padding">
           <div className="container grid-2">
             <motion.div 
@@ -457,6 +507,45 @@ const Home = () => {
                 <h3>{t('why_certified')}</h3>
                 <p>{t('why_certified_desc')}</p>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Licenses & Approvals Section */}
+        <section className="section-padding" style={{ background: '#090a0f', color: '#ffffff', position: 'relative', overflow: 'hidden' }}>
+          <div className="container">
+            <div className="section-header text-center">
+              <span className="badge" style={{ background: 'rgba(230, 47, 16, 0.1)', borderColor: 'rgba(230, 47, 16, 0.3)', color: 'var(--primary)' }}>
+                {t('home_licenses_badge')}
+              </span>
+              <h2 className="section-title" style={{ color: '#ffffff' }}>
+                {t('home_licenses_title')} <span className="accent-text">{t('home_licenses_title_span')}</span>
+              </h2>
+              <p className="text-muted mt-15" style={{ maxWidth: '600px', margin: '15px auto 0 auto', color: '#a1a1aa' }}>
+                {t('home_licenses_desc')}
+              </p>
+            </div>
+
+            <div className="licenses-grid">
+              {[
+                { num: '01.', titleKey: 'lic_noc_title', descKey: 'lic_noc_desc' },
+                { num: '02.', titleKey: 'lic_iso_title', descKey: 'lic_iso_desc' },
+                { num: '03.', titleKey: 'lic_audits_title', descKey: 'lic_audits_desc' },
+                { num: '04.', titleKey: 'lic_approvals_title', descKey: 'lic_approvals_desc' }
+              ].map((lic, idx) => (
+                <motion.div
+                  key={idx}
+                  className="license-card"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.15, duration: 0.5 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="license-number">{lic.num}</div>
+                  <h3>{t(lic.titleKey)}</h3>
+                  <p>{t(lic.descKey)}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
