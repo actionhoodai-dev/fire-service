@@ -58,9 +58,9 @@ export const translations = {
     home_cat_title_end: 'Range',
 
     // Home Category Names
-    cat_fire_extinguishers: 'Fire Extinguishers',
-    cat_fire_alarm: 'Fire Alarm Systems',
-    cat_hydrant: 'Hydrant & Fire Fighting',
+    cat_fire_extinguishers: 'Fire Extinguisher and Spares',
+    cat_fire_alarm: 'Fire Alarm Systems and Accessories',
+    cat_hydrant: 'Fire Hydrant System Installation and Accessories',
     cat_ppe: 'Safety Products (PPE)',
     cat_road_safety: 'Road Safety Products',
     cat_suppression: 'Fire Suppression',
@@ -308,9 +308,9 @@ export const translations = {
     home_cat_title_end: 'வரம்பை ஆராயுங்கள்',
 
     // Home Category Names
-    cat_fire_extinguishers: 'தீ அணைப்பான்கள்',
-    cat_fire_alarm: 'தீ எச்சரிக்கை அமைப்புகள்',
-    cat_hydrant: 'ஹைட்ரன்ட் & தீயணைப்பு',
+    cat_fire_extinguishers: 'தீ அணைப்பான்கள் மற்றும் உதிரிபாகங்கள்',
+    cat_fire_alarm: 'தீ எச்சரிக்கை அமைப்புகள் மற்றும் பாகங்கள்',
+    cat_hydrant: 'தீ ஹைட்ரண்ட் சிஸ்டம் நிறுவல் மற்றும் பாகங்கள்',
     cat_ppe: 'பாதுகாப்பு பொருட்கள் (PPE)',
     cat_road_safety: 'சாலை பாதுகாப்பு பொருட்கள்',
     cat_suppression: 'தீ அடக்குதல்',
