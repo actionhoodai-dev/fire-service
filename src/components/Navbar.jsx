@@ -215,6 +215,13 @@ const Navbar = () => {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* ISO Certification Announcement Bar */}
+        <div className="nav-iso-bar">
+          <div className="nav-iso-content">
+            <span className="nav-iso-text">{t('hero_iso_certification')}</span>
+          </div>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
@@ -263,7 +270,7 @@ const Navbar = () => {
               <p className="mobile-menu-label">{t('mobile_emergency_label')}</p>
               <div className="mobile-phone-list">
                 <a href="tel:9944677149"><Phone size={16} /> +91 99446 77149</a>
-                <a href="tel:7200763674"><Phone size={16} /> +91 72007 63674</a>
+                <a href="tel:7200763674"><Phone size={16} /> Customer Care No: +91 72007 63674</a>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '15px' }}>
                 <a 

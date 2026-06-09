@@ -258,7 +258,7 @@ body {
   border-left: none;
   border-right: none;
   border-radius: 0;
-  padding: 15px 5%;
+  padding: 0;
   z-index: 1000;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
@@ -266,7 +266,6 @@ body {
 
 .navbar-scrolled {
   top: 0;
-  padding: 12px 5%;
   background: #ffffff;
   border-color: var(--glass-border);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -277,6 +276,39 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding: 15px 5%;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar-scrolled .nav-container {
+  padding: 12px 5%;
+}
+
+.nav-iso-bar {
+  width: 100%;
+  background: linear-gradient(90deg, #ff4d00, #ff6b21);
+  padding: 6px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-iso-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-iso-text {
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(0.65rem, 1.8vw, 0.75rem);
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 15px;
 }
 
 .logo {
@@ -291,7 +323,9 @@ body {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 2.5px;
   border: 2px solid var(--primary);
   transition: var(--transition);
 }

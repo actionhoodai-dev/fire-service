@@ -21,7 +21,7 @@ export const translations = {
     mobile_emergency_label: '24/7 Emergency Support',
 
     // Home Hero Slides
-    hero_iso_certification: 'ISO 9001:2015 | ISO 45001:2018 CERTIFIED COMPANY',
+    hero_iso_certification: 'AN ISO 9001:2015 | ISO 45001:2018 CERTIFIED COMPANY',
     hero_slide0_tagline: "Tuticorin's Premium Fire Safety Partner",
     hero_slide0_title: 'Advanced Fire',
     hero_slide0_accent: 'Extinguishers',
@@ -76,6 +76,8 @@ export const translations = {
     stat_experience: 'Years Experience',
     stat_staff: 'Certified Staff',
     stat_sites: 'Active Sites',
+    stat_satisfaction: 'Customer Satisfaction',
+    stat_customers: 'Happy Customers',
 
     home_process_badge: 'Our Process',
     home_process_title: 'How We',
@@ -269,7 +271,7 @@ export const translations = {
     mobile_emergency_label: '24/7 அவசர ஆதரவு',
 
     // Home Hero Slides
-    hero_iso_certification: 'ISO 9001:2015 | ISO 45001:2018 சான்றளிக்கப்பட்ட நிறுவனம்',
+    hero_iso_certification: 'AN ISO 9001:2015 | ISO 45001:2018 சான்றளிக்கப்பட்ட நிறுவனம்',
     hero_slide0_tagline: 'தூத்துக்குடியின் முன்னணி தீ பாதுகாப்பு பங்காளி',
     hero_slide0_title: 'மேம்பட்ட தீ',
     hero_slide0_accent: 'அணைப்பான்கள்',
@@ -324,6 +326,8 @@ export const translations = {
     stat_experience: 'ஆண்டுகள் அனுபவம்',
     stat_staff: 'சான்றளிக்கப்பட்ட பணியாளர்கள்',
     stat_sites: 'செயலில் உள்ள தளங்கள்',
+    stat_satisfaction: 'வாடிக்கையாளர் திருப்தி',
+    stat_customers: 'மகிழ்ச்சியான வாடிக்கையாளர்கள்',
 
     home_process_badge: 'எங்கள் செயல்முறை',
     home_process_title: 'நாங்கள் எப்படி',

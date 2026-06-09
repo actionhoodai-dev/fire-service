@@ -84,7 +84,7 @@ const Footer = () => {
                 <div className="footer-contact-icon">
                   <Phone size={18} />
                 </div>
-                <span>+91 72007 63674</span>
+                <span>Customer Care No: +91 72007 63674</span>
               </a>
               <a href="mailto:varathavinayagar1989@gmail.com" className="footer-contact-item">
                 <div className="footer-contact-icon">

@@ -84,7 +84,7 @@ const Contact = () => {
                     <Phone size={16} /> +91 99446 77149
                   </a>
                   <a href="tel:7200763674" className="btn-outline" style={{ justifyContent: 'center' }}>
-                    <Phone size={16} /> +91 72007 63674
+                    <Phone size={16} /> Customer Care No: +91 72007 63674
                   </a>
                 </div>
               </div>

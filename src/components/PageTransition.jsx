@@ -81,7 +81,8 @@ const PageTransition = ({ children }) => {
                 borderRadius: '50%',
                 boxShadow: '0 8px 24px rgba(255, 77, 0, 0.15)',
                 border: '2px solid #ff4d00',
-                background: '#ffffff'
+                background: '#ffffff',
+                padding: '4px'
               }} 
             />
           </div>

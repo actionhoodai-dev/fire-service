@@ -102,6 +102,8 @@ const Home = () => {
   const { t } = useLanguage();
 
   const complianceStat = { label: t('stat_compliance'), end: 100, suffix: '%' };
+  const satisfactionStat = { label: t('stat_satisfaction'), end: 97, suffix: '%' };
+  const customersStat = { label: t('stat_customers'), end: 120, suffix: '+' };
 
   const slidesData = [
     {
@@ -372,20 +374,47 @@ const Home = () => {
         </section>
 
         <section className="section-padding bg-surface">
-          <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
-            <motion.div 
-              className="stat-box glass-card"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              viewport={{ once: true }}
-              style={{ maxWidth: '320px', width: '100%', textAlign: 'center' }}
-            >
-              <h3 className="stat-num" style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--primary)' }}>
-                <Counter end={complianceStat.end} suffix={complianceStat.suffix} />
-              </h3>
-              <p className="stat-label">{complianceStat.label}</p>
-            </motion.div>
+          <div className="container">
+            <div className="stats-grid">
+              <motion.div 
+                className="stat-box glass-card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="stat-num">
+                  <Counter end={complianceStat.end} suffix={complianceStat.suffix} />
+                </h3>
+                <p className="stat-label">{complianceStat.label}</p>
+              </motion.div>
+
+              <motion.div 
+                className="stat-box glass-card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="stat-num">
+                  <Counter end={satisfactionStat.end} suffix={satisfactionStat.suffix} />
+                </h3>
+                <p className="stat-label">{satisfactionStat.label}</p>
+              </motion.div>
+
+              <motion.div 
+                className="stat-box glass-card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="stat-num">
+                  <Counter end={customersStat.end} suffix={customersStat.suffix} />
+                </h3>
+                <p className="stat-label">{customersStat.label}</p>
+              </motion.div>
+            </div>
           </div>
         </section>
 

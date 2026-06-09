@@ -60,7 +60,8 @@ const Preloader = () => {
             borderRadius: '50%',
             boxShadow: '0 10px 30px rgba(255, 77, 0, 0.2)',
             border: '3px solid #ff4d00',
-            background: '#ffffff'
+            background: '#ffffff',
+            padding: '5px'
           }} 
         />
       </div>
