@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import SEOHead from '../components/SEOHead';
@@ -9,7 +8,7 @@ import SEOHead from '../components/SEOHead';
 
 
 const Contact = () => {
-  const { t, lang } = useLanguage();
+  const { t } = useLanguage();
 
   const [formData, setFormData] = React.useState({
     name: '',
@@ -19,23 +18,62 @@ const Contact = () => {
     message: ''
   });
 
+  const [submitStatus, setSubmitStatus] = React.useState('idle'); // idle | loading | success | error
+  const [statusMessage, setStatusMessage] = React.useState('');
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    
-    // Construct customized WhatsApp message with email field
-    const formattedMessage = `Hello Varatha Vinayagar Safety & Fire!\n\nI would like to inquire about your services.\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Email:* ${formData.email}\n*Service Requested:* ${formData.service}\n*Message:* ${formData.message || 'N/A'}`;
-    
-    // Encode for URL
-    const encodedText = encodeURIComponent(formattedMessage);
-    const whatsappUrl = `https://wa.me/919944677149?text=${encodedText}`;
-    
-    // Open in a new tab
-    window.open(whatsappUrl, '_blank');
+    setSubmitStatus('loading');
+    setStatusMessage('');
+
+    try {
+      const response = await fetch('/api/send-enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setStatusMessage('✅ Your enquiry has been sent successfully! We will get back to you shortly.');
+        
+        // Reset form
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          service: t('contact_svc_refilling'),
+          message: ''
+        });
+
+        // Auto-dismiss after 6 seconds
+        setTimeout(() => {
+          setSubmitStatus('idle');
+          setStatusMessage('');
+        }, 6000);
+      } else {
+        setSubmitStatus('error');
+        setStatusMessage(data.error || '❌ Failed to send enquiry. Please try again or contact us directly.');
+        setTimeout(() => {
+          setSubmitStatus('idle');
+          setStatusMessage('');
+        }, 5000);
+      }
+    } catch {
+      setSubmitStatus('error');
+      setStatusMessage('❌ Network error. Please check your connection and try again.');
+      setTimeout(() => {
+        setSubmitStatus('idle');
+        setStatusMessage('');
+      }, 5000);
+    }
   };
 
   return (
@@ -244,9 +282,44 @@ const Contact = () => {
                 </div>
               </div>
               
-              <button type="submit" className="btn-primary w-full mt-25">
-                {t('contact_send')}
+              <button 
+                type="submit" 
+                className="btn-primary w-full mt-25"
+                disabled={submitStatus === 'loading'}
+                style={{ 
+                  opacity: submitStatus === 'loading' ? 0.7 : 1,
+                  cursor: submitStatus === 'loading' ? 'not-allowed' : 'pointer',
+                  position: 'relative'
+                }}
+              >
+                {submitStatus === 'loading' ? (
+                  <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
+                    <span className="btn-spinner" /> Sending...
+                  </span>
+                ) : submitStatus === 'success' ? '✅ Sent Successfully!' : t('contact_send')}
               </button>
+
+              {statusMessage && (
+                <div 
+                  className={`form-status-message ${submitStatus === 'success' ? 'form-status-success' : 'form-status-error'}`}
+                  style={{
+                    marginTop: '16px',
+                    padding: '14px 20px',
+                    borderRadius: '10px',
+                    fontSize: '0.9rem',
+                    fontWeight: '500',
+                    textAlign: 'center',
+                    animation: 'fadeIn 0.3s ease',
+                    background: submitStatus === 'success' 
+                      ? 'rgba(22, 163, 74, 0.15)' 
+                      : 'rgba(220, 38, 38, 0.15)',
+                    border: `1px solid ${submitStatus === 'success' ? 'rgba(22, 163, 74, 0.3)' : 'rgba(220, 38, 38, 0.3)'}`,
+                    color: submitStatus === 'success' ? '#4ade80' : '#fca5a5',
+                  }}
+                >
+                  {statusMessage}
+                </div>
+              )}
             </form>
 
           </div>
