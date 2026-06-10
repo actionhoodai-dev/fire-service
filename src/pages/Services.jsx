@@ -7,7 +7,7 @@ import { useLanguage } from '../context/LanguageContext';
 import SEOHead from '../components/SEOHead';
 
 const Services = () => {
-  const { t, lang } = useLanguage();
+  const { t } = useLanguage();
 
   const services = [
     { title: t('svc_supply_title'), desc: t('svc_supply_desc'), icon: <Truck size={32} />, img: "/service_supply.png" },
@@ -51,7 +51,7 @@ const Services = () => {
             >
               <Tilt className="service-card glass-card" options={{ max: 15, scale: 1.03 }}>
                 <div className="service-image-wrapper">
-                  <img src={service.img} alt={service.title} className="service-card-img" />
+                  <img src={service.img} alt={service.title} className="service-card-img" loading="lazy" />
                 </div>
                 <div style={{ padding: '25px 30px 30px' }}>
                   <div className="service-icon-box">

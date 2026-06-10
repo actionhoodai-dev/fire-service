@@ -9,7 +9,7 @@ import SEOHead from '../components/SEOHead';
 
 const Products = () => {
   const location = useLocation();
-  const { t, lang } = useLanguage();
+  const { t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState(location.state?.filter || 'All');
 
   React.useEffect(() => {
@@ -83,7 +83,7 @@ const Products = () => {
                     <div className="product-visual-large relative">
                       <span className="product-category-badge" style={{position: 'absolute', top: '20px', left: '20px', zIndex: 10}}>{getCatLabel(product.category)}</span>
                       {product.img ? (
-                        <img src={product.img} alt={product.name} className="product-img-full" />
+                        <img src={product.img} alt={product.name} className="product-img-full" loading="lazy" />
                       ) : (
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', width: '100%', opacity: 0.5, color: 'var(--primary)' }}>
                           {product.icon}

@@ -21,10 +21,10 @@ const PartnerCarousel = () => {
           transition={{ duration: 45, ease: "linear", repeat: Infinity }}
         >
           <div className="partner-strip">
-            <img src="/partners_strip.png" alt="Trusted Brands and Partners" />
+            <img src="/partners_strip.png" alt="Trusted Brands and Partners" width="600" height="60" loading="lazy" />
           </div>
           <div className="partner-strip">
-            <img src="/partners_strip.png" alt="Trusted Brands and Partners" />
+            <img src="/partners_strip.png" alt="Trusted Brands and Partners" width="600" height="60" loading="lazy" />
           </div>
         </motion.div>
       </div>
@@ -71,7 +71,7 @@ const About = () => {
             transition={{ duration: 1 }}
           >
             <div className="glass-card about-main-card overflow-hidden">
-               <img src="/infrastructure.png" alt="Fire Extinguisher, Hydrant, and Alarm Products Showcase" />
+               <img src="/infrastructure.png" alt="Fire Extinguisher, Hydrant, and Alarm Products Showcase" loading="lazy" />
             </div>
           </motion.div>
 

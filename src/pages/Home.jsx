@@ -79,7 +79,7 @@ const CategoryCarousel = () => {
               <div className="category-circle-wrapper">
                 <div className="category-circle-border"></div>
                 <div className="category-circle-inner glass-card">
-                  <img src={item.img} alt={item.name} />
+                  <img src={item.img} alt={item.name} width="200" height="200" loading="lazy" />
                 </div>
               </div>
               <div className="category-info text-center mt-15">
@@ -282,6 +282,8 @@ const Home = () => {
                     src={activeSlide.image} 
                     alt={activeSlide.alt} 
                     className="hero-extinguisher-img" 
+                    width="420"
+                    height="631"
                     style={{ 
                       filter: 'drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15))'
                     }}
@@ -329,8 +331,8 @@ const Home = () => {
               animate={{ x: ["0%", "-50%"] }}
               transition={{ duration: 45, ease: "linear", repeat: Infinity }}
             >
-              <div className="partner-strip"><img src="/partners_strip.png" alt="Authorised Partner Brands" /></div>
-              <div className="partner-strip"><img src="/partners_strip.png" alt="Authorised Partner Brands" /></div>
+              <div className="partner-strip"><img src="/partners_strip.png" alt="Authorised Partner Brands" width="600" height="60" loading="lazy" /></div>
+              <div className="partner-strip"><img src="/partners_strip.png" alt="Authorised Partner Brands" width="600" height="60" loading="lazy" /></div>
             </motion.div>
           </div>
         </section>
@@ -397,7 +399,7 @@ const Home = () => {
               viewport={{ once: true }}
             >
               <div className="glass-card about-logo-card about-logo-wrapper">
-    <img src="/logo.png" alt="Business Logo" />
+    <img src="/logo.png" alt="Business Logo" width="200" height="200" loading="lazy" />
 </div>
   
             </motion.div>

@@ -111,6 +111,9 @@ const Contact = () => {
               src="/contact_hero_new.png" 
               alt="VV Safety Command Center" 
               className="contact-hero-img" 
+              width="500"
+              height="333"
+              loading="lazy"
             />
           </div>
         </div>
