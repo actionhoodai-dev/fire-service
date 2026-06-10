@@ -185,7 +185,7 @@ const About = () => {
 
           <div className="about-cities-fullwidth">
             <h3 className="mb-20" style={{ fontFamily: 'Plus Jakarta Sans', fontWeight: 800, fontSize: '1.25rem', color: 'var(--text-main)', textAlign: 'center' }}>
-              {t('about_operation_subtitle')} ({cities.length} {lang === 'ta' ? 'நகரங்கள்' : 'Cities'})
+              {t('about_operation_subtitle')} (30+ {lang === 'ta' ? 'நகரங்கள்' : 'Cities'})
             </h3>
             <div className="contact-cities-grid">
               {cities.map((city, idx) => (
