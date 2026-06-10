@@ -4,6 +4,7 @@ import { Shield, Zap, Settings, Truck, Wrench, CheckCircle, Factory, ShieldAlert
 import { Tilt } from 'react-tilt';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import SEOHead from '../components/SEOHead';
 
 const Services = () => {
   const { t, lang } = useLanguage();
@@ -25,6 +26,12 @@ const Services = () => {
 
   return (
     <div className="services-page pt-120 animate-fade-in">
+      <SEOHead
+        title="Fire Safety Services - Refilling, H.P. Testing & AMC"
+        description="Expert fire safety services by Varatha Vinayagar Safety & Fire in Tuticorin. Fire extinguisher refilling, hydrostatic pressure testing, annual maintenance contracts, fire safety inspection, installation & commissioning. Serving 30+ cities across Tamil Nadu."
+        keywords="fire extinguisher refilling Tuticorin, HP testing fire extinguisher, fire safety annual maintenance contract, fire safety inspection Tamil Nadu, fire extinguisher service, fire safety installation, fire hydrant system service, fire alarm maintenance, Varatha Vinayagar fire services, VV Safety services, fire safety AMC Tuticorin, Thoothukudi fire services"
+        path="/services"
+      />
       <section className="section-padding">
         <div className="section-header text-center">
           <span className="badge">{t('services_badge')}</span>

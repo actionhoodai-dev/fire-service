@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { CheckCircle, Eye, Rocket, ThumbsUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import SEOHead from '../components/SEOHead';
+
 
 const PartnerCarousel = () => {
   const { t } = useLanguage();
@@ -54,6 +56,12 @@ const About = () => {
 
   return (
     <div className="about-page pt-120">
+      <SEOHead
+        title="About Us - Trusted Fire Safety Partner Since Inception"
+        description="Learn about Varatha Vinayagar Safety & Fire (VV Safety) — your trusted fire safety partner in Tuticorin, Tamil Nadu. Licensed & approved by BIS, serving 30+ cities with fire extinguishers, alarms, hydrant systems & PPE. Our vision, mission & quality commitment."
+        keywords="about Varatha Vinayagar Fire and Safety, VV Safety company profile, fire safety company Tuticorin, BIS licensed fire safety, fire safety Tamil Nadu, trusted fire safety partner, Varatha Vinayagar about, fire safety areas of operation Tamil Nadu, fire extinguisher company profile"
+        path="/about"
+      />
       <section className="section-padding">
         <div className="container grid-2">
           <motion.div 

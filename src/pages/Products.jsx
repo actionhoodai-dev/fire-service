@@ -4,6 +4,8 @@ import { ShoppingBag, ChevronRight, Filter, ShieldAlert, Droplet, BellRing, Sett
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { productsData } from '../data/productsData';
+import SEOHead from '../components/SEOHead';
+
 
 const Products = () => {
   const location = useLocation();
@@ -37,6 +39,12 @@ const Products = () => {
 
   return (
     <div className="products-page pt-120">
+      <SEOHead
+        title="Fire Safety Products - Extinguishers, Alarms, Hydrants & PPE"
+        description="Shop BIS-approved fire safety products from Varatha Vinayagar Safety & Fire. Fire extinguishers & spares, fire alarm systems & accessories, fire hydrant system accessories, fire suppression systems, PPE safety equipment & road safety products. Best prices in Tuticorin."
+        keywords="fire extinguisher buy Tuticorin, fire alarm system price Tamil Nadu, fire hydrant accessories, PPE safety products, fire suppression system, road safety equipment, ABC powder fire extinguisher, CO2 fire extinguisher, smoke detector, fire hose reel, safety helmet, safety shoes, fire safety products India, Varatha Vinayagar products, VV Safety products, fire extinguisher spares"
+        path="/products"
+      />
       <section className="section-padding">
         <div className="section-header text-center">
           <span className="badge">{t('products_badge')}</span>

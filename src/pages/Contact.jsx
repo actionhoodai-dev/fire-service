@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import SEOHead from '../components/SEOHead';
+
 
 
 
@@ -38,6 +40,12 @@ const Contact = () => {
 
   return (
     <div className="contact-page pt-120 animate-fade-in">
+      <SEOHead
+        title="Contact Us - Get a Free Quote | 24/7 Emergency Support"
+        description="Contact Varatha Vinayagar Safety & Fire (VV Safety) in Tuticorin for fire safety solutions. Call +91-9944677149 for free quotes. Visit us at 112Q/3, Muthukrishnapuram 2nd Street, Tuticorin, Tamil Nadu. 24/7 emergency fire safety support across 30+ cities."
+        keywords="contact Varatha Vinayagar fire safety, VV Safety contact number, fire safety Tuticorin phone number, fire extinguisher Tuticorin address, fire safety free quote, emergency fire safety support, Varatha Vinayagar Tuticorin location, fire safety company near me, fire extinguisher service near me Tuticorin"
+        path="/contact"
+      />
       {/* Premium Hero Section */}
       <section className="contact-hero section-padding">
         <div className="container contact-hero-grid">

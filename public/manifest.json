@@ -1,0 +1,28 @@
+{
+  "name": "Varatha Vinayagar Safety & Fire - VV Safety Fire and Safety",
+  "short_name": "VV Safety & Fire",
+  "description": "Premium fire safety solutions, fire extinguisher refilling, hydrant systems, fire alarms & PPE in Tuticorin, Tamil Nadu. BIS-approved products with 24/7 emergency support across 30+ cities.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#ef4444",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "safety", "fire safety"],
+  "lang": "en",
+  "dir": "ltr"
+}

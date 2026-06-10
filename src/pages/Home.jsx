@@ -6,6 +6,7 @@ import { useInView } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import DottedHeroBackground from '../components/DottedHeroBackground';
 import { productsData } from '../data/productsData';
+import SEOHead from '../components/SEOHead';
 
 const Counter = ({ end, suffix }) => {
   const [count, setCount] = React.useState(0);
@@ -169,6 +170,12 @@ const Home = () => {
 
   return (
     <div className="home-page">
+      <SEOHead
+        title="Best Fire Safety Solutions in Tuticorin"
+        description="Varatha Vinayagar Safety & Fire (VV Safety) — #1 fire safety company in Tuticorin, Tamil Nadu. BIS-approved fire extinguishers, fire alarm systems, fire hydrant installation, PPE & road safety products. 24/7 emergency service, refilling & H.P. testing across 30+ cities."
+        keywords="Varatha Vinayagar Fire and Safety, VV Safety Fire and Safety, fire safety Tuticorin, best fire safety Tuticorin, Tuticorin fire services, fire extinguisher Tuticorin, fire extinguisher refilling Tuticorin, fire alarm system Tamil Nadu, fire hydrant system installation, BIS approved fire extinguisher, fire safety company Tuticorin, PPE products Tuticorin, road safety products, Thoothukudi fire safety, fire safety equipment supplier Tamil Nadu, fire extinguisher dealer, annual maintenance contract fire safety"
+        path="/"
+      />
       {/* Hero Section - two column grid layout */}
       <section className="hero-section">
         <DottedHeroBackground themeColor={activeSlide.themeColor} />

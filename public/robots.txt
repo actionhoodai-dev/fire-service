@@ -1,0 +1,19 @@
+# Varatha Vinayagar Safety & Fire - VV Safety Fire and Safety
+# https://vvsafetyfireandsafety.com
+
+User-agent: *
+Allow: /
+Disallow: /assets/
+
+# Sitemap
+Sitemap: https://vvsafetyfireandsafety.com/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
