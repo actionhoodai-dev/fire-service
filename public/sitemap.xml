@@ -4,52 +4,52 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://vvsafetyfireandsafety.com/</loc>
+    <loc>https://vvfiresafety.com/</loc>
     <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vvsafetyfireandsafety.com/"/>
-    <xhtml:link rel="alternate" hreflang="ta" href="https://vvsafetyfireandsafety.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vvfiresafety.com/"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://vvfiresafety.com/"/>
   </url>
 
   <!-- Services Page -->
   <url>
-    <loc>https://vvsafetyfireandsafety.com/services</loc>
+    <loc>https://vvfiresafety.com/services</loc>
     <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vvsafetyfireandsafety.com/services"/>
-    <xhtml:link rel="alternate" hreflang="ta" href="https://vvsafetyfireandsafety.com/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vvfiresafety.com/services"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://vvfiresafety.com/services"/>
   </url>
 
   <!-- Products Page -->
   <url>
-    <loc>https://vvsafetyfireandsafety.com/products</loc>
+    <loc>https://vvfiresafety.com/products</loc>
     <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vvsafetyfireandsafety.com/products"/>
-    <xhtml:link rel="alternate" hreflang="ta" href="https://vvsafetyfireandsafety.com/products"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vvfiresafety.com/products"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://vvfiresafety.com/products"/>
   </url>
 
   <!-- About Page -->
   <url>
-    <loc>https://vvsafetyfireandsafety.com/about</loc>
+    <loc>https://vvfiresafety.com/about</loc>
     <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vvsafetyfireandsafety.com/about"/>
-    <xhtml:link rel="alternate" hreflang="ta" href="https://vvsafetyfireandsafety.com/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vvfiresafety.com/about"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://vvfiresafety.com/about"/>
   </url>
 
   <!-- Contact Page -->
   <url>
-    <loc>https://vvsafetyfireandsafety.com/contact</loc>
+    <loc>https://vvfiresafety.com/contact</loc>
     <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vvsafetyfireandsafety.com/contact"/>
-    <xhtml:link rel="alternate" hreflang="ta" href="https://vvsafetyfireandsafety.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vvfiresafety.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://vvfiresafety.com/contact"/>
   </url>
 
 </urlset>

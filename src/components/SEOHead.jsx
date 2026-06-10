@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 
-const SITE_URL = 'https://vvsafetyfireandsafety.com';
+const SITE_URL = 'https://vvfiresafety.com';
 const BUSINESS_NAME = 'Varatha Vinayagar Safety & Fire';
 const DEFAULT_IMAGE = `${SITE_URL}/logo.png`;
 
